@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width,initial-scale=1.0">
+    <link rel="icon" href="<%= BASE_URL %>favicon.ico">
+    <link rel="stylesheet" href="/layui/css/bootstrap.min.css">
+    <link rel="stylesheet" href="/layui/css/demo.css">
+    <link rel="stylesheet" href="/layui/css/fakeLoader.min.css">
+    <link rel="stylesheet" href="/layui/css/newsub.css" type="text/css">
+    <!--<link rel="stylesheet" type="text/css" href="/layui/css/layui.css" />-->
+    <script src="https://cdn.jsdelivr.net/gh/ygbhf/clicklove/clicklove.js" type="text/javascript" charset="utf-8"></script>
+    <!--<script src="/layui/layui.all.js" type="text/javascript" charset="utf-8"></script>-->
+    <!--<script src="/layui/laybox.js" type="text/javascript" charset="utf-8"></script>-->
+    <title>在线订阅转换工具</title>
+  </head>
+  <body>
+    <div class="fakeLoader"></div>
+    <section class="canvas-wrap">
+    <div id="canvas" class="gradient"></div>
+    </section>
+    <div id="app"></div>
+    <script src="/js/jquery.min.js"></script>
+    <script src="/js/fakeLoader.min.js"></script>
+    <script>
+            $(document).ready(function(){
+                $.fakeLoader({
+                    timeToHide:1200,
+                    bgColor:"#8a43db",
+                    spinner:"spinner1"
+                });
+            });
+    </script>
+    <script src="/js/three.min.js"></script>
+    <script src="/js/projector.js"></script>
+    <script src="/js/canvas-renderer.js"></script>
+    <script src="/js/3d-lines-animation.js"></script>
+    <script src="/js/color.js"></script>
+  </body>
+</html>

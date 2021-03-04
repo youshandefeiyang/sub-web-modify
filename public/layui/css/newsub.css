@@ -53,6 +53,3 @@ textarea {-webkit-appearance: none;appearance: none;}
 .el-link.el-link--primary {color: #333 !important;}
 .el-link.el-link--primary:hover {color: #000 !important;}
 .el-link.el-link--default:after, .el-link.el-link--primary.is-underline:hover:after, .el-link.el-link--primary:after {border-color: #000 !important;}
-@media (max-width: 640px) {
-	.el-card__body {padding: 10px !important;}
-}

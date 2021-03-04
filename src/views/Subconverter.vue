@@ -122,7 +122,7 @@
                       <el-row>
                           <el-checkbox v-model="form.insert" label="网易云"></el-checkbox>
                       </el-row>
-                        <el-button slot="reference" style="margin-top:1.825px">更多选项</el-button>
+                        <el-button slot="reference">更多选项</el-button>
                       </el-popover>
                     </el-col>
                   </el-row>

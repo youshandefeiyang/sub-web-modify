@@ -24,7 +24,6 @@
                   type="textarea"
                   rows="3"
                   placeholder="支持各种订阅链接或单节点链接，多个链接每行一个或用 | 分隔"
-                  @blur="saveSubUrl"
                 />
               </el-form-item>
               <el-form-item label="客户端:">
@@ -965,11 +964,6 @@ export default {
           this.backendVersion = res.data.replace(/backend\n$/gm, "");
           this.backendVersion = this.backendVersion.replace("subconverter", "");
         });
-    },
-    saveSubUrl() {
-      if (this.form.sourceSubUrl !== '') {
-        this.setLocalStorageItem('sourceSubUrl', this.form.sourceSubUrl)
-      }
     },
     getLocalStorageItem(itemKey) {
       const now = +new Date()

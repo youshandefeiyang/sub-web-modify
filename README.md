@@ -1,5 +1,5 @@
 # sub-web-modify
-[最美订阅转换](https://sub.v1.mk)基于[CareyWang/sub-web](https://github.com/CareyWang/sub-web)，重制CSS样式，新增fakeloader过渡动画、bootstrap框架【解决手机浏览器切换电脑UI远程配置布局乱的问题】和layui【网站弹窗】增加近百条远程配置！
+[最美订阅转换](https://sub.v1.mk)基于[CareyWang/sub-web](https://github.com/CareyWang/sub-web)，重制CSS样式，新增fakeloader过渡动画、bootstrap框架【解决手机浏览器切换电脑UI远程配置布局乱的问题】和layui【网站弹窗】，解决重新载入网页依然保留上次订阅的问题，增加近百条远程配置！
 ### 食用方法【以Linux为例】：
 1.安装 [node](https://blog.csdn.net/achabuhecha/article/details/111400068) 和 [yarn](https://classic.yarnpkg.com/en/docs/install#debian-stable) 和 [git](https://git-scm.com/book/zh/v2/%E8%B5%B7%E6%AD%A5-%E5%AE%89%E8%A3%85-Git)
 

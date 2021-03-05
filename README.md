@@ -5,6 +5,6 @@
 
 2.终端执行 `cd /home && git clone https://github.com/limr95/sub-web-modify.git && chmod -R 755 sub-web-modify && cd sub-web-modify && yarn install && yarn build`
 
-3.如需进一步修改，请在/home/sub-web-modify下执行 `yarn serve` 进行调试即可
+3.build成功后，服务器自行配置ngnix并指定默认目录为/home/sub-web-modify/dist
 
-4.最后，服务器自行配置ngnix并指定默认目录为/home/sub-web-modify/dist就完了
+4.如需进一步修改前端，请在/home/sub-web-modify下执行 `yarn serve` 进行调试即可

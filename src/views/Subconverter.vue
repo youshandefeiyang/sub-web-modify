@@ -733,11 +733,6 @@ export default {
   created() {
     document.title = "在线订阅转换工具";
     this.isPC = this.$getOS().isPc;
-
-    // 获取 url cache
-    if (process.env.VUE_APP_USE_STORAGE === 'true') {
-      this.form.sourceSubUrl = this.getLocalStorageItem('sourceSubUrl')
-    }
   },
   mounted() {
     this.form.clientType = "clash";
@@ -974,35 +969,7 @@ export default {
           this.backendVersion = res.data.replace(/backend\n$/gm, "");
           this.backendVersion = this.backendVersion.replace("subconverter", "");
         });
-    },
-    getLocalStorageItem(itemKey) {
-      const now = +new Date()
-      let ls = localStorage.getItem(itemKey)
-
-      let itemValue = ''
-      if (ls !== null) {
-        let data = JSON.parse(ls)
-        if (data.expire > now) {
-          itemValue = data.value
-        } else {
-          localStorage.removeItem(itemKey)
-        }
-      }
-
-      return itemValue
-    },
-    setLocalStorageItem(itemKey, itemValue) {
-      const ttl = process.env.VUE_APP_CACHE_TTL
-      const now = +new Date()
-
-      let data = {
-        setTime: now,
-        ttl: parseInt(ttl),
-        expire: now + ttl * 1000,
-        value: itemValue
-      }
-      localStorage.setItem(itemKey, JSON.stringify(data))
     }
-  },
+  }
 };
 </script>

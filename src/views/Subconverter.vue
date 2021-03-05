@@ -296,8 +296,8 @@ export default {
         customBackend: {
           "肥羊默认后端":"https://sub.d1.mk/sub?",
           "肥羊备用后端":"https://sub.mcwy.org/sub?",
-          "edison提供【国内】":"https://url.myue.cc/sub?"
-          "nameless13提供":"https://www.nameless13.com/sub?"
+          "edison提供【国内】":"https://url.myue.cc/sub?",
+          "nameless13提供":"https://www.nameless13.com/sub?",
           "subconverter作者提供":"https://subcon.dlj.tf/sub?",
           "sub作者&lhie1提供": "https://api.dler.io/sub?",
           "品云提供": "https://sub.id9.cc/sub?",

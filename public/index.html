@@ -5,25 +5,25 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width,initial-scale=1.0">
     <link rel="icon" href="<%= BASE_URL %>favicon.ico">
-    <link rel="stylesheet" href="/layui/css/bootstrap.min.css">
-    <link rel="stylesheet" href="/layui/css/demo.css">
-    <link rel="stylesheet" href="/layui/css/fakeLoader.min.css">
-    <link rel="stylesheet" href="/layui/css/conui.css" type="text/css">
-    <link rel="stylesheet" type="text/css" href="/layui/css/layui.css" />
-    <script src="https://cdn.jsdelivr.net/gh/ygbhf/clicklove/clicklove.js" type="text/javascript" charset="utf-8"></script>
-    <script src="/layui/layui.all.js" type="text/javascript" charset="utf-8"></script>
-    <script src="/layui/laybox.js" type="text/javascript" charset="utf-8"></script>
+    <link rel="stylesheet" href="/layui/css/bootstrap.min.css">  //引入BootStrap框架
+    <link rel="stylesheet" href="/layui/css/demo.css"> //引入FakeLoader Demo
+    <link rel="stylesheet" href="/layui/css/fakeLoader.min.css"> //引入FakeLoader样式
+    <link rel="stylesheet" href="/layui/css/conui.css" type="text/css"> //引入全局重制样式
+    <link rel="stylesheet" type="text/css" href="/layui/css/layui.css" /> //引入LayUI样式
+    <script src="https://cdn.jsdelivr.net/gh/ygbhf/clicklove/clicklove.js" type="text/javascript" charset="utf-8"></script> //引入点击特效
+    <script src="/layui/layui.all.js" type="text/javascript" charset="utf-8"></script> //引入LayUI JS
+    <script src="/layui/laybox.js" type="text/javascript" charset="utf-8"></script> //引入网站进入弹窗
     <title>在线订阅转换工具</title>
   </head>
   <body>
-    <div class="fakeLoader"></div>
-    <section class="canvas-wrap">
+    <div class="fakeLoader"></div> //载入FakeLoader
+    <section class="canvas-wrap"> //载入Canvas
     <div id="canvas" class="gradient"></div>
     </section>
     <div id="app"></div>
-    <script src="/js/jquery.min.js"></script>
-    <script src="/js/fakeLoader.min.js"></script>
-    <script>
+    <script src="/js/jquery.min.js"></script> //引入Jquery
+    <script src="/js/fakeLoader.min.js"></script> //引入FakeLoader JS
+    <script> //FakeLoader设定
             $(document).ready(function(){
                 $.fakeLoader({
                     timeToHide:1200,

@@ -322,7 +322,7 @@ export default {
                 value: "https://subconverter.oss-ap-southeast-1.aliyuncs.com/Rules/RemoteConfig/universal/no-urltest.ini"
               },
               {
-                label: "默认（分组超全+自动测速）",
+                label: "默认+自动测速",
                 value: "https://subconverter.oss-ap-southeast-1.aliyuncs.com/Rules/RemoteConfig/universal/urltest.ini"
               },
               {

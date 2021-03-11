@@ -296,6 +296,7 @@ export default {
         customBackend: {
           "肥羊默认后端":"https://sub.d1.mk/sub?",
           "肥羊备用后端":"https://sub.mcwy.org/sub?",
+          "sub-web作者提供": "https://api.wcc.best/sub?",
           "edison提供【国内】":"https://url.myue.cc/sub?",
           "nameless13提供":"https://www.nameless13.com/sub?",
           "subconverter作者提供":"https://subcon.dlj.tf/sub?",
@@ -305,6 +306,7 @@ export default {
         backendOptions: [
           { value: "https://sub.d1.mk/sub?" },    
           { value: "https://sub.mcwy.org/sub?" },
+          { value: "https://api.wcc.best/sub?" },
           { value: "https://url.myue.cc/sub?" },
           { value: "https://www.nameless13.com/sub?" },
           { value: "https://subcon.dlj.tf/sub?" },
@@ -320,8 +322,16 @@ export default {
                 value: "https://subconverter.oss-ap-southeast-1.aliyuncs.com/Rules/RemoteConfig/universal/no-urltest.ini"
               },
               {
-                label: "默认+自动测速",
+                label: "默认（分组超全+自动测速）",
                 value: "https://subconverter.oss-ap-southeast-1.aliyuncs.com/Rules/RemoteConfig/universal/urltest.ini"
+              },
+              {
+                label: "默认（分组超全）",
+                value: "https://raw.githubusercontent.com/limr95/webcdn/main/rule/Area_Media_NoAuto.ini"
+              },
+              {
+                label: "默认（分组超全+自动测速）",
+                value: "https://raw.githubusercontent.com/limr95/webcdn/main/rule/Area_Media.ini"
               },
               {
                 label: "默认（附带用于 Clash 的 AdGuard DNS）",
@@ -472,15 +482,7 @@ export default {
               {
                 label: "分区域无自动测速",
                 value: "https://raw.githubusercontent.com/flyhigherpi/merlinclash_clash_related/master/Rule_config/ZHANG_Area_NoAuto.ini"
-              },
-              {
-                label: "媒体与分区域有测速",
-                value: "https://raw.githubusercontent.com/flyhigherpi/merlinclash_clash_related/master/Rule_config/ZHANG_Area_Media.ini"
-              },
-              {
-                label: "媒体与分区域无测速",
-                value: "https://raw.githubusercontent.com/flyhigherpi/merlinclash_clash_related/master/Rule_config/ZHANG_Area_Media_NoAuto.ini"
-              },  
+              }, 
               {
                 label: "OoHHHHHHH",
                 value: "https://raw.githubusercontent.com/OoHHHHHHH/ini/master/config.ini"

@@ -692,7 +692,7 @@ export default {
       form: {
         sourceSubUrl: "",
         clientType: "",
-        customBackend: "https://sub.d1.mk/sub?",
+        customBackend: "https://api.wcc.best/sub?",
         remoteConfig: "https://subconverter.oss-ap-southeast-1.aliyuncs.com/Rules/RemoteConfig/universal/no-urltest.ini",
         excludeRemarks: "",
         includeRemarks: "",
@@ -799,7 +799,7 @@ export default {
         return false;
       }
       if (this.form.sourceSubUrl.indexOf("losadhwse") !== -1 && (this.form.customBackend.indexOf("api.wcc.best") !== -1)) {
-        this.$alert("此机场订阅已将该后端屏蔽，请更换其他后端进行转换！",{
+        this.$alert("薯条已将该后端屏蔽，请更换其他后端进行转换！",{
         type: "warning",
         confirmButtonText: '确定',
         customClass: 'msgbox',

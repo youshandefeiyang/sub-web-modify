@@ -46,7 +46,13 @@
 
               </el-form-item>
               <el-form-item label="短链选择:">
-                <el-select v-model="form.shortType" style="width: 100%">
+                <el-select 
+                  v-model="form.shortType" 
+                  allow-create
+                  filterable
+                  placeholder="可输入其他可用短链API"
+                  style="width: 100%"
+                >
                   <el-option v-for="(v, k) in options.shortTypes" :key="k" :label="k" :value="v"></el-option>
                 </el-select>
               </el-form-item>

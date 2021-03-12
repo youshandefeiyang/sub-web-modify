@@ -1,6 +1,6 @@
 * {touch-action: pan-y;}
 html {margin: 0;padding: 0;}
-#canvas {width:3840px;height:2160px;overflow:hidden;position:absolute;}
+#canvas {width:100%;height:2160px;overflow:hidden;position:absolute;}
 .canvas-wrap{width:100%;height:100%;position:fixed;left:0;top:0;}
 div,p,ul,li,a,img,i,b,span,input,textarea,select,label {outline: none !important;}
 textarea {-webkit-appearance: none;appearance: none;}

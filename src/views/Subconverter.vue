@@ -86,7 +86,7 @@
                     <template slot="title">
                     <el-form-item label="高级功能:" style="width: 100%;">
                      <el-button
-		      type="limr"
+                      type="limr"
                       style="width: 100%;"
                       icon="el-icon-more-outline"
                      >点击显示/隐藏</el-button>
@@ -104,9 +104,6 @@
 					<el-form-item label="订阅命名:">
                     <el-input v-model="form.filename" placeholder="返回的订阅文件名" />
                     </el-form-item>
-                    </el-collapse-item>
-                 </el-collapse>
-                </el-form-item>
                 <el-form-item label-width="0px">
                   <el-row type="flex">
                     <el-col>
@@ -151,10 +148,13 @@
                       </el-popover>
                     </el-col>
                   </el-row>
+                </el-form-item>    
+                </el-collapse-item>
+                </el-collapse>
                 </el-form-item>
               </div>
 
-              <div style="margin-top: 50px"></div>
+              <div style="margin-top: 30px"></div>
 
               <el-divider content-position="center">
                 <i class="el-icon-magic-stick"></i>

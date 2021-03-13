@@ -6,6 +6,7 @@ div,p,ul,li,a,img,i,b,span,input,textarea,select,label {outline: none !important
 textarea {-webkit-appearance: none;appearance: none;}
 #app .el-row:not(.el-row--flex) {margin: 0 auto !important;padding: 16px;max-width: 1032px;}
 .el-card {background: none !important;}
+.el-collapse-item__content {padding-bottom:0px!important;}
 .el-collapse-item .el-button {background:rgba(255,255,255,.5)!important;border-radius: 4px!important;height:32px!important;}
 .el-collapse-item .el-button:active,.el-button:focus,.el-button:hover {color:#606266!important;border-color:#DCDFE6!important;}
 .el-collapse-item__wrap {background: none !important;border-bottom:none!important;}

@@ -6,6 +6,12 @@ div,p,ul,li,a,img,i,b,span,input,textarea,select,label {outline: none !important
 textarea {-webkit-appearance: none;appearance: none;}
 #app .el-row:not(.el-row--flex) {margin: 0 auto !important;padding: 16px;max-width: 1032px;}
 .el-card {background: none !important;}
+.el-collapse-item .el-button {background:rgba(255,255,255,.5)!important;border-radius: 4px!important;height:32px!important;}
+.el-collapse-item .el-button:active,.el-button:focus,.el-button:hover {color:#606266!important;border-color:#DCDFE6!important;}
+.el-collapse-item__wrap {background: none !important;border-bottom:none!important;}
+.el-collapse {border-top:none!important;border-bottom:none!important;}
+.el-collapse-item__header {background: none !important;border-bottom:none!important;height:auto!important;}
+.el-collapse-item__arrow {display: none!important;}
 .el-card__header {position: relative;color: #fff;}
 .el-card__body {background: rgba(255,255,255,.8);color: #000;}
 .el-form-item__label,.el-radio,.el-textarea__inner,.el-input__inner,.el-select .el-input .el-select__caret,.el-input-group__append {color: #000 !important;}

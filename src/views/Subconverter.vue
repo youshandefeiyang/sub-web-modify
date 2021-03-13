@@ -80,14 +80,31 @@
                     <el-button slot="append" @click="gotoRemoteConfig" icon="el-icon-link">配置示例</el-button>
                   </el-select>
                 </el-form-item>
-                <el-form-item label="包含节点:">
-                  <el-input v-model="form.includeRemarks" placeholder="要保留的节点，支持正则" />
-                </el-form-item>
-                <el-form-item label="排除节点:">
-                  <el-input v-model="form.excludeRemarks" placeholder="要排除的节点，支持正则" />
-                </el-form-item>
-                <el-form-item label="订阅命名:">
-                  <el-input v-model="form.filename" placeholder="返回的订阅文件名" />
+                <el-form-item label-width="0px">
+                 <el-collapse>
+                    <el-collapse-item>
+                    <template slot="title">
+                    <el-form-item label="高级功能:" style="width: 100%;">
+                     <el-button
+                      style="width: 100%;"
+                      icon="el-icon-more-outline"
+                     >点击展开/收回</el-button>
+                    </el-form-item>    
+                    </template>
+                    <el-form-item label="包含节点:">
+                    <el-input v-model="form.includeRemarks" placeholder="要保留的节点，支持正则" />
+                    </el-form-item>
+                    <el-form-item label="排除节点:">
+                    <el-input v-model="form.excludeRemarks" placeholder="要排除的节点，支持正则" />
+                    </el-form-item>
+					<el-form-item label="节点命名:">
+					<el-input v-model="form.rename" placeholder="原始命名@重命名" />
+					</el-form-item>
+					<el-form-item label="订阅命名:">
+                    <el-input v-model="form.filename" placeholder="返回的订阅文件名" />
+                    </el-form-item>
+                    </el-collapse-item>
+                 </el-collapse>
                 </el-form-item>
                 <el-form-item label-width="0px">
                   <el-row type="flex">
@@ -113,9 +130,6 @@
                       </el-row>
                       <el-row>
                         <el-checkbox v-model="form.sort" label="排序节点"></el-checkbox>
-                      </el-row>
-                      <el-row>
-                        <el-checkbox v-model="form.expand" label="展开规则全文"></el-checkbox>                        
                       </el-row>
                       <el-row>
                         <el-checkbox v-model="form.scv" label="跳过证书验证"></el-checkbox>
@@ -729,6 +743,7 @@ export default {
         excludeRemarks: "",
         includeRemarks: "",
         filename: "",
+        rename: "",
         emoji: true,
         nodeList: false,
         extraset: false,
@@ -736,7 +751,6 @@ export default {
         udp: true,
         tfo: false,
         scv: false,
-        expand: true,
         fdn: false,
         appendType: false,
         insert: false, // 是否插入默认订阅的节点，对应配置项 insert_url
@@ -874,6 +888,10 @@ export default {
           this.customSubUrl +=
             "&filename=" + encodeURIComponent(this.form.filename);
         }
+        if (this.form.rename !== "") {
+          this.customSubUrl +=
+            "&rename=" + encodeURIComponent(this.form.rename);
+        }
         if (this.form.appendType) {
           this.customSubUrl +=
             "&append_type=" + this.form.appendType.toString();
@@ -890,8 +908,6 @@ export default {
           this.form.tfo.toString() +
           "&scv=" +
           this.form.scv.toString() +
-          "&expand=" +
-          this.form.expand.toString() +
           "&fdn=" +
           this.form.fdn.toString() +
           "&sort=" +

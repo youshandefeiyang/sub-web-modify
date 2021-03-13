@@ -86,6 +86,7 @@
                     <template slot="title">
                     <el-form-item label="高级功能:" style="width: 100%;">
                      <el-button
+		      type="limr"
                       style="width: 100%;"
                       icon="el-icon-more-outline"
                      >点击显示/隐藏</el-button>

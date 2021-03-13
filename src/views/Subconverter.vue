@@ -88,7 +88,7 @@
                      <el-button
                       style="width: 100%;"
                       icon="el-icon-more-outline"
-                     >点击展开/收回</el-button>
+                     >点击显示/隐藏</el-button>
                     </el-form-item>    
                     </template>
                     <el-form-item label="包含节点:">

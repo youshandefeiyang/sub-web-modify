@@ -347,18 +347,12 @@ export default {
           { value: "https://sub.id9.cc/sub?" },
         ],
         remoteConfig: [
-          { 
-	    options: [
-	      {
-                label: "推荐",
-                value: "https://raw.githubusercontent.com/limr95/webcdn/main/rule/no-urltest.ini"
-              }
-	    ],
-            label: "通用",
+          {
+	    label: "通用",
             options: [
               {
                 label: "默认",
-                value: "https://subconverter.oss-ap-southeast-1.aliyuncs.com/Rules/RemoteConfig/universal/no-urltest.ini"
+                value: "https://raw.githubusercontent.com/limr95/webcdn/main/rule/no-urltest.ini"
               },
               {
                 label: "默认（自动测速）",

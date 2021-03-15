@@ -109,44 +109,33 @@
                     <el-col>
                       <el-checkbox v-model="form.nodeList" label="仅输出节点信息" border style="margin-top:5.9px"></el-checkbox>
                     </el-col>
-                    <el-col>
                       <el-popover placement="bottom" v-model="form.extraset">
-                          <el-row>
-                        <el-checkbox v-model="form.emoji" label="Emoji"></el-checkbox>
+                      <el-row :gutter="10">
+                        <el-col :span="12"><el-checkbox v-model="form.emoji" label="Emoji"></el-checkbox></el-col>
+                        <el-col :span="12"><el-checkbox v-model="form.insert" label="网易云"></el-checkbox></el-col>
                       </el-row>
-                      <el-row>
-                        <el-checkbox v-model="form.new_name" label="Clash New Field"></el-checkbox>
-                      </el-row>
-                      <el-row>
-                        <el-checkbox v-model="form.udp" label="启用 UDP"></el-checkbox>
-                      </el-row>
-                      <el-row>
-                        <el-checkbox v-model="form.tfo" label="启用 TFO"></el-checkbox>
+                      <el-row :gutter="10">
+                        <el-col :span="12"><el-checkbox v-model="form.udp" label="启用 UDP"></el-checkbox></el-col>
+                        <el-col :span="12"><el-checkbox v-model="form.sort" label="排序节点"></el-checkbox></el-col>          
                       </el-row>    
-                      <el-row>
-                        <el-checkbox v-model="form.appendType" label="节点类型"></el-checkbox>
+                      <el-row :gutter="10">
+                        <el-col :span="12"><el-checkbox v-model="form.tfo" label="启用 TFO"></el-checkbox></el-col>
+                        <el-col :span="12"><el-checkbox v-model="form.tpl.surge.doh" label="Surge.DoH"></el-checkbox></el-col>
                       </el-row>
-                      <el-row>
-                        <el-checkbox v-model="form.sort" label="排序节点"></el-checkbox>
+                      <el-row :gutter="10">
+                        <el-col :span="12"><el-checkbox v-model="form.appendType" label="插入节点类型"></el-checkbox></el-col>
+                        <el-col :span="12"><el-checkbox v-model="form.tpl.clash.doh" label="Clash.DoH"></el-checkbox></el-col>                        
                       </el-row>
-                      <el-row>
-                        <el-checkbox v-model="form.scv" label="跳过证书验证"></el-checkbox>
+                      <el-row :gutter="10">
+                        <el-col :span="12"><el-checkbox v-model="form.expand" label="展开规则全文"></el-checkbox></el-col>
+                        <el-col :span="12"><el-checkbox v-model="form.new_name" label="Clash新字段名"></el-checkbox></el-col>
                       </el-row>
-                      <el-row>
-                        <el-checkbox v-model="form.fdn" label="过滤非法节点"></el-checkbox>
+                      <el-row :gutter="10">
+                        <el-col :span="12"><el-checkbox v-model="form.scv" label="跳过证书验证"></el-checkbox></el-col>
+                        <el-col :span="12"><el-checkbox v-model="form.fdn" label="过滤不支持节点"></el-checkbox></el-col>
                       </el-row>
-                      <el-row>
-                          <el-checkbox v-model="form.tpl.surge.doh" label="Surge.DoH"></el-checkbox>
-                      </el-row>
-                      <el-row>
-                          <el-checkbox v-model="form.tpl.clash.doh" label="Clash.DoH"></el-checkbox>
-                      </el-row>
-                      <el-row>
-                          <el-checkbox v-model="form.insert" label="网易云"></el-checkbox>
-                      </el-row>
-                        <el-button slot="reference">更多选项</el-button>
-                      </el-popover>
-                    </el-col>
+                      <el-button slot="reference">更多选项</el-button>
+                    </el-popover>
                   </el-row>
                 </el-form-item>    
                 </el-collapse-item>
@@ -751,6 +740,7 @@ export default {
         sort: false,
         udp: true,
         tfo: false,
+        expand: true,
         scv: false,
         fdn: false,
         appendType: false,
@@ -907,6 +897,8 @@ export default {
           this.form.udp.toString() +
           "&tfo=" +
           this.form.tfo.toString() +
+          "&expand=" +
+          this.form.expand.toString() +
           "&scv=" +
           this.form.scv.toString() +
           "&fdn=" +

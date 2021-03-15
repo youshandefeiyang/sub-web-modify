@@ -99,7 +99,7 @@
                     <el-input v-model="form.excludeRemarks" placeholder="要排除的节点，支持正则" />
                     </el-form-item>
 					<el-form-item label="节点命名:">
-					<el-input v-model="form.rename" placeholder="原始命名@重命名" />
+					<el-input v-model="form.rename" placeholder="举例：`香港@菲律宾``美国@巴西``台湾@俄罗斯`..." />
 					</el-form-item>
 					<el-form-item label="订阅命名:">
                     <el-input v-model="form.filename" placeholder="返回的订阅文件名" />

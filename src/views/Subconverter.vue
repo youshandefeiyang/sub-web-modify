@@ -348,7 +348,7 @@ export default {
         ],
         remoteConfig: [
           {
-	    label: "通用",
+            label: "通用",
             options: [
               {
                 label: "默认",
@@ -356,7 +356,7 @@ export default {
               },
               {
                 label: "默认（自动测速）",
-                value: "https://subconverter.oss-ap-southeast-1.aliyuncs.com/Rules/RemoteConfig/universal/urltest.ini"
+                value: "https://raw.githubusercontent.com/limr95/webcdn/main/rule/urltest.ini"
               },
               {
                 label: "默认（分组超全）",

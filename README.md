@@ -10,3 +10,4 @@
 3.build成功后，服务器自行配置ngnix并指定默认目录为/home/sub-web-modify/dist
 
 4.如需进一步修改前端，请在/home/sub-web-modify下执行 `yarn serve` 进行调试即可
+测试？？

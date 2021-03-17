@@ -316,7 +316,7 @@ export default {
          "sub.cm":"https://sub.cm/short",
         },
         customBackend: {
-          "肥羊增强型后端【负载均衡】":"https://api.v1.mk/sub?",
+          "肥羊增强型后端【四端负载】":"https://api.v1.mk/sub?",
           "肥羊备用后端A":"https://sub.d1.mk/sub?",
           "肥羊备用后端B":"https://sub.mcwy.org/sub?",
           "sub-web作者提供": "https://api.wcc.best/sub?",

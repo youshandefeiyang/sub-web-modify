@@ -316,8 +316,9 @@ export default {
          "sub.cm":"https://sub.cm/short",
         },
         customBackend: {
-          "肥羊默认后端":"https://sub.d1.mk/sub?",
-          "肥羊备用后端":"https://sub.mcwy.org/sub?",
+          "肥羊增强型后端【负载均衡】":"https://api.v1.mk/sub?",
+          "肥羊备用后端A":"https://sub.d1.mk/sub?",
+          "肥羊备用后端B":"https://sub.mcwy.org/sub?",
           "sub-web作者提供": "https://api.wcc.best/sub?",
           "edison提供【国内】":"https://url.myue.cc/sub?",
           "nameless13提供":"https://www.nameless13.com/sub?",
@@ -326,6 +327,7 @@ export default {
           "品云提供": "https://sub.id9.cc/sub?",
         },
         backendOptions: [
+          { value: "https://api.v1.mk/sub?" },   
           { value: "https://sub.d1.mk/sub?" },    
           { value: "https://sub.mcwy.org/sub?" },
           { value: "https://api.wcc.best/sub?" },
@@ -346,14 +348,6 @@ export default {
               {
                 label: "默认（自动测速）",
                 value: "https://raw.githubusercontent.com/limr95/webcdn/main/rule/urltest.ini"
-              },
-              {
-                label: "默认（分组超全）",
-                value: "https://raw.githubusercontent.com/limr95/webcdn/main/rule/Area_Media_NoAuto.ini"
-              },
-              {
-                label: "默认（分组超全+自动测速）",
-                value: "https://raw.githubusercontent.com/limr95/webcdn/main/rule/Area_Media.ini"
               },
               {
                 label: "默认（附带用于 Clash 的 AdGuard DNS）",
@@ -727,7 +721,7 @@ export default {
       form: {
         sourceSubUrl: "",
         clientType: "",
-        customBackend: "https://api.wcc.best/sub?",
+        customBackend: "https://api.v1.mk/sub?",
         shortType: "https://v1.mk/short",
         remoteConfig: "https://raw.githubusercontent.com/limr95/webcdn/main/rule/no-urltest.ini",
         excludeRemarks: "",

@@ -1102,7 +1102,7 @@ export default {
           this.backendVersion = res.data.replace(/backend\n$/gm, "");
           this.backendVersion = this.backendVersion.replace("subconverter", "");
         });
-    }
-  }
+    },
+  },
 };
 </script>

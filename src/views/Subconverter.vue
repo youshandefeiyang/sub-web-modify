@@ -146,7 +146,11 @@
               <div style="margin-top: 30px"></div>
 
               <el-divider content-position="center">
-                <i class="el-icon-magic-stick"></i>
+                <el-button 
+                 type="zhuti"
+                 @click="change">
+                 <i class="el-icon-magic-stick" ></i>    
+                 </el-button>
               </el-divider>
 
               <el-form-item label="定制订阅:">
@@ -839,8 +843,16 @@ export default {
   mounted() {
     this.form.clientType = "clash";
     this.getBackendVersion();
+    document.getElementsByTagName('body')[0].setAttribute('class', 'light-mode')
   },
   methods: {
+    change() {
+      var zhuti = document.getElementsByTagName('body')[0].className;
+      if (zhuti === 'light-mode'){
+      document.getElementsByTagName('body')[0].setAttribute('class', 'dark-mode')}
+      if (zhuti === 'dark-mode'){
+      document.getElementsByTagName('body')[0].setAttribute('class', 'light-mode')}
+    }, 
     onCopy() {
       this.$message.success("Copied!");
     },

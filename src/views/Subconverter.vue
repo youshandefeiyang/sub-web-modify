@@ -843,7 +843,7 @@ export default {
   mounted() {
     this.form.clientType = "clash";
     this.getBackendVersion();
-    document.getElementsByTagName('body')[0].setAttribute('class', 'light-mode')
+    document.getElementsByTagName('body')[0].setAttribute('class', 'light-mode');
   },
   methods: {
     change() {

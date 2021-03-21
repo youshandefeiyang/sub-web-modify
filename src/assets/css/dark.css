@@ -1,9 +1,10 @@
 .dark-mode .el-card {background: none !important;}
 .dark-mode .el-popover {background:#000!important}
 .dark-mode .gayhub {margin-left: 20px!important}
+.dark-mode .el-message-box__content {color:#fff!important}
 .dark-mode .el-collapse-item__content {padding-bottom:0px!important;}
 .dark-mode #canvas,dark-mode .canvas-wrap {display:none!important}
-.dark-mode .el-message-box {color:#fff!important;background-color:#000!important}
+.dark-mode .el-message-box {background-color:#000!important}
 .dark-mode .bilibili,.dark-mode .youguan,.dark-mode .dianbao {display:none!important}
 .dark-mode .el-button--zhuti {color:#fff!important;font-size:14px!important;border:0!important;width:54px!important;padding:0px 0px!important;background-color:#000!important;}
 .dark-mode .el-button--zhuti:active,.dark-mode .el-button--zhuti:focus,.dark-mode .el-button--zhuti:hover {color:#fff!important;}

@@ -1,6 +1,7 @@
 .dark-mode .el-card {background: none !important;}
 .dark-mode .el-popover {background:#000!important}
 .dark-mode .gayhub {margin-left: 20px!important}
+.dark-mode .el-dialog {border:1px solid #313131!important}
 .dark-mode .el-message-box__content {color:#fff!important}
 .dark-mode .el-collapse-item__content {padding-bottom:0px!important;}
 .dark-mode #canvas,dark-mode .canvas-wrap {display:none!important}

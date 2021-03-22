@@ -845,7 +845,30 @@ export default {
   mounted() {
     this.form.clientType = "clash";
     this.getBackendVersion();
-    document.getElementsByTagName('body')[0].setAttribute('class', 'light-mode');
+    const lightMode = window.matchMedia && window.matchMedia('(prefers-color-scheme: light)'); 
+    const darkMode = window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)'); 
+    if (lightMode && lightMode.matches) { 
+     document.getElementsByTagName('body')[0].setAttribute('class', 'light-mode')
+     } 
+    lightMode && lightMode.addEventListener('change', e => { 
+    if (e.matches) { 
+     document.getElementsByTagName('body')[0].setAttribute('class', 'light-mode')
+     } 
+    else { 
+     document.getElementsByTagName('body')[0].setAttribute('class', 'dark-mode')
+     } 
+    });  
+    if (darkMode && darkMode.matches) { 
+    document.getElementsByTagName('body')[0].setAttribute('class', 'dark-mode')
+     } 
+    darkMode && darkMode.addEventListener('change', e => { 
+    if (e.matches) { 
+    document.getElementsByTagName('body')[0].setAttribute('class', 'dark-mode')
+     } 
+    else { 
+    document.getElementsByTagName('body')[0].setAttribute('class', 'light-mode')
+     } 
+    });
   },
   methods: {
     change() {

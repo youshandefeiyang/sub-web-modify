@@ -845,6 +845,11 @@ export default {
   mounted() {
     this.form.clientType = "clash";
     this.getBackendVersion();
+    mounted() {
+
+    this.form.clientType = "clash";
+
+    this.getBackendVersion();
     const lightMode = window.matchMedia && window.matchMedia('(prefers-color-scheme: light)'); 
     const darkMode = window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)'); 
     if (lightMode && lightMode.matches) { 
@@ -869,14 +874,22 @@ export default {
     document.getElementsByTagName('body')[0].setAttribute('class', 'light-mode')
      } 
     });
+    var getLocalTheme = window.localStorage.getItem("localTheme")
+    if (getLocalTheme) {
+    document.getElementsByTagName('body')[0].className = getLocalTheme;
+    }
   },
   methods: {
     change() {
       var zhuti = document.getElementsByTagName('body')[0].className;
       if (zhuti === 'light-mode'){
-      document.getElementsByTagName('body')[0].setAttribute('class', 'dark-mode')}
+      document.getElementsByTagName('body')[0].setAttribute('class', 'dark-mode');
+      window.localStorage.setItem('localTheme','dark-mode');
+      }
       if (zhuti === 'dark-mode'){
-      document.getElementsByTagName('body')[0].setAttribute('class', 'light-mode')}
+      document.getElementsByTagName('body')[0].setAttribute('class', 'light-mode')
+      window.localStorage.setItem('localTheme','light-mode');
+      }
     }, 
     onCopy() {
       this.$message.success("Copied!");

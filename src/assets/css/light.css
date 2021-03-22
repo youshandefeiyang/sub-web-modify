@@ -1,4 +1,4 @@
-* {touch-action: pan-y;}
+* {touch-action: manipulation;}
 html {margin: 0;padding: 0;}
 .el-divider__text {padding:0!important;}
 .light-mode .banben {display:none!important}

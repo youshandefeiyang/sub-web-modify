@@ -871,7 +871,7 @@ export default {
     document.getElementsByTagName('body')[0].setAttribute('class', 'light-mode')
      } 
     });
-    var getLocalTheme = window.localStorage.getItem("localTheme")
+    var getLocalTheme = window.localStorage.getItem("localTheme");
     if (getLocalTheme) {
     document.getElementsByTagName('body')[0].className = getLocalTheme;
     }

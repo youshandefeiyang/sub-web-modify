@@ -846,6 +846,7 @@ export default {
   mounted() {
     this.form.clientType = "clash";
     this.getBackendVersion();
+    document.getElementsByTagName('body')[0].setAttribute('class', 'light-mode');
     const lightMode = window.matchMedia && window.matchMedia('(prefers-color-scheme: light)'); 
     const darkMode = window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)'); 
     if (lightMode && lightMode.matches) { 

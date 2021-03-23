@@ -861,14 +861,14 @@ export default {
      } 
     });  
     if (darkMode && darkMode.matches) { 
-    document.getElementsByTagName('body')[0].setAttribute('class', 'dark-mode')
+     document.getElementsByTagName('body')[0].setAttribute('class', 'dark-mode')
      } 
-    darkMode && darkMode.addEventListener('change', e => { 
+     darkMode && darkMode.addEventListener('change', e => { 
     if (e.matches) { 
-    document.getElementsByTagName('body')[0].setAttribute('class', 'dark-mode')
+     document.getElementsByTagName('body')[0].setAttribute('class', 'dark-mode')
      } 
     else { 
-    document.getElementsByTagName('body')[0].setAttribute('class', 'light-mode')
+     document.getElementsByTagName('body')[0].setAttribute('class', 'light-mode')
      } 
     });
     var getLocalTheme = window.localStorage.getItem("localTheme");

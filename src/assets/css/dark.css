@@ -1,4 +1,4 @@
-.dark-mode .banben {display: inline-block !important;}
+.dark-mode .banben,.dark-mode #yejian {display: inline-block !important;}
 .dark-mode .el-card {background: none !important;}
 .dark-mode .el-popover {background:#000!important}
 .dark-mode .gayhub {margin-left: 20px!important}
@@ -7,7 +7,7 @@
 .dark-mode .el-collapse-item__content {padding-bottom:0px!important;}
 .dark-mode #canvas,dark-mode .canvas-wrap {display:none!important}
 .dark-mode .el-message-box {background-color:#000!important}
-.dark-mode .bilibili,.dark-mode .youguan,.dark-mode .dianbao {display:none!important}
+.dark-mode .bilibili,.dark-mode .youguan,.dark-mode .dianbao,.dark-mode #rijian {display:none!important}
 .dark-mode .el-dialog__header,.dark-mode .el-dialog__body,.dark-mode .el-dialog__footer {background-color:#000!important;color:#fff!important}
 .dark-mode .el-textarea .el-input__count {background-color:rgba(255,255,255,0)!important;color:#fff!important}
 .dark-mode .el-textarea__inner {border: 0px!important;}

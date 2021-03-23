@@ -151,7 +151,8 @@
                 <el-button 
                  type="zhuti"
                  @click="change">
-                 <i class="el-icon-magic-stick" ></i>    
+                 <i id="rijian" class="el-icon-sunny" ></i>  
+                 <i id="yejian" class="el-icon-moon" ></i>    
                  </el-button>
               </el-divider>
 

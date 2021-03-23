@@ -8,7 +8,6 @@ require(`@/plugins/particles`)
 require(`@/plugins/axios`)
 require(`@/plugins/device`)
 
-import './assets/css/style.css'
 import './assets/css/light.css'
 import './assets/css/dark.css'
 import '@/icons' // icon

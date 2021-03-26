@@ -846,34 +846,41 @@ export default {
   mounted() {
     this.form.clientType = "clash";
     this.getBackendVersion();
-    document.getElementsByTagName('body')[0].setAttribute('class', 'light-mode');
+    const getLocalTheme = window.localStorage.getItem("localTheme");
     const lightMode = window.matchMedia && window.matchMedia('(prefers-color-scheme: light)'); 
     const darkMode = window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)'); 
-    if (lightMode && lightMode.matches) { 
-     document.getElementsByTagName('body')[0].setAttribute('class', 'light-mode');
-     } 
-    lightMode && lightMode.addEventListener('change', e => { 
-    if (e.matches) { 
-     document.getElementsByTagName('body')[0].setAttribute('class', 'light-mode');
-     } 
-    else { 
-     document.getElementsByTagName('body')[0].setAttribute('class', 'dark-mode');
-     } 
-    });  
-    if (darkMode && darkMode.matches) { 
-     document.getElementsByTagName('body')[0].setAttribute('class', 'dark-mode');
-     } 
-     darkMode && darkMode.addEventListener('change', e => { 
-    if (e.matches) { 
-     document.getElementsByTagName('body')[0].setAttribute('class', 'dark-mode');
-     } 
-    else { 
-     document.getElementsByTagName('body')[0].setAttribute('class', 'light-mode');
-     } 
-    });
-    var getLocalTheme = window.localStorage.getItem("localTheme");
     if (getLocalTheme) {
      document.getElementsByTagName('body')[0].className = getLocalTheme;
+    } //读取localstorage，优先级最高！
+    else if (getLocalTheme == null || getLocalTheme == "undefined" || getLocalTheme == "") {
+      if (new Date().getHours() >= 19 || new Date().getHours() < 7) {
+        document.getElementsByTagName('body')[0].setAttribute('class', 'dark-mode');  
+      } 
+      else {
+        document.getElementsByTagName('body')[0].setAttribute('class', 'light-mode');  
+      } //凭借当前时间来判断，用来对付QQ等不支持媒体变量查询的浏览器
+      if (lightMode && lightMode.matches) { 
+        document.getElementsByTagName('body')[0].setAttribute('class', 'light-mode');
+        lightMode && lightMode.addEventListener('change', e => { 
+      if (e.matches) { 
+        document.getElementsByTagName('body')[0].setAttribute('class', 'light-mode');
+        } 
+      else { 
+        document.getElementsByTagName('body')[0].setAttribute('class', 'dark-mode');
+        } 
+       }); 
+      } 
+      if (darkMode && darkMode.matches) { 
+        document.getElementsByTagName('body')[0].setAttribute('class', 'dark-mode');
+        darkMode && darkMode.addEventListener('change', e => { 
+      if (e.matches) { 
+        document.getElementsByTagName('body')[0].setAttribute('class', 'dark-mode');
+        } 
+      else { 
+        document.getElementsByTagName('body')[0].setAttribute('class', 'light-mode');
+        } 
+       });
+      } //根据窗口主题以及监听系统主题来判断当前主题！
     }
   },
   methods: {

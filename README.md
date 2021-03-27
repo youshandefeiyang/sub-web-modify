@@ -7,7 +7,7 @@
 
 2.终端执行 `cd /home && git clone https://github.com/limr95/sub-web-modify.git && chmod -R 755 sub-web-modify && cd sub-web-modify && yarn install && yarn build`
 
-3.build成功后，需要安装 nginx (或其他 web 服务器)并正确配置。以下为示例配置，你需要修改 example.com 为自己域名并配置正确的项目根路径（https 自行配置）。
+3.build成功后，需要安装 nginx (或其他 web 服务器)并正确配置，以下为示例配置，你需要修改 example.com 为自己域名并配置正确的项目根路径（https 自行配置）。
 
 ```shell
 server {

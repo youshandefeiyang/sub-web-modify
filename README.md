@@ -7,7 +7,7 @@
 
 2.终端执行 `cd /home && git clone https://github.com/limr95/sub-web-modify.git && chmod -R 755 sub-web-modify && cd sub-web-modify && yarn install && yarn build`
 
-3.build成功后，需要安装nginx并正确配置，以下为nginx server部分配置，可以参考一下【这块建议新手直接在宝塔面板将网站目录更改为/home/sub-web-modify即可】！
+3.build成功后，需要安装nginx并正确配置，以下为nginx server部分配置，可以参考一下【这块建议新手使用宝塔面板等自动化昨晚工具，直接将网站目录更改为/home/sub-web-modify即可】！
 
 ```shell
 server {

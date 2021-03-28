@@ -846,13 +846,17 @@ export default {
   mounted() {
     this.form.clientType = "clash";
     this.getBackendVersion();
-    const getLocalTheme = window.localStorage.getItem("localTheme");
-    const lightMode = window.matchMedia && window.matchMedia('(prefers-color-scheme: light)'); 
-    const darkMode = window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)'); 
-    if (getLocalTheme) {
-     document.getElementsByTagName('body')[0].className = getLocalTheme;
-    } //读取localstorage，优先级最高！
-    else if (getLocalTheme == null || getLocalTheme == "undefined" || getLocalTheme == "") {
+    this.anhei();
+  },
+  methods: {
+    anhei() {
+      const getLocalTheme = window.localStorage.getItem("localTheme");
+      const lightMode = window.matchMedia && window.matchMedia('(prefers-color-scheme: light)'); 
+      const darkMode = window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)'); 
+      if (getLocalTheme) {
+        document.getElementsByTagName('body')[0].className = getLocalTheme;
+      } //读取localstorage，优先级最高！
+      else if (getLocalTheme == null || getLocalTheme == "undefined" || getLocalTheme == "") {
       if (new Date().getHours() >= 19 || new Date().getHours() < 7) {
         document.getElementsByTagName('body')[0].setAttribute('class', 'dark-mode');  
       } 
@@ -881,9 +885,8 @@ export default {
         } 
        });
       } //根据窗口主题以及监听系统主题来判断当前主题！
-    }
-  },
-  methods: {
+     }  
+    },  
     change() {
       var zhuti = document.getElementsByTagName('body')[0].className;
       if (zhuti === 'light-mode'){
@@ -1143,7 +1146,7 @@ export default {
           this.backendVersion = res.data.replace(/backend\n$/gm, "");
           this.backendVersion = this.backendVersion.replace("subconverter", "");
         });
-    },
-  },
+    }
+  }
 };
 </script>

@@ -847,6 +847,18 @@ export default {
     this.form.clientType = "clash";
     this.getBackendVersion();
     this.anhei();
+    let lightMedia = window.matchMedia('(prefers-color-scheme: light)');
+    let darkMedia = window.matchMedia('(prefers-color-scheme: dark)');
+    let callback = (e) => {
+    let prefersDarkMode = e.matches;
+    if (prefersDarkMode) {
+       this.anhei();
+       }
+    };
+    if (typeof darkMedia.addEventListener === 'function'|| typeof lightMedia.addEventListener === 'function') {
+       lightMedia.addEventListener('change', callback);
+       darkMedia.addEventListener('change', callback);
+    } //监听系统主题，自动切换！
   },
   methods: {
     anhei() {
@@ -862,29 +874,13 @@ export default {
       } 
       else {
         document.getElementsByTagName('body')[0].setAttribute('class', 'light-mode');  
-      } //凭借当前时间来判断，用来对付QQ等不支持媒体变量查询的浏览器
+      } //根据当前时间来判断，用来对付QQ等不支持媒体变量查询的浏览器
       if (lightMode && lightMode.matches) { 
         document.getElementsByTagName('body')[0].setAttribute('class', 'light-mode');
-        lightMode && lightMode.addEventListener('change', e => { 
-      if (e.matches) { 
-        document.getElementsByTagName('body')[0].setAttribute('class', 'light-mode');
-        } 
-      else { 
-        document.getElementsByTagName('body')[0].setAttribute('class', 'dark-mode');
-        } 
-       }); 
       } 
       if (darkMode && darkMode.matches) { 
         document.getElementsByTagName('body')[0].setAttribute('class', 'dark-mode');
-        darkMode && darkMode.addEventListener('change', e => { 
-      if (e.matches) { 
-        document.getElementsByTagName('body')[0].setAttribute('class', 'dark-mode');
-        } 
-      else { 
-        document.getElementsByTagName('body')[0].setAttribute('class', 'light-mode');
-        } 
-       });
-      } //根据窗口主题以及监听系统主题来判断当前主题！
+      } //根据窗口主题来判断当前主题！
      }  
     },  
     change() {
@@ -897,7 +893,7 @@ export default {
       document.getElementsByTagName('body')[0].setAttribute('class', 'light-mode');
       window.localStorage.setItem('localTheme','light-mode');
       }
-    }, 
+    },  
     onCopy() {
       this.$message.success("Copied!");
     },

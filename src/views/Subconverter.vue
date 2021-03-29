@@ -630,7 +630,7 @@ export default {
                 value:
                   "https://raw.githubusercontent.com/limr95/webcdn/main/rule/Blinkload.ini"
               },
-	      {
+              {
                 label: "EXFLUX",
                 value:
                   "https://gist.github.com/jklolixxs/16964c46bad1821c70fa97109fd6faa2/raw/EXFLUX.ini"

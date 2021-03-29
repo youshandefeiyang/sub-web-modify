@@ -851,8 +851,7 @@ export default {
     let lightMedia = window.matchMedia('(prefers-color-scheme: light)');
     let darkMedia = window.matchMedia('(prefers-color-scheme: dark)');
     let callback = (e) => {
-    let prefersDarkMode = e.matches;
-    if (prefersDarkMode) {
+    if (e.matches) {
        this.anhei();
        }
     };

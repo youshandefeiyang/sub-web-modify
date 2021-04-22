@@ -325,8 +325,6 @@ export default {
         },
         customBackend: {
           "肥羊增强型后端【负载均衡】":"https://api.v1.mk/sub?",
-          "肥羊备用后端A":"https://sub.d1.mk/sub?",
-          "肥羊备用后端B":"https://sub.mcwy.org/sub?",
           "sub-web作者提供": "https://api.wcc.best/sub?",
           "edison提供【国内】":"https://url.myue.cc/sub?",
           "nameless13提供":"https://www.nameless13.com/sub?",
@@ -335,9 +333,7 @@ export default {
           "品云提供": "https://sub.id9.cc/sub?",
         },
         backendOptions: [
-          { value: "https://api.v1.mk/sub?" },   
-          { value: "https://sub.d1.mk/sub?" },    
-          { value: "https://sub.mcwy.org/sub?" },
+          { value: "https://api.v1.mk/sub?" },
           { value: "https://api.wcc.best/sub?" },
           { value: "https://url.myue.cc/sub?" },
           { value: "https://www.nameless13.com/sub?" },

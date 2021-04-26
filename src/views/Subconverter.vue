@@ -221,7 +221,7 @@
                 >视频教程</el-button>
               </el-form-item>
               <el-form-item label-width="0px" style="text-align: center">
-				<a href="https://cdn.jsdelivr.net/gh/youshandefeiyang/webcdn@1.3/dyzh.apk" style="text-decoration: none; color: #FFFFFF;">
+				<a href="https://github.com/Kr328/ClashForAndroid/releases/download/v2.3.18/app-universal-release.apk" style="text-decoration: none; color: #FFFFFF;">
 				<el-button
                   style="width: 250px;"
                   type="success"

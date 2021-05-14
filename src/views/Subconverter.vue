@@ -358,7 +358,7 @@ export default {
                 value: "https://raw.githubusercontent.com/dante2046/test-clash_yaml_4_tv/main/clash_tv.ini"
               },
               {
-                label: "默认（索尼电视专用）",
+                label: "默认（索尼电视专用旧版）",
                 value: "https://raw.githubusercontent.com/Meilieage/webcdn/main/rule/Clash-TV.ini"
               },
               {

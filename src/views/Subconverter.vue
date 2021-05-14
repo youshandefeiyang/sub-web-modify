@@ -357,6 +357,10 @@ export default {
                 label: "默认（索尼电视专用）",
                 value: "https://raw.githubusercontent.com/Meilieage/webcdn/main/rule/Clash-TV.ini"
               },
+	      {
+                label: "默认（索尼电视专用新版）",
+                value: "https://raw.githubusercontent.com/dante2046/test-clash_yaml_4_tv/main/clash_tv.ini"
+              },
               {
                 label: "默认（附带用于 Clash 的 AdGuard DNS）",
                 value: "https://gist.githubusercontent.com/tindy2013/1fa08640a9088ac8652dbd40c5d2715b/raw/default_with_clash_adg.yml"

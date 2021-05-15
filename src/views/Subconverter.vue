@@ -691,7 +691,7 @@ export default {
                   "https://gist.github.com/jklolixxs/b1f91606165b1df82e5481b08fd02e00/raw/ABCloud.ini"
               },
               {
-                label: "xianyu",
+                label: "咸鱼",
                 value: "https://raw.githubusercontent.com/SleepyHeeead/subconverter-config/master/remote-config/customized/xianyu.ini"
               },    
               {
@@ -755,7 +755,7 @@ export default {
                 value: "https://gist.githubusercontent.com/tindy2013/1fa08640a9088ac8652dbd40c5d2715b/raw/scholar_optimized.ini"
               },
               {
-                label: "flowercloud",
+                label: "Flowercloud",
                 value: "https://raw.githubusercontent.com/SleepyHeeead/subconverter-config/master/remote-config/customized/flowercloud.ini"
               }
             ]

@@ -780,7 +780,7 @@ export default {
         clientType: "",
         customBackend: "https://api.v1.mk/sub?",
         shortType: "https://v1.mk/short",
-        remoteConfig: "https://raw.githubusercontent.com/limr95/webcdn/main/rule/no-urltest.ini",
+        remoteConfig: "https://raw.githubusercontent.com/SleepyHeeead/subconverter-config/master/remote-config/universal/no-urltest.ini",
         excludeRemarks: "",
         includeRemarks: "",
         filename: "",

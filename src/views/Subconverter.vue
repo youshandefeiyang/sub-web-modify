@@ -695,8 +695,8 @@ export default {
                 value: "https://raw.githubusercontent.com/SleepyHeeead/subconverter-config/master/remote-config/customized/xianyu.ini"
               },    
               {
-                label: "路飞船长",
-                value: "https://raw.githubusercontent.com/Mazeorz/airports/master/Clash/Luffy_balance.ini"
+                label: "便利店",
+                value: "https://subweb.oss-cn-hongkong.aliyuncs.com/RemoteConfig/customized/convenience.ini"
               },
               {
                 label: "CNIX",
@@ -753,10 +753,6 @@ export default {
               {
                 label: "Scholar",
                 value: "https://gist.githubusercontent.com/tindy2013/1fa08640a9088ac8652dbd40c5d2715b/raw/scholar_optimized.ini"
-              },
-	          {
-                label: "便利店",
-                value: "https://subweb.oss-cn-hongkong.aliyuncs.com/RemoteConfig/customized/convenience.ini"
               },
               {
                 label: "flowercloud",

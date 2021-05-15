@@ -1,6 +1,6 @@
 {
-  "name": "sub-web",
-  "version": "0.1.0",
+  "name": "订阅转换",
+  "version": "1.0",
   "private": true,
   "scripts": {
     "serve": "vue-cli-service serve",

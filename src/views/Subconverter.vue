@@ -755,16 +755,12 @@ export default {
                 value: "https://gist.githubusercontent.com/tindy2013/1fa08640a9088ac8652dbd40c5d2715b/raw/scholar_optimized.ini"
               },
 	      {
-                label: "flowercloud",
-                value: "https://raw.githubusercontent.com/SleepyHeeead/subconverter-config/master/remote-config/customized/flowercloud.ini"
-              },
-              {
                 label: "便利店",
                 value: "https://subweb.oss-cn-hongkong.aliyuncs.com/RemoteConfig/customized/convenience.ini"
               },
               {
-                label: "ssrCloud",
-                value: "https://raw.githubusercontent.com/SleepyHeeead/subconverter-config/master/remote-config/customized/ssrcloud.ini"
+                label: "flowercloud",
+                value: "https://raw.githubusercontent.com/SleepyHeeead/subconverter-config/master/remote-config/customized/flowercloud.ini"
               }
             ]
           },

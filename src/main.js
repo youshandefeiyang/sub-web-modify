@@ -11,7 +11,6 @@ require(`@/plugins/device`)
 import './assets/css/light.css'
 import './assets/css/dark.css'
 import '@/icons' // icon
-import './registerServiceWorker'
 
 Vue.config.productionTip = false
 

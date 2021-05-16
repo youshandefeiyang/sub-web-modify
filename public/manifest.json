@@ -1,33 +1,4 @@
 {
   "short_name": "订阅转换",
   "name": "订阅转换",
-  "icons": [
-    {
-      "src": "favicon.png",
-      "sizes": "256x256 180x180 128x128 96x96 72x72 48x48 32x32 24x24 16x16",
-      "type": "image/png"
-    },    
-    {
-      "src": "favicon-192x192.png",
-      "type": "image/png",
-      "sizes": "192x192"
-    },
-    {
-      "src": "favicon-256x256.png",
-      "type": "image/png",
-      "sizes": "256x256"
-    }
-  ],
-  "start_url": ".",
-  "display": "fullscreen",
-  "theme_color": "#000000",
-  "background_color": "#ffffff",
-  "splashscreen": {
-      "waiting": true,
-      "autoclose": true,
-      "delay": 0,
-      "android": {
-                    "xxhdpi": "/startup/A.png"
-                 }
-  }
 }

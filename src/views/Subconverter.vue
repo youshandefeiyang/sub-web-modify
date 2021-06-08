@@ -825,6 +825,7 @@ export default {
     this.isPC = this.$getOS().isPc;
   },
   mounted() {
+    this.notify();
     this.form.clientType = "clash";
     this.getBackendVersion();
     this.anhei();
@@ -874,7 +875,7 @@ export default {
       window.localStorage.setItem('localTheme','light-mode');
       }
     },  
-	notify(){
+    notify(){
       this.$message({
       showClose: true,
       message: '注意：默认配置中的Streaming就是Netflix，Streaming SE是港澳台的流媒体！',

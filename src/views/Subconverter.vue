@@ -878,7 +878,7 @@ export default {
     notify(){
       this.$message({
       showClose: true,
-      message: '注意：默认配置中的Streaming就是Netflix，Streaming SE是港澳台的流媒体！',
+      message: '注意：默认配置中的Streaming就是Netflix，请选B组或C组的原生节点；Streaming SE虽然是港澳台的流媒体，但是包含爱奇艺，所以最好选Direct！',
       type: 'warning',
       duration: 0
       });

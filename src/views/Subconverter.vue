@@ -311,10 +311,10 @@ export default {
           Loon: "loon",
           Mellow: "mellow",
           Surfboard: "surfboard",
+	  ClashR:"clashr",
           "Shadowsocks(SIP002)": "ss",
           "Shadowsocks Android(SIP008)": "sssub",
           ShadowsocksD: "ssd",
-	  ClashR:"clashr",
         },
         shortTypes: {
          "v1.mk":"https://v1.mk/short",

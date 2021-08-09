@@ -823,7 +823,6 @@ export default {
     this.isPC = this.$getOS().isPc;
   },
   mounted() {
-    this.notify();
     this.form.clientType = "clash";
     this.getBackendVersion();
     this.anhei();
@@ -872,14 +871,6 @@ export default {
       document.getElementsByTagName('body')[0].setAttribute('class', 'light-mode');
       window.localStorage.setItem('localTheme','light-mode');
       }
-    },  
-    notify(){
-      this.$message({
-      showClose: true,
-      message: '注意：默认配置中的Streaming就是Netflix，请选B组或C组的原生节点；Streaming SE虽然是港澳台的流媒体，但是包含爱奇艺，所以最好选Direct！',
-      type: 'warning',
-      duration: 0
-      });
     },
     onCopy() {
       this.$message.success("Copied!");

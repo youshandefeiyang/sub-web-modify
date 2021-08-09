@@ -11,8 +11,8 @@
 .dark-mode .el-dialog__header,.dark-mode .el-dialog__body,.dark-mode .el-dialog__footer {background-color:#000!important;color:#fff!important}
 .dark-mode .el-textarea .el-input__count {background-color:rgba(255,255,255,0)!important;color:#fff!important}
 .dark-mode .el-textarea__inner {border: 0px!important;}
-.dark-mode .el-message--warning .el-message__content,.dark-mode .el-message .el-icon-warning {color: #fff!important;}
-.dark-mode .el-message--warning {background-color: rgb(0,0,0,.7)!important;border-color: #fff!important;}
+.dark-mode .el-message--warning .el-message--success .el-message__content,.dark-mode .el-message .el-icon-warning {color: #fff!important;}
+.dark-mode .el-message--warning .el-message--success {background-color: rgb(0,0,0,.7)!important;border-color: #fff!important;}
 .dark-mode .el-button--zhuti {color:#fff!important;font-size:14px!important;border:0!important;width:54px!important;padding:0px 0px!important;background-color:#000!important;}
 .dark-mode .el-button--zhuti:active,.dark-mode .el-button--zhuti:focus,.dark-mode .el-button--zhuti:hover {color:#fff!important;}
 .dark-mode,.dark-mode .el-button--primary,.dark-mode .el-button--warning,.dark-mode .el-button--success,.dark-mode .el-button--danger{background-color:#000!important}

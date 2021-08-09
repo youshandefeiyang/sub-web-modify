@@ -326,7 +326,6 @@ export default {
         customBackend: {
           "肥羊增强型后端【负载均衡】":"https://api.v1.mk/sub?",
           "sub-web作者提供": "https://api.wcc.best/sub?",
-          "edison提供【国内】":"https://url.myue.cc/sub?",
           "nameless13提供":"https://www.nameless13.com/sub?",
           "subconverter作者提供":"https://subcon.dlj.tf/sub?",
           "sub作者&lhie1提供": "https://api.dler.io/sub?",
@@ -335,7 +334,6 @@ export default {
         backendOptions: [
           { value: "https://api.v1.mk/sub?" },
           { value: "https://api.wcc.best/sub?" },
-          { value: "https://url.myue.cc/sub?" },
           { value: "https://www.nameless13.com/sub?" },
           { value: "https://subcon.dlj.tf/sub?" },
           { value: "https://api.dler.io/sub?" },
@@ -931,7 +929,7 @@ export default {
 	showClose: false ,
 	})
     .then(() => {
-        const youtube = 'https://www.youtube.com/watch?v=EkZPqsYBTuw'
+        const youtube = 'https://www.youtube.com/watch?v=C4WV4223uYw'
         window.open(youtube);
         });
     },

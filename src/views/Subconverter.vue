@@ -218,7 +218,7 @@
                   type="warning"
                   icon="el-icon-video-play"
                   @click="gotovideo"
-                >视频教程</el-button>
+                >保姆级视频教程</el-button>
               </el-form-item>
               <el-form-item label-width="0px" style="text-align: center">
 				<a href="https://github.com/Kr328/ClashForAndroid/releases/download/v2.1.6/app-universal-release.apk" style="text-decoration: none; color: #FFFFFF;">

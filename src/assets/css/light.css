@@ -9,8 +9,8 @@ html {margin: 0;padding: 0;}
 div,p,ul,li,a,img,i,b,span,input,textarea,select,label {outline: none !important;}
 textarea {-webkit-appearance: none;appearance: none;}
 #app .el-row:not(.el-row--flex) {margin: 0 auto !important;padding: 16px;max-width: 1032px;}
-.light-mode .el-message--warning .el-message__content,.light-mode .el-message .el-icon-warning {color: #000!important;}
-.light-mode .el-message--warning {background-color: rgba(255,255,255,.7)!important;border-color: #fff!important;}
+.light-mode .el-message--warning .el-message__content,.light-mode .el-message .el-icon-warning,.light-mode .el-message--success .el-message__content,.light-mode .el-message .el-icon-success {color: #000!important;}
+.light-mode .el-message--warning,.light-mode .el-message--success {background-color: rgba(255,255,255,.7)!important;border-color: #fff!important;}
 .light-mode .el-card {background: none !important;}
 .light-mode .el-collapse-item__content {padding-bottom:0px!important;}
 .light-mode .el-collapse-item .el-button--limr {background:rgba(255,255,255,.5)!important;border-radius: 4px!important;height:32px!important;}

@@ -345,11 +345,11 @@ export default {
             options: [
               {
                 label: "默认",
-                value: "https://raw.githubusercontent.com/SleepyHeeead/subconverter-config/master/remote-config/universal/no-urltest.ini"
+                value: "https://raw.githubusercontent.com/youshandefeiyang/webcdn/main/rule/no-urltest.ini"
               },
               {
                 label: "默认（自动测速）",
-                value: "https://raw.githubusercontent.com/SleepyHeeead/subconverter-config/master/remote-config/universal/urltest.ini"
+                value: "https://raw.githubusercontent.com/youshandefeiyang/webcdn/main/rule/urltest.ini"
               },
               {
                 label: "默认（索尼电视专用新版）",

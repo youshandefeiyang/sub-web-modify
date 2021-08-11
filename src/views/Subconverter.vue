@@ -223,7 +223,7 @@
                   type="success"
                   icon="el-icon-download"
                   @click="cldown"
-                >Android客户端</el-button>
+                >Clash For Android 客户端</el-button>
               </el-form-item>
             </el-form>
           </el-container>
@@ -285,7 +285,7 @@ const tgBotLink = process.env.VUE_APP_BOT_LINK
 const yglink = process.env.VUE_APP_YOUTUBE_LINK
 const bzlink = process.env.VUE_APP_BILIBILI_LINK
 const downld = process.env.VUE_APP_CFA 
-const bmvideo = process.env.VUE_VIDEO
+const bmvideo = process.env.VUE_APP_VIDEO
 
 export default {
   data() {

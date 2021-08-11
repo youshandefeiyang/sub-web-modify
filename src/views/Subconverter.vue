@@ -8,7 +8,7 @@
           <svg-icon class="dianbao" icon-class="telegram" style="margin-left: 10px" @click="gotoTgChannel" />
           <svg-icon class="bilibili" icon-class="bilibili" style="float:right;margin-top:3px;margin-left:10px" @click="gotoBiliBili" />
           <svg-icon class="youguan" icon-class="youtube" style="float:right;margin-top:3px;margin-left:10px" @click="gotoYouTuBe" />
-		  <div class="banben" style="position:absolute; right: 20px">{{ backendVersion }}</div>
+	  <div class="banben" style="position:absolute; right: 20px">{{ backendVersion }}</div>
           </div>
           
           <el-container>

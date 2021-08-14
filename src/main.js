@@ -8,8 +8,8 @@ require(`@/plugins/particles`)
 require(`@/plugins/axios`)
 require(`@/plugins/device`)
 
-import './assets/css/light.css'
-import './assets/css/dark.css'
+import './assets/css/light.min.css'
+import './assets/css/dark.min.css'
 import '@/icons' // icon
 
 Vue.config.productionTip = false

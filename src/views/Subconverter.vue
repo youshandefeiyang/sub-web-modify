@@ -14,10 +14,6 @@
           
           <el-container>
             <el-form :model="form" label-width="80px" label-position="left" style="width: 100%">
-              <el-form-item label="模式设置:" style="display:none">
-                <el-radio v-model="advanced" label="1">基础模式</el-radio>
-                <el-radio v-model="advanced" label="2">进阶模式</el-radio>
-              </el-form-item>
               <el-form-item label="订阅链接:">
                 <el-input
                   v-model="form.sourceSubUrl"
@@ -56,7 +52,6 @@
                   <el-option v-for="(v, k) in options.shortTypes" :key="k" :label="k" :value="v"></el-option>
                 </el-select>
               </el-form-item>
-              <div v-if="advanced === '2'">
                 <el-form-item label="远程配置:">
                   <el-select
                     v-model="form.remoteConfig"
@@ -141,7 +136,6 @@
                 </el-collapse-item>
                 </el-collapse>
                 </el-form-item>
-              </div>
 
               <div style="margin-top: 30px"></div>
 

@@ -102,7 +102,7 @@
                 <el-form-item label-width="0px">
                   <el-row type="flex">
                     <el-col>
-                      <el-checkbox v-model="form.nodeList" label="仅输出节点信息" border style="margin-top:5.9px"></el-checkbox>
+                      <el-checkbox class="nodeinfo" v-model="form.nodeList" label="仅输出节点信息" border></el-checkbox>
                     </el-col>
                       <el-popover placement="bottom" v-model="form.extraset">
                       <el-row :gutter="10">

@@ -262,13 +262,6 @@
     </el-dialog>
   </div>
 </template>
-<style>
-@media(max-width:460px){
-.msgbox {
-     width: 80%;
-  } 
-}
-</style>
 <script>
 const project = process.env.VUE_APP_PROJECT
 const remoteConfigSample = process.env.VUE_APP_SUBCONVERTER_REMOTE_CONFIG

@@ -351,19 +351,6 @@ export default {
             ]
           },
           {
-            label: "Meilieage大神的规则",
-            options: [
-              {
-                label: "Meilieage_不带测速",
-                value: "https://raw.githubusercontent.com/Meilieage/webcdn/main/rule/Area_Media_NoAuto.ini"
-              },
-              {
-                label: "Meilieage_带自动测速",
-                value: "https://raw.githubusercontent.com/Meilieage/webcdn/main/rule/Area_Media.ini"
-              }
-            ]
-          },
-          {
             label: "ACL规则",
             options: [
               {

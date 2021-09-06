@@ -847,10 +847,11 @@ export default {
     },
     notify(){
       this.$message({
-      showClose: false,
+      showClose: true,
       message: '温馨提示：默认远程配置已经替换为Meilieage大神独家配置，分流比之前更全更好用，老用户请重新进行一次订阅转换来获取最新分流列表！',
       customClass: 'msgbox',
       duration: 6000,
+      position: 'top-right',
       type: 'warning'
       });
     },

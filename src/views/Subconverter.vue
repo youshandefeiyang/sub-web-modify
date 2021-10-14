@@ -99,7 +99,7 @@
 					<el-form-item label="订阅命名:">
                     <el-input v-model="form.filename" placeholder="返回的订阅文件名" />
                     </el-form-item>
-                <el-form-item label-width="0px">
+                <el-form-item class="eldiy" label-width="0px">
                   <el-row type="flex">
                     <el-col>
                       <el-checkbox v-model="form.nodeList" label="仅输出节点信息" border></el-checkbox>

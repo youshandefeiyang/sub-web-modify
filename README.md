@@ -1,5 +1,5 @@
 # sub-web-modify
-[dkaoy版订阅转换](链接暂时没做好)基于项目[youshandefeiyang/sub-web-modify](https://github.com/youshandefeiyang/sub-web-modify)，在肥羊基础上增加自己的配置，并删除自认为用不到的配置<br/>
+[dkaoy版订阅转换](https://github.com/xb001/sub-web-modify/tree/dkaoy_dev)基于项目[youshandefeiyang/sub-web-modify](https://github.com/youshandefeiyang/sub-web-modify)，在肥羊基础上增加自己的配置，并删除自认为用不到的配置<br/>
 ## 效果预览：
 ![暂时还没做，先用肥羊的顶一下](https://cdn.jsdelivr.net/gh/limr95/webcdn@3.8/dfy.gif)
 ### 食用方法【以Linux为例】(直接抄作业)：

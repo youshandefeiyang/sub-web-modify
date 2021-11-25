@@ -22,7 +22,7 @@
                   placeholder="支持各种订阅链接或单节点链接，多个链接每行一个或用 | 分隔"
                 />
               </el-form-item>
-              <el-form-item label="客户端项:">
+              <el-form-item label="生成类型:">
                 <el-select v-model="form.clientType" style="width: 100%">
                   <el-option v-for="(v, k) in options.clientTypes" :key="k" :label="k" :value="v"></el-option>
                 </el-select>

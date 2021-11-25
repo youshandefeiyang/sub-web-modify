@@ -1,8 +1,8 @@
 # sub-web-modify
-[最美订阅转换](https://sub.v1.mk)基于项目[CareyWang/sub-web](https://github.com/CareyWang/sub-web)，重制CSS样式，增加“暗黑模式”，监听系统默认主题，自动切换亮/暗模式（点击“太阳/月亮”图标可手动切换），增加“高级功能”点击显示/隐藏，解决当手机浏览器切换电脑UA时，远程配置添加过多后，布局乱的问题，解决重新载入网页依然保留上次订阅的问题，添加短链接选择/自定义功能，增加近百条远程配置！<br/>
+[dkaoy版订阅转换](链接暂时没做好)基于项目[youshandefeiyang/sub-web-modify](https://github.com/youshandefeiyang/sub-web-modify)，在肥羊基础上增加自己的配置，并删除自认为用不到的配置<br/>
 ## 效果预览：
-![avatar](https://cdn.jsdelivr.net/gh/limr95/webcdn@3.8/dfy.gif)
-### 食用方法【以Linux为例】：
+![暂时还没做，先用肥羊的顶一下](https://cdn.jsdelivr.net/gh/limr95/webcdn@3.8/dfy.gif)
+### 食用方法【以Linux为例】(直接抄作业)：
 1.安装 [node](https://blog.csdn.net/achabuhecha/article/details/111400068) 和 [yarn](https://classic.yarnpkg.com/en/docs/install#debian-stable) 和 [git](https://git-scm.com/book/zh/v2/%E8%B5%B7%E6%AD%A5-%E5%AE%89%E8%A3%85-Git)
 
 2.终端执行 `cd /home && git clone https://github.com/youshandefeiyang/sub-web-modify.git && chmod -R 755 sub-web-modify && cd sub-web-modify && yarn install && yarn build`

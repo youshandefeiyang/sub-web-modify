@@ -324,7 +324,7 @@ export default {
           { value: "https://api.v1.mk/sub?" },
           { value: "https://api.wcc.best/sub?" },
           { value: "https://www.nameless13.com/sub?" },
-          { value: "https://subcon.dlj.tf/sub?" },
+          { value: "https://sub.xeton.dev/sub?" },
           { value: "https://api.dler.io/sub?" },
           { value: "https://sub.id9.cc/sub?" },
         ],

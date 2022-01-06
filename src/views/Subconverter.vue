@@ -342,7 +342,7 @@ export default {
               },
               {
                 label: "默认（索尼电视专用）",
-                value: "https://raw.githubusercontent.com/Meilieage/webcdn/main/rule/Clash-TV.ini"
+                value: "https://raw.githubusercontent.com/youshandefeiyang/webcdn/main/SONY.ini"
               },
               {
                 label: "默认（附带用于 Clash 的 AdGuard DNS）",

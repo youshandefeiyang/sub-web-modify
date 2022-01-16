@@ -796,7 +796,7 @@ export default {
         position: 'top-left',
         customClass: 'msgbox',
         message: (
-          "本订阅转换默认后端第一时间会跟随上游更新，默认分流配置为Meilieage大神独家配置，共有二十多个分组，老用户可以重新转换一次订阅来获取最新分组！"
+          "本站自定义配置上传功能已恢复，请知悉！"
         )
       });
     },

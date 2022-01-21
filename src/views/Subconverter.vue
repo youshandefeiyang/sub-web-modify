@@ -320,6 +320,10 @@ export default {
             label: "通用",
             options: [
               {
+                label: "ACL_全分组多模式版",
+                value: "https://raw.githubusercontent.com/ACL4SSR/ACL4SSR/master/Clash/config/ACL4SSR_Online_Full_MultiMode.ini"
+              },
+              {
                 label: "默认",
                 value: "https://raw.githubusercontent.com/Meilieage/webcdn/main/rule/Area_Media_NoAuto.ini"
               },
@@ -776,17 +780,7 @@ export default {
       window.localStorage.setItem('localTheme','light-mode');
       }
     },
-    notify() {
-      this.$notify({
-        title: "温馨提示",
-        type: "warning",
-        position: 'top-left',
-        customClass: 'msgbox',
-        message: (
-          "本站自定义配置上传功能已恢复！"
-        )
-      });
-    },
+   
     onCopy() {
       this.$message.success("Copied!");
     },
@@ -998,7 +992,7 @@ export default {
         .then(res => {
           if (res.data.code === 0 && res.data.data.url !== "") {
             this.$message.success(
-              "远程配置上传成功，配置链接已复制到剪贴板，有效期三个月望知悉"
+              "远程配置上传成功，配置链接已复制到剪贴板，有效期三个月"
             );
 
             // 自动填充至『表单-远程配置』

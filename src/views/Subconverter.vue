@@ -260,7 +260,7 @@ const tgBotLink = process.env.VUE_APP_BOT_LINK
 const yglink = process.env.VUE_APP_YOUTUBE_LINK
 const bzlink = process.env.VUE_APP_BILIBILI_LINK
 const downld = process.env.VUE_APP_CFA 
-const bmvideo = process.env.VUE_APP_VIDEO
+//const bmvideo = process.env.VUE_APP_VIDEO
 
 export default {
   data() {

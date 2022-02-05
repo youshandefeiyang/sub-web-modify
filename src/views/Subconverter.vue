@@ -829,7 +829,7 @@ export default {
       window.open(url + this.customSubUrl);
     },
     gotovideo() {
-    this.$alert("别忘了关注友善的肥羊哦！",{
+    /*this.$alert("别忘了关注友善的肥羊哦！",{
 	type: "warning",
 	confirmButtonText: '确定',
 	customClass: 'msgbox',
@@ -837,7 +837,7 @@ export default {
 	})
     .then(() => {
         window.open(bmvideo);
-        });
+        });*/
     },
     makeUrl() {
       if (this.form.sourceSubUrl === "" || this.form.clientType === "") {

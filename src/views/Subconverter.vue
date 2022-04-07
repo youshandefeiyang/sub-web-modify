@@ -533,6 +533,10 @@ export default {
               {
                 label: "DlerCloud Silver 李哥定制规则",
                 value: "https://gist.githubusercontent.com/tindy2013/1fa08640a9088ac8652dbd40c5d2715b/raw/dlercloud_lige_silver.ini"
+              },
+              {
+                label: "ProxyStorage自用",
+                value: "https://raw.githubusercontent.com/ProxyStorage/For-Own-Use/master/Clash/clash.ini"
               }
             ]
           },

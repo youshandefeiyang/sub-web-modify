@@ -311,6 +311,7 @@ export default {
          "dlj.tf":"https://dlj.tf/short",
          "suo.yt":"https://suo.yt/short",
          "sub.cm":"https://sub.cm/short",
+	 "nfdy.top":"https://nfdy.top/short",
         },
         customBackend: {
           "肥羊增强型后端【负载均衡】":"https://api.v1.mk/sub?",

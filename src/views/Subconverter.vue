@@ -805,7 +805,7 @@ export default {
         position: 'top-left',
         customClass: 'msgbox',
         message: (
-          "本站自定义配置上传功能已恢复！"
+          "本站已增加vless订阅转换实验性后端！"
         )
       });
     },

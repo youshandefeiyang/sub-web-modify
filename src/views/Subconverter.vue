@@ -315,7 +315,7 @@ export default {
         },
         customBackend: {
           "肥羊增强型后端【负载均衡】":"https://api.v1.mk/sub?",
-          "vless专属后端【实验性】":"https://sub.id9.cc/sub?",
+          "vless专属后端【实验性】":"https://v.id9.cc/sub?",
           "sub-web作者提供": "https://api.wcc.best/sub?",
           "nameless13提供":"https://www.nameless13.com/sub?",
           "subconverter作者提供":"https://subcon.dlj.tf/sub?",

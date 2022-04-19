@@ -315,8 +315,8 @@ export default {
           "nfdy.top":"https://nfdy.top/short",
         },
         customBackend: {
-          "肥羊增强型后端【负载均衡】":"https://api.v1.mk/sub?",
-          "vless专属后端【实验性】":"https://v.id9.cc/sub?",
+          "肥羊增强型后端【vless+负载均衡】":"https://api.v1.mk/sub?",
+          "品云提供后端【实验性】":"https://v.id9.cc/sub?",
           "sub-web作者提供": "https://api.wcc.best/sub?",
           "nameless13提供":"https://www.nameless13.com/sub?",
           "subconverter作者提供":"https://subcon.dlj.tf/sub?",
@@ -809,7 +809,7 @@ export default {
         position: 'bottom-left',
         customClass: 'msgbox',
         message: (
-          "本站自定义配置上传功能已恢复！"
+          "本站默认后端现已支持vless订阅转换！"
         )
       });
     },
@@ -1070,7 +1070,7 @@ export default {
           this.backendVersion = this.backendVersion.replace("subconverter", "SubConverter");
           let a = this.form.customBackend.indexOf("api.v1.mk") !== -1 ;
           let b = this.form.customBackend.indexOf("v.id9.cc") !== -1 ;
-          a ? this.$message.success(`${this.backendVersion}` + "负载均衡加强后端") : b ? this.$message.success(`${this.backendVersion}` + "此后端支持vless+trojan-xtls订阅转换") : this.$message.success(`${this.backendVersion}`);
+          a ? this.$message.success(`${this.backendVersion}` + "负载均衡加强后端支持vless订阅转换") : b ? this.$message.success(`${this.backendVersion}` + "此后端支持vless+trojan-xtls订阅转换") : this.$message.success(`${this.backendVersion}`);
         })
         .catch(() => {
           this.$message.error("请求SubConverter版本号返回数据失败，该后端不可用！");

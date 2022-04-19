@@ -809,7 +809,7 @@ export default {
         position: 'bottom-left',
         customClass: 'msgbox',
         message: (
-          "本站默认后端现已支持vless订阅转换！"
+          "可以在后端地址栏手动选择官方原版订阅转换！"
         )
       });
     },

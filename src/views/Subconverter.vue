@@ -33,9 +33,9 @@
                   v-model="form.customBackend"
                   allow-create
                   filterable
+		  @change="selectChanged"
                   placeholder="可输入自己的后端"
                   style="width: 100%"
-                  @change="selectChanged"
                 >
                   <el-option v-for="(v, k) in options.customBackend" :key="k" :label="k" :value="v"></el-option>
 
@@ -47,6 +47,7 @@
                   v-model="form.shortType" 
                   allow-create
                   filterable
+		  @change="selectChanged2"
                   placeholder="可输入其他可用短链API"
                   style="width: 100%"
                 >
@@ -768,6 +769,11 @@ export default {
   methods: {
     selectChanged() {
       this.getBackendVersion();
+    },
+    selectChanged2() {
+      if (this.form.shortType.indexOf("nfdy.top") !== -1 ) {
+        this.$message.success("该短链接为隐藏福利！")
+      }
     },
     anhei() {
       const getLocalTheme = window.localStorage.getItem("localTheme");

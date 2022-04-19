@@ -35,6 +35,7 @@
                   filterable
                   placeholder="可输入自己的后端"
                   style="width: 100%"
+                  @change="selectChanged"
                 >
                   <el-option v-for="(v, k) in options.customBackend" :key="k" :label="k" :value="v"></el-option>
 
@@ -266,7 +267,6 @@
 const project = process.env.VUE_APP_PROJECT
 const remoteConfigSample = process.env.VUE_APP_SUBCONVERTER_REMOTE_CONFIG
 const gayhubRelease = process.env.VUE_APP_BACKEND_RELEASE
-const defaultBackend = process.env.VUE_APP_SUBCONVERTER_DEFAULT_BACKEND + '/sub?'
 const shortUrlBackend = process.env.VUE_APP_MYURLS_DEFAULT_BACKEND + '/short'
 const configUploadBackend = process.env.VUE_APP_CONFIG_UPLOAD_BACKEND + '/config/upload'
 const tgBotLink = process.env.VUE_APP_BOT_LINK
@@ -765,6 +765,9 @@ export default {
     } //监听系统主题，自动切换！
   },
   methods: {
+    selectChanged() {
+      this.getBackendVersion();
+    },
     anhei() {
       const getLocalTheme = window.localStorage.getItem("localTheme");
       const lightMode = window.matchMedia && window.matchMedia('(prefers-color-scheme: light)'); 
@@ -802,7 +805,7 @@ export default {
       this.$notify({
         title: "温馨提示",
         type: "warning",
-        position: 'top-left',
+        position: 'bottom-left',
         customClass: 'msgbox',
         message: (
           "本站已增加vless/trojan-xtls订阅转换实验性后端！"
@@ -1059,11 +1062,17 @@ export default {
     getBackendVersion() {
       this.$axios
         .get(
-          defaultBackend.substring(0, defaultBackend.length - 5) + "/version"
+          this.form.customBackend.substring(0, this.form.customBackend.length - 5) + "/version"
         )
         .then(res => {
           this.backendVersion = res.data.replace(/backend\n$/gm, "");
-          this.backendVersion = this.backendVersion.replace("subconverter", "");
+          this.backendVersion = this.backendVersion.replace("subconverter", "SubConverter");
+          let a = this.form.customBackend.indexOf("api.v1.mk") !== -1 ;
+          let b = this.form.customBackend.indexOf("v.id9.cc") !== -1 ;
+          a ? this.$message.success(`${this.backendVersion}` + "负载均衡加强后端") : b ? this.$message.success(`${this.backendVersion}` + "此后端支持vless+trojan-xtls订阅转换") : this.$message.success(`${this.backendVersion}`);
+        })
+        .catch(() => {
+          this.$message.error("版本号获取失败，请检查后端可用性");
         });
     }
   }

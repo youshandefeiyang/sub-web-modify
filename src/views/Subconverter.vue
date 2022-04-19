@@ -805,7 +805,7 @@ export default {
         position: 'top-left',
         customClass: 'msgbox',
         message: (
-          "本站已增加vless订阅转换实验性后端！"
+          "本站已增加vless/trojan-xtls订阅转换实验性后端！"
         )
       });
     },

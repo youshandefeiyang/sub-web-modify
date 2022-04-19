@@ -749,7 +749,7 @@ export default {
     this.isPC = this.$getOS().isPc;
   },
   mounted() {
-    this.notify();
+    this.tanchuang();
     this.form.clientType = "clash";
     this.getBackendVersion();
     this.anhei();
@@ -802,11 +802,10 @@ export default {
       window.localStorage.setItem('localTheme','light-mode');
       }
     },
-    notify() {
-      this.$notify({
+    tanchuang() {
+      this.$alert({
         title: "温馨提示",
         type: "warning",
-        position: 'bottom-left',
         customClass: 'msgbox',
         message: (
           "可以在后端地址栏手动选择官方原版订阅转换！"

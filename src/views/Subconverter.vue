@@ -1073,7 +1073,7 @@ export default {
           a ? this.$message.success(`${this.backendVersion}` + "负载均衡加强后端") : b ? this.$message.success(`${this.backendVersion}` + "此后端支持vless+trojan-xtls订阅转换") : this.$message.success(`${this.backendVersion}`);
         })
         .catch(() => {
-          this.$message.error("版本号获取失败，请检查后端可用性");
+          this.$message.error("请求SubConverter版本号返回数据失败，该后端不可用！");
         });
     }
   }

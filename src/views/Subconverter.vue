@@ -809,7 +809,7 @@ export default {
         position: 'bottom-left',
         customClass: 'msgbox',
         message: (
-          "本站已增加vless/trojan-xtls订阅转换实验性后端！"
+          "本站自定义配置上传功能已恢复！"
         )
       });
     },

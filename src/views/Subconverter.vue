@@ -803,13 +803,10 @@ export default {
       }
     },
     tanchuang() {
-      this.$alert({
-        title: "温馨提示",
+      this.$confirm('可以在后端地址栏手动选择官方原版订阅转换！', '温馨提示', {
+        confirmButtonText: '确定',
         type: "warning",
-        customClass: 'msgbox',
-        message: (
-          "可以在后端地址栏手动选择官方原版订阅转换！"
-        )
+        customClass: 'msgbox'
       });
     },
     onCopy() {

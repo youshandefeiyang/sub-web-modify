@@ -1072,7 +1072,7 @@ export default {
           this.backendVersion = this.backendVersion.replace("subconverter", "SubConverter");
           let a = this.form.customBackend.indexOf("api.v1.mk") !== -1 ;
           let b = this.form.customBackend.indexOf("v.id9.cc") !== -1 ;
-          a ? this.$message.success(`${this.backendVersion}` + "负载均衡加强后端支持vless+trojan-go订阅转换") : b ? this.$message.success(`${this.backendVersion}` + "此后端支持vless+trojan-go订阅转换") : this.$message.success(`${this.backendVersion}` + "官方原版后端不支持vless订阅转换");
+          a ? this.$message.success(`${this.backendVersion}` + "肥羊负载均衡加强后端支持vless+trojan-go订阅转换") : b ? this.$message.success(`${this.backendVersion}` + "品云实验性后端支持vless+trojan-go订阅转换") : this.$message.success(`${this.backendVersion}` + "官方原版后端不支持vless/trojan-go订阅转换");
         })
         .catch(() => {
           this.$message.error("请求SubConverter版本号返回数据失败，该后端不可用！");

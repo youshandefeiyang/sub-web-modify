@@ -307,7 +307,6 @@ export default {
           ShadowsocksD: "ssd",
           "自动判断客户端": "auto",
         },
-	backendOptions: [{ value: "https://cfdingyingzhizhuo002.l4535svip.workers.dev/sub?" }],
         shortTypes: {
           "v1.mk":"https://v1.mk/short",
           "d1.mk":"https://d1.mk/short",
@@ -325,12 +324,12 @@ export default {
           "sub作者&lhie1提供": "https://api.dler.io/sub?",
         },
         backendOptions: [
-          { value: "https://api.v1.mk/sub?" },
-          { value: "https://v.id9.cc/sub?" },
-          { value: "https://www.nameless13.com/sub?" },
-          { value: "https://sub.xeton.dev/sub?" },
-          { value: "https://api.wcc.best/sub?" },
-          { value: "https://api.dler.io/sub?" },
+          { value: "https://cfdingyingzhizhuo002.l4535svip.workers.dev/sub?" },
+          { value: "https://cfdingyingzhizhuo002.l4535svip.workers.dev/sub?" },
+          { value: "https://cfdingyingzhizhuo002.l4535svip.workers.dev/sub?" },
+          { value: "https://cfdingyingzhizhuo002.l4535svip.workers.dev/sub?" },
+          { value: "https://cfdingyingzhizhuo002.l4535svip.workers.dev//sub?" },
+          { value: "https://cfdingyingzhizhuo002.l4535svip.workers.dev/sub?" },
         ],
         remoteConfig: [
           {

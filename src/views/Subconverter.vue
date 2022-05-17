@@ -307,6 +307,7 @@ export default {
           ShadowsocksD: "ssd",
           "自动判断客户端": "auto",
         },
+	backendOptions: [{ value: "https://cfdingyingzhizhuo002.l4535svip.workers.dev/sub?" }],
         shortTypes: {
           "v1.mk":"https://v1.mk/short",
           "d1.mk":"https://d1.mk/short",

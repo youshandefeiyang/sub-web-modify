@@ -539,7 +539,7 @@ export default {
               },
               {
                 label: "ProxyStorage自用",
-                value: "https://raw.githubusercontent.com/ProxyStorage/For-Own-Use/master/Clash/clash.ini"
+                value: "https://unpkg.com/proxy-script/config/Clash/clash.ini"
               },
               {
                 label: "ACL_全分组 Dream修改版",

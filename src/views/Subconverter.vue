@@ -1037,7 +1037,7 @@ export default {
 
             this.dialogUploadConfigVisible = false;
           } else {
-            this.$message.error("远程配置上传失败");
+            this.$message.error("远程配置上传失败: " + res.data.msg);
           }
         })
         .catch(() => {

@@ -1026,18 +1026,18 @@ export default {
           }
         })
         .then(res => {
-          if (res.data.code === 0 && res.data.data.url !== "") {
+          if (res.data.code === 0 && res.data.data !== "") {
             this.$message.success(
-              "远程配置上传成功，配置链接已复制到剪贴板，有效期三个月望知悉"
+              "远程配置上传成功，配置链接已复制到剪贴板"
             );
 
             // 自动填充至『表单-远程配置』
-            this.form.remoteConfig = res.data.data.url;
+            this.form.remoteConfig = res.data.data;
             this.$copyText(this.form.remoteConfig);
 
             this.dialogUploadConfigVisible = false;
           } else {
-            this.$message.error("远程配置上传失败: " + res.data.msg);
+            this.$message.error("远程配置上传失败");
           }
         })
         .catch(() => {

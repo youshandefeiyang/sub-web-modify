@@ -247,7 +247,7 @@
           <el-input
             v-model="uploadConfig"
             type="textarea"
-            :autosize="{ minRows: 15, maxRows: 15}"
+            :autosize="{ minRows: 15, maxRows: 150}"
             maxlength="50000"
             show-word-limit
           ></el-input>

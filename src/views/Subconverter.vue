@@ -1016,7 +1016,6 @@ export default {
       this.loading = true;
 
       let data = new FormData();
-      data.append("password", this.uploadPassword);
       data.append("config", this.uploadConfig);
 
       this.$axios

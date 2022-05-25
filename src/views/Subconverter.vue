@@ -47,7 +47,6 @@
                   v-model="form.shortType" 
                   allow-create
                   filterable
-                  @change="selectChanged2"
                   placeholder="可输入其他可用短链API"
                   style="width: 100%"
                 >
@@ -312,8 +311,7 @@ export default {
           "d1.mk":"https://d1.mk/short",
           "dlj.tf":"https://dlj.tf/short",
           "suo.yt":"https://suo.yt/short",
-          "sub.cm":"https://sub.cm/short", 
-          "nfdy.top":"https://nfdy.top/short",
+          "sub.cm":"https://sub.cm/short",
         },
         customBackend: {
           "肥羊增强型后端【vless+负载均衡】": "https://api.v1.mk/sub?",
@@ -771,11 +769,6 @@ export default {
   methods: {
     selectChanged() {
       this.getBackendVersion();
-    },
-    selectChanged2() {
-      if (this.form.shortType.indexOf("nfdy.top") !== -1 ) {
-        this.$message.success("该短链接为隐藏福利！")
-      }
     },
     anhei() {
       const getLocalTheme = window.localStorage.getItem("localTheme");

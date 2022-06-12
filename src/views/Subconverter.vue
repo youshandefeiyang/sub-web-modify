@@ -905,6 +905,10 @@ export default {
           this.customSubUrl +=
             "&config=" + encodeURIComponent(this.form.remoteConfig);
         }
+      if (this.form.emoji) {
+          this.customSubUrl +=
+            "&emoji=" + this.form.emoji.toString();
+        }
       if (this.advanced === "open") {
         if (this.form.excludeRemarks !== "") {
           this.customSubUrl +=
@@ -928,8 +932,6 @@ export default {
         }
 
         this.customSubUrl +=
-          "&emoji=" +
-          this.form.emoji.toString() +
           "&list=" +
           this.form.nodeList.toString() +
           "&udp=" +

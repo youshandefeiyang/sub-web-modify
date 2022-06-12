@@ -77,17 +77,18 @@
                   </el-select>
                 </el-form-item>
                 <el-form-item label-width="0px">
-                 <el-collapse>
-                    <el-collapse-item>
-                    <template slot="title">
                     <el-form-item label="高级功能:" style="width: 100%;">
-                     <el-button
+                     <!-- <el-button
                       type="limr"
                       style="width: 100%;"
                       icon="el-icon-more-outline"
-                     >点击显示/隐藏</el-button>
-                    </el-form-item>    
-                    </template>
+                     >点击显示/隐藏</el-button> -->
+                    <el-radio-group v-model="advanced">
+                    <el-radio-button label="open">显示</el-radio-button>
+                    <el-radio-button label="close">隐藏</el-radio-button>
+                    </el-radio-group>
+                    </el-form-item>  
+                    <div v-if="advanced === 'open'">
                     <el-form-item label="包含节点:">
                     <el-input v-model="form.includeRemarks" placeholder="要保留的节点，支持正则" />
                     </el-form-item>
@@ -133,9 +134,8 @@
                       <el-button slot="reference">更多选项</el-button>
                     </el-popover>
                   </el-row>
-                </el-form-item>    
-                </el-collapse-item>
-                </el-collapse>
+                </el-form-item>  
+                </div>
                 </el-form-item>
 
               <div style="margin-top: 30px"></div>
@@ -280,7 +280,7 @@ export default {
   data() {
     return {
       backendVersion: "",
-      advanced: "2",
+      advanced: "close",
 
       // 是否为 PC 端
       isPC: true,
@@ -901,12 +901,11 @@ export default {
         encodeURIComponent(sourceSub) +
         "&insert=" +
         this.form.insert;
-
-      if (this.advanced === "2") {
-        if (this.form.remoteConfig !== "") {
+      if (this.form.remoteConfig !== "") {
           this.customSubUrl +=
             "&config=" + encodeURIComponent(this.form.remoteConfig);
         }
+      if (this.advanced === "open") {
         if (this.form.excludeRemarks !== "") {
           this.customSubUrl +=
             "&exclude=" + encodeURIComponent(this.form.excludeRemarks);

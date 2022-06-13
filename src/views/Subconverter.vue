@@ -1036,23 +1036,6 @@ export default {
           this.loading = false;
         });
     },
-    backendSearch(queryString, cb) {
-      let backends = this.options.backendOptions;
-
-      let results = queryString
-        ? backends.filter(this.createFilter(queryString))
-        : backends;
-
-      // 调用 callback 返回建议列表的数据
-      cb(results);
-    },
-    createFilter(queryString) {
-      return candidate => {
-        return (
-          candidate.value.toLowerCase().indexOf(queryString.toLowerCase()) === 0
-        );
-      };
-    },
     getBackendVersion() {
       this.$axios
         .get(

@@ -347,7 +347,7 @@ export default {
       activeName: 'first',
       // 是否为 PC 端
       isPC: true,
-      btnBoolean: Boolean,
+      btnBoolean: false,
       options: {
         clientTypes: {
           Clash: "clash",

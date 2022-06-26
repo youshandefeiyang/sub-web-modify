@@ -206,7 +206,7 @@
                     style="width: 120px"
                     type="danger"
                     @click="makeUrl"
-                    :disabled="form.sourceSubUrl.length === 0"
+                    :disabled="form.sourceSubUrl.length === 0 || btnBoolean"
                 >生成订阅链接
                 </el-button>
                 <el-button
@@ -295,15 +295,15 @@
             </el-button>
           </div>
         </el-tab-pane>
-        <el-tab-pane label="自定义JavaScript" name="second">
+        <el-tab-pane label="JS排序节点" name="second">
           <el-link type="danger" :href="scriptConfig" style="margin-bottom: 15px" target="_blank" icon="el-icon-info">
-            参考配置
+            使用方法
           </el-link>
           <el-form label-position="left">
             <el-form-item prop="uploadScript">
               <el-input
                   v-model="uploadScript"
-                  placeholder="功能还没有写好，静等上线"
+                  placeholder="使用JavaScript对节点进行自定义排序，后期会加上filter_script和rename等功能，注意：如果你还需要自定义上传远程配置，此操作务必在其之后进行！"
                   type="textarea"
                   :autosize="{ minRows: 15, maxRows: 15}"
                   maxlength="50000"
@@ -327,6 +327,7 @@
 </template>
 <script>
 const project = process.env.VUE_APP_PROJECT
+const configScriptBackend = process.env.VUE_APP_SCRIPT_BACKEND
 const remoteConfigSample = process.env.VUE_APP_SUBCONVERTER_REMOTE_CONFIG
 const scriptConfigSample = process.env.VUE_APP_SCRIPT_CONFIG
 const gayhubRelease = process.env.VUE_APP_BACKEND_RELEASE
@@ -346,6 +347,7 @@ export default {
       activeName: 'first',
       // 是否为 PC 端
       isPC: true,
+      btnBoolean: Boolean,
       options: {
         clientTypes: {
           Clash: "clash",
@@ -1096,8 +1098,62 @@ export default {
             this.loading = false;
           });
     },
+    renderPost() {
+      let data = new FormData();
+      data.append("target",encodeURIComponent(this.form.clientType));
+      data.append("url",encodeURIComponent(this.form.sourceSubUrl));
+      data.append("config",encodeURIComponent(this.form.remoteConfig));
+      data.append("exclude",encodeURIComponent(this.form.excludeRemarks));
+      data.append("include",encodeURIComponent(this.form.includeRemarks));
+      data.append("filename",encodeURIComponent(this.form.filename));
+      data.append("rename",encodeURIComponent(this.form.rename));
+      data.append("append_type",encodeURIComponent(this.form.appendType.toString()));
+      data.append("emoji",encodeURIComponent(this.form.emoji.toString()));
+      data.append("list",encodeURIComponent(this.form.nodeList.toString()));
+      data.append("udp",encodeURIComponent(this.form.udp.toString()));
+      data.append("tfo",encodeURIComponent(this.form.tfo.toString()));
+      data.append("expand",encodeURIComponent(this.form.expand.toString()));
+      data.append("scv",encodeURIComponent(this.form.scv.toString()));
+      data.append("fdn",encodeURIComponent(this.form.fdn.toString()));
+      data.append("sort",encodeURIComponent(this.form.sort.toString()));
+      data.append("sdoh",encodeURIComponent(this.form.tpl.surge.doh.toString()));
+      data.append("cdoh",encodeURIComponent(this.form.tpl.clash.doh.toString()));
+      data.append("newname",encodeURIComponent(this.form.new_name.toString()));
+      return data;
+    },
     confirmUploadScript() {
-
+      if (this.uploadScript === "") {
+        this.$message.warning("自定义JS不能为空");
+        return false;
+      }
+      this.loading = true;
+      let data = this.renderPost();
+      data.append("sortscript",encodeURIComponent(this.uploadScript));
+      this.$axios
+          .post(configScriptBackend,data,{
+            header: {
+              "Content-Type": "application/form-data; charset=utf-8"
+            }
+          })
+          .then(res => {
+            if (res.data.code === 0 && res.data.data !== "") {
+              this.$message.success(
+                  "自定义JS上传成功，订阅链接已复制到剪贴板"
+              );
+              this.customSubUrl = res.data.data;
+              this.$copyText(this.customSubUrl);
+              this.dialogUploadConfigVisible = false;
+              this.btnBoolean=true;
+            } else {
+              this.$message.error("自定义JS上传失败: " + res.data.msg);
+            }
+          })
+          .catch(() => {
+            this.$message.error("自定义JS上传失败");
+          })
+          .finally(() => {
+            this.loading = false;
+          })
     },
     getBackendVersion() {
       this.$axios

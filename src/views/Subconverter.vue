@@ -1019,7 +1019,7 @@ export default {
       }
 
       this.$copyText(this.customSubUrl);
-      this.$message.success("定制订阅已复制到剪贴板（IOS设备和Safari浏览器不支持自动复制）");
+      this.$message.success("定制订阅已复制到剪贴板");
     },
     makeShortUrl() {
       if (this.customSubUrl === "") {
@@ -1047,7 +1047,7 @@ export default {
             if (res.data.Code === 1 && res.data.ShortUrl !== "") {
               this.curtomShortSubUrl = res.data.ShortUrl;
               this.$copyText(res.data.ShortUrl);
-              this.$message.success("短链接已复制到剪贴板");
+              this.$message.success("短链接已复制到剪贴板（IOS设备和Safari浏览器不支持自动复制API，需手动点击复制按钮）");
             } else {
               this.$message.error("短链接获取失败：" + res.data.Message);
             }
@@ -1138,7 +1138,7 @@ export default {
           .then(res => {
             if (res.data.code === 0 && res.data.data !== "") {
               this.$message.success(
-                  "自定义JS上传成功，订阅链接已复制到剪贴板（IOS设备和Safari浏览器不支持自动复制）"
+                  "自定义JS上传成功，订阅链接已复制到剪贴板（IOS设备和Safari浏览器不支持自动复制API，需手动点击复制按钮）"
               );
               this.customSubUrl = res.data.data;
               this.$copyText(res.data.data);

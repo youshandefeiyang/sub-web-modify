@@ -1046,7 +1046,7 @@ export default {
           .then(res => {
             if (res.data.Code === 1 && res.data.ShortUrl !== "") {
               this.curtomShortSubUrl = res.data.ShortUrl;
-              this.$copyText(res.data.ShortUrl);
+              navigator.clipboard.writeText(res.data.ShortUrl);
               this.$message.success("短链接已复制到剪贴板");
             } else {
               this.$message.error("短链接获取失败：" + res.data.Message);

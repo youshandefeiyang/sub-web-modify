@@ -1,5 +1,5 @@
 # sub-web-modify
-[最美订阅转换](https://sub.v1.mk)基于项目[CareyWang/sub-web](https://github.com/CareyWang/sub-web)，重制CSS样式，解决大部分布局细节问题，增加“暗黑模式”，默认自动切换亮/暗模式（点击“太阳/月亮”图标可手动切换），增加“高级功能”点击显示/隐藏，添加短链接选择/自定义功能，增加近百条远程配置，新增[DIY远程配置后端](https://github.com/youshandefeiyang/sub-web-config-backend)，增加上传自定义JavaScript对节点进行进阶排序等功能，感兴趣的朋友可以自建远程配置托管服务！<br/>
+[最美订阅转换](https://sub.v1.mk)基于项目[CareyWang/sub-web](https://github.com/CareyWang/sub-web)，重制CSS样式，解决大部分布局细节问题，增加“暗黑模式”，默认自动切换亮/暗模式（点击“太阳/月亮”图标可手动切换），增加“高级功能”点击显示/隐藏，添加短链接选择/自定义功能，增加近百条远程配置，新增[DIY远程配置后端](https://github.com/youshandefeiyang/sub-web-config-backend)，增加上传自定义JavaScript对节点进行进阶排序，感兴趣的朋友可以自建远程配置托管服务！<br/>
 ## 效果预览：
 ![avatar](https://cdn.jsdelivr.net/gh/limr95/webcdn@3.8/dfy.gif)
 ### 使用方法【以Linux为例】：

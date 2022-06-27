@@ -1143,7 +1143,7 @@ export default {
               this.customSubUrl = res.data.data;
               this.dialogUploadConfigVisible = false;
               this.btnBoolean=true;
-              this.$copyText(this.customSubUrl);
+              navigator.clipboard.writeText(res.data.data);
             } else {
               this.$message.error("自定义JS上传失败: " + res.data.msg);
             }

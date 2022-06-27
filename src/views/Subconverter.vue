@@ -1143,7 +1143,6 @@ export default {
               this.dialogUploadConfigVisible = false;
               this.btnBoolean=true;
               this.customSubUrl = res.data.data;
-              this.$copyText(this.customSubUrl);
             } else {
               this.$message.error("自定义JS上传失败: " + res.data.msg);
             }
@@ -1154,6 +1153,7 @@ export default {
           .finally(() => {
             this.loading = false;
           })
+          this.$copyText(this.customSubUrl);
     },
     getBackendVersion() {
       this.$axios

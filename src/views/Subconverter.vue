@@ -1141,9 +1141,9 @@ export default {
                   "自定义JS上传成功，订阅链接已复制到剪贴板"
               );
               this.customSubUrl = res.data.data;
-              this.$copyText(this.customSubUrl);
               this.dialogUploadConfigVisible = false;
               this.btnBoolean=true;
+              this.$copyText(this.customSubUrl);
             } else {
               this.$message.error("自定义JS上传失败: " + res.data.msg);
             }

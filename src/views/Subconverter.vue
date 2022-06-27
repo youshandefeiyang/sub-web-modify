@@ -875,7 +875,7 @@ export default {
       });
     },
     onCopy() {
-      this.$message.success("Copied!");
+      this.$message.success("已复制!");
     },
     goToProject() {
       window.open(project);

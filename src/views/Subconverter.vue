@@ -1019,7 +1019,7 @@ export default {
       }
 
       this.$copyText(this.customSubUrl);
-      this.$message.success("定制订阅已复制到剪贴板");
+      this.$message.success("定制订阅已复制到剪贴板（IOS设备和Safari浏览器不支持自动复制）");
     },
     makeShortUrl() {
       if (this.customSubUrl === "") {
@@ -1138,12 +1138,12 @@ export default {
           .then(res => {
             if (res.data.code === 0 && res.data.data !== "") {
               this.$message.success(
-                  "自定义JS上传成功，订阅链接已复制到剪贴板"
+                  "自定义JS上传成功，订阅链接已复制到剪贴板（IOS设备和Safari浏览器不支持自动复制）"
               );
               this.customSubUrl = res.data.data;
+              this.$copyText(res.data.data);
               this.dialogUploadConfigVisible = false;
               this.btnBoolean=true;
-              this.$copyText(this.customSubUrl);
             } else {
               this.$message.error("自定义JS上传失败: " + res.data.msg);
             }

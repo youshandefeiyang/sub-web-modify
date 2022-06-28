@@ -135,7 +135,7 @@
                               <el-checkbox v-model="form.tfo" label="启用 TFO"></el-checkbox>
                             </el-col>
                             <el-col :span="12">
-                              <el-checkbox v-model="form.tpl.surge.doh" label="Surge强制更新"></el-checkbox>
+                              <el-checkbox v-model="form.tpl.strict" label="Surge强制更新"></el-checkbox>
                             </el-col>
                           </el-row>
                           <el-row :gutter="10">

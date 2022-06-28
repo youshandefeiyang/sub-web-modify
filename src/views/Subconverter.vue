@@ -135,7 +135,7 @@
                               <el-checkbox v-model="form.tfo" label="启用 TFO"></el-checkbox>
                             </el-col>
                             <el-col :span="12">
-                              <el-checkbox v-model="form.tpl.strict" label="Surge强制更新"></el-checkbox>
+                              <el-checkbox v-model="form.tpl.surgestrict" label="Surge强制更新"></el-checkbox>
                             </el-col>
                           </el-row>
                           <el-row :gutter="10">
@@ -784,7 +784,7 @@ export default {
         nodeList: false,
         extraset: false,
         tls13: false,
-        strict: false,
+        surgestrict: false,
         udp: false,
         tfo: false,
         appendInfo: true,
@@ -1013,7 +1013,7 @@ export default {
           "&scv=" +
           this.form.scv.toString() +
           "&strict=" +
-          this.form.strict.toString() +
+          this.form.surgestrict.toString() +
           "&fdn=" +
           this.form.fdn.toString() +
           "&tls13=" +
@@ -1112,7 +1112,7 @@ export default {
       data.append("include",encodeURIComponent(this.form.includeRemarks));
       data.append("rename",encodeURIComponent(this.form.rename));
       data.append("tls13",encodeURIComponent(this.form.tls13.toString()));
-      data.append("strict",encodeURIComponent(this.form.strict.toString()));
+      data.append("surgestrict",encodeURIComponent(this.form.surgestrict.toString()));
       data.append("emoji",encodeURIComponent(this.form.emoji.toString()));
       data.append("list",encodeURIComponent(this.form.nodeList.toString()));
       data.append("udp",encodeURIComponent(this.form.udp.toString()));

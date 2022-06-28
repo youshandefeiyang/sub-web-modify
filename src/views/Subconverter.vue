@@ -143,7 +143,7 @@
                               <el-checkbox v-model="form.appendType" label="插入节点类型"></el-checkbox>
                             </el-col>
                             <el-col :span="12">
-                              <el-checkbox v-model="form.tpl.appendInfo" label="输出订阅信息"></el-checkbox>
+                              <el-checkbox v-model="form.appendInfo" label="输出订阅信息"></el-checkbox>
                             </el-col>
                           </el-row>
                           <el-row :gutter="10">

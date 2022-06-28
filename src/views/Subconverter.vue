@@ -994,6 +994,14 @@ export default {
         this.customSubUrl +=
             "&append_type=" + this.form.appendType.toString();
       }
+      if (this.form.tls13) {
+        this.customSubUrl +=
+            "&tls13=" + this.form.tls13.toString();
+      }
+      if (this.form.surgeForce) {
+        this.customSubUrl +=
+            "&strict=" + this.form.surgeForce.toString();
+      }
       if (!this.form.appendInfo) {
         this.customSubUrl +=
             "&append_info=" + this.form.appendInfo.toString();
@@ -1012,12 +1020,8 @@ export default {
           this.form.expand.toString() +
           "&scv=" +
           this.form.scv.toString() +
-          "&strict=" +
-          this.form.surgeForce.toString() +
           "&fdn=" +
-          this.form.fdn.toString() +
-          "&tls13=" +
-          this.form.tls13.toString();
+          this.form.fdn.toString();
 
       if (this.form.clientType === "clash") {
         this.customSubUrl += "&new_name=" + this.form.new_name.toString();

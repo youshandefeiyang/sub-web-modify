@@ -1011,9 +1011,9 @@ export default {
           "&expand=" +
           this.form.expand.toString() +
           "&scv=" +
-          this.form.strict.toString() +
-          "&strict=" +
           this.form.scv.toString() +
+          "&strict=" +
+          this.form.strict.toString() +
           "&fdn=" +
           this.form.fdn.toString() +
           "&tls13=" +

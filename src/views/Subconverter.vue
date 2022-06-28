@@ -14,7 +14,6 @@
                       @click="gotoTgChannel"/>
             <div style="text-align:center;font-size:15px">订 阅 转 换</div>
           </div>
-
           <el-container>
             <el-form :model="form" label-width="80px" label-position="left" style="width: 100%">
               <el-form-item label="订阅链接:">
@@ -103,6 +102,12 @@
                     <el-form-item label="订阅命名:">
                       <el-input v-model="form.filename" placeholder="返回的订阅文件名"/>
                     </el-form-item>
+                    <el-form-item label="更新间隔:">
+                      <el-input v-model="form.interval" placeholder="返用于设置托管配置更新间隔，单位为秒"/>
+                    </el-form-item>
+                    <el-form-item label="远程设备ID:">
+                      <el-input v-model="form.devid" placeholder="用于设置QuantumultX的远程设备ID"/>
+                    </el-form-item>
                     <el-form-item class="eldiy" label-width="0px">
                       <el-row type="flex">
                         <el-col>
@@ -114,7 +119,7 @@
                               <el-checkbox v-model="form.emoji" label="Emoji"></el-checkbox>
                             </el-col>
                             <el-col :span="12">
-                              <el-checkbox v-model="form.insert" label="网易云"></el-checkbox>
+                              <el-checkbox v-model="form.insert" label="插入默认节点"></el-checkbox>
                             </el-col>
                           </el-row>
                           <el-row :gutter="10">
@@ -122,7 +127,7 @@
                               <el-checkbox v-model="form.udp" label="启用 UDP"></el-checkbox>
                             </el-col>
                             <el-col :span="12">
-                              <el-checkbox v-model="form.sort" label="排序节点"></el-checkbox>
+                              <el-checkbox v-model="form.tls13" label="开启TLS_1.3"></el-checkbox>
                             </el-col>
                           </el-row>
                           <el-row :gutter="10">
@@ -130,7 +135,7 @@
                               <el-checkbox v-model="form.tfo" label="启用 TFO"></el-checkbox>
                             </el-col>
                             <el-col :span="12">
-                              <el-checkbox v-model="form.tpl.surge.doh" label="Surge.DoH"></el-checkbox>
+                              <el-checkbox v-model="form.tpl.surge.doh" label="Surge强制更新"></el-checkbox>
                             </el-col>
                           </el-row>
                           <el-row :gutter="10">
@@ -138,7 +143,7 @@
                               <el-checkbox v-model="form.appendType" label="插入节点类型"></el-checkbox>
                             </el-col>
                             <el-col :span="12">
-                              <el-checkbox v-model="form.tpl.clash.doh" label="Clash.DoH"></el-checkbox>
+                              <el-checkbox v-model="form.tpl.appendInfo" label="输出订阅信息"></el-checkbox>
                             </el-col>
                           </el-row>
                           <el-row :gutter="10">
@@ -773,28 +778,22 @@ export default {
         includeRemarks: "",
         filename: "",
         rename: "",
+        devid: "",
+        interval: "",
         emoji: true,
         nodeList: false,
         extraset: false,
-        sort: false,
+        tls13: false,
+        strict: false,
         udp: false,
         tfo: false,
+        appendInfo: true,
         expand: true,
         scv: false,
         fdn: false,
         appendType: false,
         insert: false, // 是否插入默认订阅的节点，对应配置项 insert_url
         new_name: true, // 是否使用 Clash 新字段
-
-        // tpl 定制功能
-        tpl: {
-          surge: {
-            doh: false // dns 查询是否使用 DoH
-          },
-          clash: {
-            doh: false
-          }
-        }
       },
 
       loading: false,
@@ -983,9 +982,21 @@ export default {
         this.customSubUrl +=
             "&rename=" + encodeURIComponent(this.form.rename);
       }
+      if (this.form.interval !== "") {
+        this.customSubUrl +=
+            "&interval=" + encodeURIComponent(this.form.interval);
+      }
+      if (this.form.devid !== "") {
+        this.customSubUrl +=
+            "&dev_id=" + encodeURIComponent(this.form.devid);
+      }
       if (this.form.appendType) {
         this.customSubUrl +=
             "&append_type=" + this.form.appendType.toString();
+      }
+      if (!this.form.appendInfo) {
+        this.customSubUrl +=
+            "&append_info=" + this.form.appendInfo.toString();
       }
 
       this.customSubUrl +=
@@ -1000,21 +1011,15 @@ export default {
           "&expand=" +
           this.form.expand.toString() +
           "&scv=" +
+          this.form.strict.toString() +
+          "&strict=" +
           this.form.scv.toString() +
           "&fdn=" +
           this.form.fdn.toString() +
-          "&sort=" +
-          this.form.sort.toString();
-
-      if (this.form.tpl.surge.doh === true) {
-        this.customSubUrl += "&surge.doh=true";
-      }
+          "&tls13=" +
+          this.form.tls13.toString();
 
       if (this.form.clientType === "clash") {
-        if (this.form.tpl.clash.doh === true) {
-          this.customSubUrl += "&clash.doh=true";
-        }
-
         this.customSubUrl += "&new_name=" + this.form.new_name.toString();
       }
 
@@ -1105,9 +1110,9 @@ export default {
       data.append("config",encodeURIComponent(this.form.remoteConfig));
       data.append("exclude",encodeURIComponent(this.form.excludeRemarks));
       data.append("include",encodeURIComponent(this.form.includeRemarks));
-      data.append("filename",encodeURIComponent(this.form.filename));
       data.append("rename",encodeURIComponent(this.form.rename));
-      data.append("append_type",encodeURIComponent(this.form.appendType.toString()));
+      data.append("tls13",encodeURIComponent(this.form.tls13.toString()));
+      data.append("strict",encodeURIComponent(this.form.strict.toString()));
       data.append("emoji",encodeURIComponent(this.form.emoji.toString()));
       data.append("list",encodeURIComponent(this.form.nodeList.toString()));
       data.append("udp",encodeURIComponent(this.form.udp.toString()));
@@ -1115,9 +1120,6 @@ export default {
       data.append("expand",encodeURIComponent(this.form.expand.toString()));
       data.append("scv",encodeURIComponent(this.form.scv.toString()));
       data.append("fdn",encodeURIComponent(this.form.fdn.toString()));
-      data.append("sort",encodeURIComponent(this.form.sort.toString()));
-      data.append("sdoh",encodeURIComponent(this.form.tpl.surge.doh.toString()));
-      data.append("cdoh",encodeURIComponent(this.form.tpl.clash.doh.toString()));
       data.append("newname",encodeURIComponent(this.form.new_name.toString()));
       return data;
     },

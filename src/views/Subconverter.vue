@@ -241,7 +241,7 @@
                     @click="dialogUploadConfigVisible = true"
                     icon="el-icon-upload"
                     :loading="loading"
-                >自定义进阶配置
+                >进阶自定义配置
                 </el-button>
                 <el-button
                     style="width: 120px"

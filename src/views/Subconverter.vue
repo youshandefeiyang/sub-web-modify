@@ -336,7 +336,7 @@
           </div>
         </el-tab-pane>
         <el-tab-pane label="JS筛选节点" name="third">
-          <el-link type="info" :href="filterConfig" style="margin-bottom: 15px" target="_blank" icon="el-icon-info">
+          <el-link type="warning" :href="filterConfig" style="margin-bottom: 15px" target="_blank" icon="el-icon-info">
             参考案例
           </el-link>
           <el-form label-position="left">

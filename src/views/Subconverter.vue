@@ -309,7 +309,7 @@
             </el-button>
           </div>
         </el-tab-pane>
-        <el-tab-pane label="JS进阶操作" name="second">
+        <el-tab-pane label="JS排序节点" name="second">
           <el-link type="success" :href="scriptConfig" style="margin-bottom: 15px" target="_blank" icon="el-icon-info">
             参考案例
           </el-link>
@@ -334,6 +334,8 @@
             >确 定
             </el-button>
           </div>
+        </el-tab-pane>
+        <el-tab-pane label="JS筛选节点" name="third">
           <el-link type="warning" :href="filterConfig" style="margin-bottom: 15px" target="_blank" icon="el-icon-info">
             参考案例
           </el-link>

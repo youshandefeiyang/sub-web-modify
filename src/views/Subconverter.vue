@@ -203,10 +203,10 @@
                 </el-input>
               </el-form-item>
               <el-form-item label="订阅短链:">
-                <el-input class="copy-content" disabled v-model="curtomShortSubUrl">
+                <el-input class="copy-content" disabled v-model="customShortSubUrl">
                   <el-button
                       slot="append"
-                      v-clipboard:copy="curtomShortSubUrl"
+                      v-clipboard:copy="customShortSubUrl"
                       v-clipboard:success="onCopy"
                       ref="copy-btn"
                       icon="el-icon-document-copy"
@@ -285,8 +285,8 @@
     >
       <el-tabs v-model="activeName" type="card">
         <el-tab-pane label="远程配置上传" name="first">
-          <el-link type="danger" :href="sampleConfig" style="margin-bottom: 15px" target="_blank" icon="el-icon-info">
-            参考配置
+          <el-link type="warning" :href="sampleConfig" style="margin-bottom: 15px" target="_blank" icon="el-icon-info">
+            参考案例
           </el-link>
           <el-form label-position="left">
             <el-form-item prop="uploadConfig">
@@ -311,7 +311,7 @@
         </el-tab-pane>
         <el-tab-pane label="JS排序节点" name="second">
           <el-link type="danger" :href="scriptConfig" style="margin-bottom: 15px" target="_blank" icon="el-icon-info">
-            使用方法
+            参考案例
           </el-link>
           <el-form label-position="left">
             <el-form-item prop="uploadScript">
@@ -335,6 +335,32 @@
             </el-button>
           </div>
         </el-tab-pane>
+        <el-tab-pane label="JS筛选节点" name="third">
+          <el-link type="Success" :href="filterConfig" style="margin-bottom: 15px" target="_blank" icon="el-icon-info">
+            参考案例
+          </el-link>
+          <el-form label-position="left">
+            <el-form-item prop="uploadFilter">
+              <el-input
+                  v-model="uploadFilter"
+                  placeholder="使用JavaScript对节点进行进阶筛选，本功能后端接口自动模版化，JS无需以挤在一行加换行符的形式输入，注意：如果你还需要自定义上传远程配置，此操作务必在其之后进行！"
+                  type="textarea"
+                  :autosize="{ minRows: 15, maxRows: 15}"
+                  maxlength="50000"
+                  show-word-limit
+              ></el-input>
+            </el-form-item>
+          </el-form>
+          <div style="float: right">
+            <el-button type="primary" @click="uploadFilter = ''; dialogUploadConfigVisible = false">取 消</el-button>
+            <el-button
+                type="primary"
+                @click="confirmUploadScript"
+                :disabled="uploadFilter.length === 0"
+            >确 定
+            </el-button>
+          </div>
+        </el-tab-pane>
       </el-tabs>
     </el-dialog>
   </div>
@@ -344,6 +370,7 @@ const project = process.env.VUE_APP_PROJECT
 const configScriptBackend = process.env.VUE_APP_SCRIPT_BACKEND
 const remoteConfigSample = process.env.VUE_APP_SUBCONVERTER_REMOTE_CONFIG
 const scriptConfigSample = process.env.VUE_APP_SCRIPT_CONFIG
+const filterConfigSample = process.env.VUE_APP_FILTER_CONFIG
 const gayhubRelease = process.env.VUE_APP_BACKEND_RELEASE
 const defaultBackend = process.env.VUE_APP_SUBCONVERTER_DEFAULT_BACKEND + '/sub?'
 const shortUrlBackend = process.env.VUE_APP_MYURLS_DEFAULT_BACKEND + '/short'
@@ -815,13 +842,13 @@ export default {
 
       loading: false,
       customSubUrl: "",
-      curtomShortSubUrl: "",
-
+      customShortSubUrl: "",
       dialogUploadConfigVisible: false,
+      uploadFilter: "",
       uploadScript: "",
       uploadConfig: "",
-      uploadPassword: "",
       myBot: tgBotLink,
+      filterConfig: filterConfigSample,
       scriptConfig: scriptConfigSample,
       sampleConfig: remoteConfigSample
     };
@@ -921,8 +948,8 @@ export default {
       window.open(
           url +
           encodeURIComponent(
-              this.curtomShortSubUrl !== ""
-                  ? this.curtomShortSubUrl
+              this.customShortSubUrl !== ""
+                  ? this.customShortSubUrl
                   : this.customSubUrl
           )
       );
@@ -1078,7 +1105,7 @@ export default {
           })
           .then(res => {
             if (res.data.Code === 1 && res.data.ShortUrl !== "") {
-              this.curtomShortSubUrl = res.data.ShortUrl;
+              this.customShortSubUrl = res.data.ShortUrl;
               this.$copyText(res.data.ShortUrl);
               this.$message.success("短链接已复制到剪贴板（IOS设备和Safari浏览器不支持自动复制API，需手动点击复制按钮）");
             } else {
@@ -1154,13 +1181,10 @@ export default {
       return data;
     },
     confirmUploadScript() {
-      if (this.uploadScript === "") {
-        this.$message.warning("自定义JS不能为空");
-        return false;
-      }
       this.loading = true;
       let data = this.renderPost();
       data.append("sortscript",encodeURIComponent(this.uploadScript));
+      data.append("filterscript",encodeURIComponent(this.uploadFilter));
       this.$axios
           .post(configScriptBackend,data,{
             header: {

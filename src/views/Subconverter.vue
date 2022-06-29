@@ -285,7 +285,7 @@
     >
       <el-tabs v-model="activeName" type="card">
         <el-tab-pane label="远程配置上传" name="first">
-          <el-link type="warning" :href="sampleConfig" style="margin-bottom: 15px" target="_blank" icon="el-icon-info">
+          <el-link type="danger" :href="sampleConfig" style="margin-bottom: 15px" target="_blank" icon="el-icon-info">
             参考案例
           </el-link>
           <el-form label-position="left">
@@ -310,7 +310,7 @@
           </div>
         </el-tab-pane>
         <el-tab-pane label="JS排序节点" name="second">
-          <el-link type="danger" :href="scriptConfig" style="margin-bottom: 15px" target="_blank" icon="el-icon-info">
+          <el-link type="success" :href="scriptConfig" style="margin-bottom: 15px" target="_blank" icon="el-icon-info">
             参考案例
           </el-link>
           <el-form label-position="left">
@@ -336,7 +336,7 @@
           </div>
         </el-tab-pane>
         <el-tab-pane label="JS筛选节点" name="third">
-          <el-link type="Success" :href="filterConfig" style="margin-bottom: 15px" target="_blank" icon="el-icon-info">
+          <el-link type="info" :href="filterConfig" style="margin-bottom: 15px" target="_blank" icon="el-icon-info">
             参考案例
           </el-link>
           <el-form label-position="left">

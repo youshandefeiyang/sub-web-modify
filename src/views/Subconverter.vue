@@ -534,6 +534,11 @@ export default {
                 value: "https://raw.githubusercontent.com/flyhigherpi/merlinclash_clash_related/master/Rule_config/ZHANG.ini"
               },
               {
+                label: "PharosPro无测速",
+                value:
+                    "https://subweb.s3.fr-par.scw.cloud/RemoteConfig/special/phaors.ini"
+              },
+              {
                 label: "分区域故障转移",
                 value: "https://raw.githubusercontent.com/flyhigherpi/merlinclash_clash_related/master/Rule_config/ZHANG_Area_Fallback.ini"
               },

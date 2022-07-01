@@ -705,6 +705,11 @@ export default {
                     "https://gist.github.com/jklolixxs/b53d315cd1cede23af83322c26ce34ec/raw/AmyTelecom.ini"
               },
               {
+                label: "LinkCube",
+                value:
+                    "https://subweb.s3.fr-par.scw.cloud/RemoteConfig/customized/convenience.ini"
+              },
+              {
                 label: "Miaona",
                 value:
                     "https://gist.github.com/jklolixxs/ff8ddbf2526cafa568d064006a7008e7/raw/Miaona.ini"
@@ -753,7 +758,7 @@ export default {
               },
               {
                 label: "Ytoo",
-                value: "https://raw.githubusercontent.com/SleepyHeeead/subconverter-config/master/remote-config/customized/ytoo.ini"
+                value: "https://subweb.s3.fr-par.scw.cloud/RemoteConfig/customized/ytoo.ini"
               },
               {
                 label: "w8ves",
@@ -785,7 +790,7 @@ export default {
               },
               {
                 label: "Flowercloud",
-                value: "https://raw.githubusercontent.com/SleepyHeeead/subconverter-config/master/remote-config/customized/flowercloud.ini"
+                value: "https://subweb.s3.fr-par.scw.cloud/RemoteConfig/customized/flower.ini"
               }
             ]
           },

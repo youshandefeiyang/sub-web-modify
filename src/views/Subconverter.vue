@@ -765,7 +765,7 @@ export default {
               },
               {
                 label: "Nexitally",
-                value: "https://raw.githubusercontent.com/SleepyHeeead/subconverter-config/master/remote-config/customized/nexitally.ini"
+                value: "https://subweb.s3.fr-par.scw.cloud/RemoteConfig/customized/nexitally.ini"
               },
               {
                 label: "SoCloud",

@@ -282,19 +282,24 @@
         width="40vh"
         top="40vh"
         center>
+     <div label-width="0px" style="text-align: center">
       <el-button
+          style="width: 200px;"
           type="success"
           icon="el-icon-video-play"
           @click="gotoBasicVideo();centerDialogVisible = false"
       >基础视频教程
       </el-button>
+     </div>
+     <div label-width="0px" style="text-align: center;margin: 3vh 0 2vh">
       <el-button
-          style="float: right"
+          style="width: 200px;"
           type="danger"
           icon="el-icon-video-play"
           @click="gotoAdvancedVideo();centerDialogVisible = false"
       >进阶视频教程
       </el-button>
+     </div>
     </el-dialog>
     <el-dialog
         :visible.sync="dialogUploadConfigVisible"

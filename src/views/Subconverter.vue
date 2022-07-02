@@ -257,7 +257,7 @@
                     style="width: 250px;"
                     type="warning"
                     icon="el-icon-video-play"
-                    @click="gotovideo"
+                    @click="centerDialogVisible = true"
                 >保姆级视频教程
                 </el-button>
               </el-form-item>
@@ -276,6 +276,26 @@
       </el-col>
     </el-row>
 
+    <el-dialog
+        title="请选择需要观看的视频教程"
+        :visible.sync="centerDialogVisible"
+        width="40vh"
+        top="40vh"
+        center>
+      <el-button
+          type="success"
+          icon="el-icon-video-play"
+          @click="gotoBasicVideo();centerDialogVisible = false"
+      >基础视频教程
+      </el-button>
+      <el-button
+          style="float: right"
+          type="danger"
+          icon="el-icon-video-play"
+          @click="gotoAdvancedVideo();centerDialogVisible = false"
+      >进阶视频教程
+      </el-button>
+    </el-dialog>
     <el-dialog
         :visible.sync="dialogUploadConfigVisible"
         :show-close="false"
@@ -374,16 +394,18 @@ const filterConfigSample = process.env.VUE_APP_FILTER_CONFIG
 const defaultBackend = process.env.VUE_APP_SUBCONVERTER_DEFAULT_BACKEND + '/sub?'
 const shortUrlBackend = process.env.VUE_APP_MYURLS_DEFAULT_BACKEND + '/short'
 const configUploadBackend = process.env.VUE_APP_CONFIG_UPLOAD_BACKEND + '/sub.php'
+const basicVideo = process.env.VUE_APP_BASIC_VIDEO
+const advancedVideo = process.env.VUE_APP_ADVANCED_VIDEO
 const tgBotLink = process.env.VUE_APP_BOT_LINK
 const yglink = process.env.VUE_APP_YOUTUBE_LINK
 const bzlink = process.env.VUE_APP_BILIBILI_LINK
 const downld = process.env.VUE_APP_CFA
-const bmvideo = process.env.VUE_APP_VIDEO
 
 export default {
   data() {
     return {
       backendVersion: "",
+      centerDialogVisible: false,
       activeName: 'first',
       // 是否为 PC 端
       isPC: true,
@@ -969,7 +991,7 @@ export default {
       const url = "surge://install-config?url=";
       window.open(url + this.customSubUrl);
     },
-    gotovideo() {
+    gotoBasicVideo() {
       this.$alert("别忘了关注友善的肥羊哦！", {
         type: "warning",
         confirmButtonText: '确定',
@@ -977,7 +999,18 @@ export default {
         showClose: false,
       })
           .then(() => {
-            window.open(bmvideo);
+            window.open(basicVideo);
+          });
+    },
+    gotoAdvancedVideo() {
+      this.$alert("别忘了关注友善的肥羊哦！", {
+        type: "warning",
+        confirmButtonText: '确定',
+        customClass: 'msgbox',
+        showClose: false,
+      })
+          .then(() => {
+            window.open(advancedVideo);
           });
     },
     makeUrl() {

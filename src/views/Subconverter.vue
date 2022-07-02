@@ -279,6 +279,7 @@
     <el-dialog
         title="请选择需要观看的视频教程"
         :visible.sync="centerDialogVisible"
+        :show-close="false"
         width="40vh"
         top="40vh"
         center>

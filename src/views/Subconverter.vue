@@ -135,7 +135,7 @@
                               <el-checkbox v-model="form.tfo" label="启用 TFO"></el-checkbox>
                             </el-col>
                             <el-col :span="12">
-                              <el-checkbox v-model="form.appendInfo" label="输出订阅信息"></el-checkbox>
+                              <el-checkbox v-model="form.sort" label="基础节点排序"></el-checkbox>
                             </el-col>
                           </el-row>
                           <el-row :gutter="10">
@@ -860,7 +860,7 @@ export default {
         surgeForce: false,
         udp: false,
         tfo: false,
-        appendInfo: true,
+        sort: false,
         expand: true,
         scv: false,
         fdn: false,
@@ -1091,9 +1091,9 @@ export default {
         this.customSubUrl +=
             "&strict=" + this.form.surgeForce.toString();
       }
-      if (!this.form.appendInfo) {
+      if (this.form.sort) {
         this.customSubUrl +=
-            "&append_info=" + this.form.appendInfo.toString();
+            "&sort=" + this.form.sort.toString();
       }
 
       this.customSubUrl +=

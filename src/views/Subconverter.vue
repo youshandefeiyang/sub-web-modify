@@ -455,6 +455,7 @@ export default {
         },
         backendOptions: [
           {value: "https://api.v1.mk/sub?"},
+          {value: "https://sub.d1.mk/sub?"},
           {value: "https://api.tsutsu.one/sub?"},
           {value: "https://v.id9.cc/sub?"},
           {value: "https://www.nameless13.com/sub?"},
@@ -844,7 +845,7 @@ export default {
       form: {
         sourceSubUrl: "",
         clientType: "",
-        customBackend: "https://api.v1.mk/sub?",
+        customBackend: "https://sub.d1.mk/sub?",
         shortType: "https://v1.mk/short",
         remoteConfig: "https://raw.githubusercontent.com/Meilieage/webcdn/main/rule/Area_Media_NoAuto.ini",
         excludeRemarks: "",
@@ -1264,7 +1265,7 @@ export default {
           .then(res => {
             this.backendVersion = res.data.replace(/backend\n$/gm, "");
             this.backendVersion = this.backendVersion.replace("subconverter", "SubConverter");
-            let a = this.form.customBackend.indexOf("api.v1.mk") !== -1;
+            let a = this.form.customBackend.indexOf("api.v1.mk") !== -1 || this.form.customBackend.indexOf("sub.d1.mk") !== -1;
             let b = this.form.customBackend.indexOf("v.id9.cc") !== -1;
             a ? this.$message.success(`${this.backendVersion}` + "肥羊负载均衡加强后端支持vless+trojan xtls订阅转换") : b ? this.$message.success(`${this.backendVersion}` + "品云实验性后端支持vless+trojan xtls订阅转换") : this.$message.success(`${this.backendVersion}` + "官方原版后端不支持vless/trojan xtls订阅转换");
           })

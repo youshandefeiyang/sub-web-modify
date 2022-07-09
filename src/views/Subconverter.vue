@@ -103,7 +103,7 @@
                       <el-input v-model="form.devid" placeholder="用于设置QuantumultX的远程设备ID"/>
                     </el-form-item>
                     <el-form-item label="更新间隔:">
-                      <el-input v-model="form.interval" placeholder="返用于设置托管配置更新间隔，单位为秒"/>
+                      <el-input v-model="form.interval" placeholder="返用于设置托管配置更新间隔，单位为天"/>
                     </el-form-item>
                     <el-form-item label="订阅命名:">
                       <el-input v-model="form.filename" placeholder="返回的订阅文件名，可以在支持文件名的客户端中显示出来"/>
@@ -1075,7 +1075,7 @@ export default {
       }
       if (this.form.interval !== "") {
         this.customSubUrl +=
-            "&interval=" + encodeURIComponent(this.form.interval);
+            "&interval=" + encodeURIComponent(this.form.interval * 86400);
       }
       if (this.form.devid !== "") {
         this.customSubUrl +=

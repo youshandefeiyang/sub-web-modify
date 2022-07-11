@@ -847,7 +847,7 @@ export default {
         sourceSubUrl: "",
         clientType: "",
         customBackend: "https://api.v1.mk/sub?",
-        shortType: "https://d1.mk/short",
+        shortType: "https://v1.mk/short",
         remoteConfig: "https://raw.githubusercontent.com/Meilieage/webcdn/main/rule/Area_Media_NoAuto.ini",
         excludeRemarks: "",
         includeRemarks: "",

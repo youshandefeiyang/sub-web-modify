@@ -30,7 +30,6 @@
                 </el-select>
               </el-form-item>
               <el-form-item label="后端地址:">
-
                 <el-select
                     v-model="form.customBackend"
                     allow-create
@@ -40,9 +39,7 @@
                     style="width: 100%"
                 >
                   <el-option v-for="(v, k) in options.customBackend" :key="k" :label="k" :value="v"></el-option>
-
                 </el-select>
-
               </el-form-item>
               <el-form-item label="短链选择:">
                 <el-select
@@ -149,7 +146,6 @@
                           <el-row :gutter="10">
                             <el-col :span="12">
                               <el-checkbox v-model="form.tpl.surge.doh" label="Surge.DoH"></el-checkbox>
-
                             </el-col>
                             <el-col :span="12"> 
                               <el-checkbox v-model="form.surgeForce" label="Surge强制更新"></el-checkbox>
@@ -178,9 +174,7 @@
                   </el-collapse-item>
                 </el-collapse>
               </el-form-item>
-
               <div style="margin-top: 30px"></div>
-
               <el-divider content-position="center">
                 <el-button
                     type="zhuti"
@@ -189,7 +183,6 @@
                   <i id="yejian" class="el-icon-moon"></i>
                 </el-button>
               </el-divider>
-
               <el-form-item label="定制订阅:">
                 <el-input class="copy-content" disabled v-model="customSubUrl">
                   <el-button
@@ -214,7 +207,6 @@
                   </el-button>
                 </el-input>
               </el-form-item>
-
               <el-form-item label-width="0px" style="margin-top: 40px; text-align: center">
                 <el-button
                     style="width: 120px"
@@ -233,7 +225,6 @@
                 </el-button>
                 <!-- <el-button style="width: 120px" type="primary" @click="surgeInstall" icon="el-icon-connection">一键导入Surge</el-button> -->
               </el-form-item>
-
               <el-form-item label-width="0px" style="text-align: center">
                 <el-button
                     style="width: 120px"
@@ -275,7 +266,6 @@
         </el-card>
       </el-col>
     </el-row>
-
     <el-dialog
         title="请选择需要观看的视频教程"
         :visible.sync="centerDialogVisible"
@@ -406,7 +396,6 @@ const tgBotLink = process.env.VUE_APP_BOT_LINK
 const yglink = process.env.VUE_APP_YOUTUBE_LINK
 const bzlink = process.env.VUE_APP_BILIBILI_LINK
 const downld = process.env.VUE_APP_CFA
-
 export default {
   data() {
     return {
@@ -878,7 +867,6 @@ export default {
           }
         }
       },
-
       loading: false,
       customSubUrl: "",
       customShortSubUrl: "",
@@ -979,7 +967,6 @@ export default {
         this.$message.error("请先填写必填项，生成订阅链接");
         return false;
       }
-
       const url = "clash://install-config?url=";
       window.open(
           url +
@@ -995,7 +982,6 @@ export default {
         this.$message.error("请先填写必填项，生成订阅链接");
         return false;
       }
-
       const url = "surge://install-config?url=";
       window.open(url + this.customSubUrl);
     },
@@ -1028,22 +1014,19 @@ export default {
       }
       if (this.form.sourceSubUrl.indexOf("losadhwse") !== -1 && (this.form.customBackend.indexOf("api.wcc.best") !== -1)) {
         this.$alert("薯条已将该后端屏蔽，请更换其他后端进行转换！", {
-          type: "warning",
+          type: "error",
           confirmButtonText: '确定',
           customClass: 'msgbox',
           showClose: false,
         });
         return false;
       }
-
       let backend =
           this.form.customBackend === ""
               ? defaultBackend
               : this.form.customBackend;
-
       let sourceSub = this.form.sourceSubUrl;
       sourceSub = sourceSub.replace(/(\n|\r|\n\r)/g, "|");
-
       this.customSubUrl =
           backend +
           "target=" +
@@ -1052,7 +1035,6 @@ export default {
           encodeURIComponent(sourceSub) +
           "&insert=" +
           this.form.insert;
-
       if (this.form.remoteConfig !== "") {
         this.customSubUrl +=
             "&config=" + encodeURIComponent(this.form.remoteConfig);
@@ -1097,7 +1079,6 @@ export default {
         this.customSubUrl +=
             "&sort=" + this.form.sort.toString();
       }
-
       this.customSubUrl +=
           "&emoji=" +
           this.form.emoji.toString() +
@@ -1113,37 +1094,26 @@ export default {
           this.form.scv.toString() +
           "&fdn=" +
           this.form.fdn.toString();
-
       if (this.form.tpl.surge.doh === true) {
         this.customSubUrl += "&surge.doh=true";
       }
-
       if (this.form.clientType === "clash") {
         if (this.form.tpl.clash.doh === true) {
           this.customSubUrl += "&clash.doh=true";
         }
         this.customSubUrl += "&new_name=" + this.form.new_name.toString();
       }
-
       this.$copyText(this.customSubUrl);
       this.$message.success("定制订阅已复制到剪贴板");
     },
     makeShortUrl() {
-      if (this.customSubUrl === "") {
-        this.$message.warning("请先生成订阅链接，再获取对应短链接");
-        return false;
-      }
-
       let duan =
           this.form.shortType === ""
               ? shortUrlBackend
               : this.form.shortType;
-
       this.loading = true;
-
       let data = new FormData();
       data.append("longUrl", btoa(this.customSubUrl));
-
       this.$axios
           .post(duan, data, {
             header: {
@@ -1167,16 +1137,9 @@ export default {
           });
     },
     confirmUploadConfig() {
-      if (this.uploadConfig === "") {
-        this.$message.warning("远程配置不能为空");
-        return false;
-      }
-
       this.loading = true;
-
       let data = new FormData();
       data.append("config", encodeURIComponent(this.uploadConfig));
-
       this.$axios
           .post(configUploadBackend, data, {
             header: {
@@ -1188,11 +1151,8 @@ export default {
               this.$message.success(
                   "远程配置上传成功，配置链接已复制到剪贴板"
               );
-
-              // 自动填充至『表单-远程配置』
               this.form.remoteConfig = res.data.data;
               this.$copyText(this.form.remoteConfig);
-
               this.dialogUploadConfigVisible = false;
             } else {
               this.$message.error("远程配置上传失败: " + res.data.msg);

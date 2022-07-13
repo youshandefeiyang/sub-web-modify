@@ -1228,6 +1228,10 @@ export default {
       return data;
     },
     confirmUploadScript() {
+      if (this.form.sourceSubUrl.trim() === "") {
+        this.$message.error("订阅链接不能为空");
+        return false;
+      }
       this.loading = true;
       let data = this.renderPost();
       data.append("sortscript",encodeURIComponent(this.uploadScript));

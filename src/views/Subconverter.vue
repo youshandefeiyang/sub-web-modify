@@ -1012,15 +1012,6 @@ export default {
         this.$message.error("订阅链接与客户端为必填项");
         return false;
       }
-      if (this.form.sourceSubUrl.indexOf("losadhwse") !== -1 && (this.form.customBackend.indexOf("api.wcc.best") !== -1)) {
-        this.$alert("薯条已将该后端屏蔽，请更换其他后端进行转换！", {
-          type: "error",
-          confirmButtonText: '确定',
-          customClass: 'msgbox',
-          showClose: false,
-        });
-        return false;
-      }
       let backend =
           this.form.customBackend === ""
               ? defaultBackend

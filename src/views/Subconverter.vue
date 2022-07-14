@@ -672,6 +672,10 @@ export default {
                 label: "ACL_全分组 Dream修改版",
                 value: "https://raw.githubusercontent.com/WC-Dream/ACL4SSR/master/Clash/config/ACL4SSR_Online_Full_Dream.ini"
               }
+              {
+                label: "emby-TikTok-流媒体分组-去广告加强版",
+                value: "https://raw.githubusercontent.com/justdoiting/ClashRule/main/GeneralClashRule.ini"
+              }
             ]
           },
           {

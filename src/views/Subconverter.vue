@@ -252,21 +252,12 @@
                 >保姆级视频教程
                 </el-button>
               </el-form-item>
-              <el-form-item label-width="0px" style="text-align: center">
-                <el-button
-                    style="width: 250px;"
-                    type="success"
-                    icon="el-icon-download"
-                    @click="cldown"
-                >Clash For Android 客户端
-                </el-button>
-              </el-form-item>
             </el-form>
           </el-container>
         </el-card>
       </el-col>
     </el-row>
-    <el-dialog
+   <el-dialog
         title="请选择需要观看的视频教程"
         :visible.sync="centerDialogVisible"
         :show-close="false"
@@ -291,6 +282,15 @@
       >进阶视频教程
       </el-button>
      </div>
+     <div label-width="0px" style="text-align: center;margin: 3vh 0 2vh">
+      <el-button
+          style="width: 200px;"
+          type="success"
+          icon="el-icon-download"
+          @click="cldown"
+          >Clash For Android 客户端
+      </el-button>
+     </div> 
     </el-dialog>
     <el-dialog
         :visible.sync="dialogUploadConfigVisible"

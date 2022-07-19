@@ -246,7 +246,7 @@
               <el-form-item label-width="0px" style="text-align: center">
                 <el-button
                     style="width: 250px;"
-                    type="warning"
+                    type="success"
                     icon="el-icon-video-play"
                     @click="centerDialogVisible = true"
                 >保姆级视频教程
@@ -262,12 +262,12 @@
         :visible.sync="centerDialogVisible"
         :show-close="false"
         width="40vh"
-        top="40vh"
+        top="30vh"
         center>
      <div label-width="0px" style="text-align: center">
       <el-button
           style="width: 200px;"
-          type="success"
+          type="primary"
           icon="el-icon-video-play"
           @click="gotoBasicVideo();centerDialogVisible = false"
       >基础视频教程
@@ -285,10 +285,10 @@
      <div label-width="0px" style="text-align: center;margin: 3vh 0 2vh">
       <el-button
           style="width: 200px;"
-          type="success"
+          type="warning"
           icon="el-icon-download"
           @click="cldown"
-          >Clash For Android 客户端
+      >Clash For Android 客户端
       </el-button>
      </div> 
     </el-dialog>

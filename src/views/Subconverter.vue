@@ -287,7 +287,7 @@
           style="width: 200px;"
           type="warning"
           icon="el-icon-download"
-          @click="cldown"
+          @click="toolsDown"
       >代理工具集合
       </el-button>
      </div> 
@@ -395,7 +395,7 @@ const advancedVideo = process.env.VUE_APP_ADVANCED_VIDEO
 const tgBotLink = process.env.VUE_APP_BOT_LINK
 const yglink = process.env.VUE_APP_YOUTUBE_LINK
 const bzlink = process.env.VUE_APP_BILIBILI_LINK
-const downld = process.env.VUE_APP_CFA
+const downld = process.env.VUE_APP_PROXYTOOLS
 export default {
   data() {
     return {
@@ -965,7 +965,7 @@ export default {
     gotoYouTuBe() {
       window.open(yglink);
     },
-    cldown() {
+    toolsDown() {
       window.open(downld);
     },
     clashInstall() {

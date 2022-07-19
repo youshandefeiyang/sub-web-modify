@@ -59,7 +59,9 @@
                 if (httpRequest.status === 200) {
                     var text = httpRequest.responseText;
                     var newText = text.match(/<h5 id="ios-客户端-全区可下载包括中区">[\s\S]*\n<h5 id="tv">/g);
-                    document.getElementById("code").innerHTML = `${newText[0]}`;
+                    var nextText = newText[0].replace(/shadowrocket.store/ig,'shadowrocket.shop');
+                    var finalText = nextText.replace(/https:\/\/github.com\/KOP-XIAO\/Clash-Merlin\/wiki/ig,'https://t.me/merlinclashfile')
+                    document.getElementById("code").innerHTML = finalText;
                 } else {
                     alert("There was a problem with the request.");
                 }

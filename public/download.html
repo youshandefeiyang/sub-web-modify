@@ -39,8 +39,8 @@
 
     layer.open({
         type: 1,
-        skin: 'layui-layer-rim', //加上边框
-        area: ['420px', '320px'], //宽高
+        skin: 'layui-layer-rim', 
+        area: ['420px', '320px'], 
         content: `<div style="text-align:center;font-size:15px"><strong><span style="font-size:20px">牧场物语官网：</span><span><a href="https://www.mcwy.org" style="color:red;font-size:20px;text-decoration:none">点击注册</a></span></strong></br><strong><span style="font-size:20px">奈飞合租网站：</span><span><a href="https://www.ihezu.club" style="color:red;font-size:20px;text-decoration:none">点击上车</a></span></strong></br><strong><span style="font-size:20px">牧场流媒体支持状态实时检测图：</span><span><a href="https://nf.mccloud.vip" style="color:red;font-size:20px;text-decoration:none">点击查看</a></span></strong></br>本站服务器赞助机场-牧场物语，是一家拥有CN2+BGP+IEPL内网专线的高端机场，适合各个价位要求的用户，牧场物语采用最新的奈飞非自制剧解决方案，出口随机更换IP，确保尽可能的每个用户可以用上独立IP，以此来稳定解决奈飞非自制剧的封锁，并推出7*24小时奈飞非自制剧节点自动检测系统，用户再也不用自己手动一个个的乱试节点了，目前牧场的新加坡，台湾等节区域点均可做到24H稳定非自制剧观看！</br></div>`
     });
 
@@ -67,8 +67,8 @@
                 if (httpRequest.status === 200) {
                     var text = httpRequest.responseText;
                     var newText = text.match(/<h5 id="ios-客户端-全区可下载包括中区">[\s\S]*\n<h5 id="tv">/g);
-                    var nextText = newText[0].replace(/shadowrocket.store/ig, 'shadowrocket.shop');
-                    var finalText = nextText.replace(/https:\/\/github.com\/KOP-XIAO\/Clash-Merlin\/wiki/ig, 'https://t.me/merlinclashfile')
+                    var nextText = newText[0].replaceAll(/shadowrocket.store/ig, 'shadowrocket.shop');
+                    var finalText = nextText.replaceAll(/https:\/\/github.com\/KOP-XIAO\/Clash-Merlin\/wiki/ig, 'https://t.me/merlinclashfile')
                     document.getElementById("code").innerHTML = finalText;
                 } else {
                     alert("There was a problem with the request.");

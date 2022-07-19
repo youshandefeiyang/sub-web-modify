@@ -288,7 +288,7 @@
           type="warning"
           icon="el-icon-download"
           @click="cldown"
-      >Clash For Android 客户端
+      >Clash For Sony TV 客户端
       </el-button>
      </div> 
     </el-dialog>

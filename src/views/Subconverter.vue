@@ -223,24 +223,15 @@
                     :disabled="customSubUrl.length === 0"
                 >生成短链接
                 </el-button>
-                <!-- <el-button style="width: 120px" type="primary" @click="surgeInstall" icon="el-icon-connection">一键导入Surge</el-button> -->
               </el-form-item>
               <el-form-item label-width="0px" style="text-align: center">
                 <el-button
-                    style="width: 120px"
+                    style="width: 250px"
                     type="primary"
                     @click="dialogUploadConfigVisible = true"
                     icon="el-icon-upload"
                     :loading="loading"
                 >进阶自定义配置
-                </el-button>
-                <el-button
-                    style="width: 120px"
-                    type="primary"
-                    @click="clashInstall"
-                    icon="el-icon-connection"
-                    :disabled="customSubUrl.length === 0"
-                >一键导入Clash
                 </el-button>
               </el-form-item>
               <el-form-item label-width="0px" style="text-align: center">
@@ -967,29 +958,6 @@ export default {
     },
     toolsDown() {
       window.open(downld);
-    },
-    clashInstall() {
-      if (this.customSubUrl === "") {
-        this.$message.error("请先填写必填项，生成订阅链接");
-        return false;
-      }
-      const url = "clash://install-config?url=";
-      window.open(
-          url +
-          encodeURIComponent(
-              this.customShortSubUrl !== ""
-                  ? this.customShortSubUrl
-                  : this.customSubUrl
-          )
-      );
-    },
-    surgeInstall() {
-      if (this.customSubUrl === "") {
-        this.$message.error("请先填写必填项，生成订阅链接");
-        return false;
-      }
-      const url = "surge://install-config?url=";
-      window.open(url + this.customSubUrl);
     },
     gotoBasicVideo() {
       this.$alert("别忘了关注友善的肥羊哦！", {

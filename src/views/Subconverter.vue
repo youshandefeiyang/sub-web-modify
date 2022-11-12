@@ -226,13 +226,20 @@
               </el-form-item>
               <el-form-item label-width="0px" style="text-align: center">
                 <el-button
-                    style="width: 250px"
+                    style="width: 120px"
                     type="primary"
                     @click="dialogUploadConfigVisible = true"
                     icon="el-icon-upload"
                     :loading="loading"
-                >进阶自定义配置
+                >进阶配置
                 </el-button>
+                <el-button
+                    style="width: 120px"
+                    type="primary"
+                    @click="dialogLoadConfigVisible = true"
+                    icon="el-icon-copy-document"
+                    :loading="loading"
+                >从URL解析</el-button>
               </el-form-item>
               <el-form-item label-width="0px" style="text-align: center">
                 <el-button
@@ -242,15 +249,6 @@
                     @click="centerDialogVisible = true"
                 >保姆级视频教程
                 </el-button>
-              </el-form-item>
-              <el-form-item label-width="0px" style="text-align: center">
-                <el-button
-                    style="width: 250px"
-                    type="primary"
-                    @click="dialogLoadConfigVisible = true"
-                    icon="el-icon-copy-document"
-                    :loading="loading"
-                >从URL解析</el-button>
               </el-form-item>
             </el-form>
           </el-container>
@@ -384,10 +382,10 @@
         :show-close="false"
         :close-on-click-modal="false"
         :close-on-press-escape="false"
-        width="700px"
+        width="80%"
     >
       <div slot="title">
-        可以从老的订阅信息中解析信息,填入页面中去
+        可以从生成的长链接中解析信息,填入页面中去
       </div>
       <el-form label-position="left">
         <el-form-item prop="uploadConfig">
@@ -401,7 +399,7 @@
         </el-form-item>
       </el-form>
       <div slot="footer" class="dialog-footer">
-        <el-button @click="loadConfig = ''; dialogLoadConfigVisible = false">取 消</el-button>
+        <el-button type="primary" @click="loadConfig = ''; dialogLoadConfigVisible = false">取 消</el-button>
         <el-button
             type="primary"
             @click="confirmLoadConfig"
@@ -1171,8 +1169,7 @@ export default {
             this.loading = false;
           });
     },
-    confirmLoadConfig(){
-      // 怎么解析短链接的302和301...
+    confirmLoadConfig() {
       if (this.loadConfig.indexOf("target")=== -1){
         this.$message.error("请输入正确的订阅地址,暂不支持短链接!");
         return;

@@ -463,8 +463,8 @@ export default {
         },
         customBackend: {
           "本地局域网版后端": "http://127.0.0.1:25500/sub?",
-          "肥羊增强型后端【vless+负载均衡】": "https://api.v1.mk/sub?",
-          "肥羊备用后端【vless+负载均衡】": "https://sub.d1.mk/sub?",
+          "肥羊增强型后端【vless+hysteria】": "https://api.v1.mk/sub?",
+          "肥羊备用后端【vless+hysteria】": "https://sub.d1.mk/sub?",
           "品云提供后端【实验性】": "https://v.id9.cc/sub?",
           "つつ-多地防失联【负载均衡+国内优化】": "https://api.tsutsu.one/sub?",
           nameless13提供: "https://www.nameless13.com/sub?",

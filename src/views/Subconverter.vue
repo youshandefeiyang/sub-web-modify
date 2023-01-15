@@ -123,8 +123,8 @@
                             <el-col :span="12">
                               <el-checkbox v-model="form.udp" label="启用 UDP"></el-checkbox>
                             </el-col>
-                            <el-col :span="12">
-                              <el-checkbox v-model="form.tls13" label="开启TLS_1.3"></el-checkbox>
+                            <el-col :span="12"> 
+                              <el-checkbox v-model="form.xudp" label="启用 XUDP"></el-checkbox>
                             </el-col>
                           </el-row>
                           <el-row :gutter="10">
@@ -147,8 +147,8 @@
                             <el-col :span="12">
                               <el-checkbox v-model="form.tpl.surge.doh" label="Surge.DoH"></el-checkbox>
                             </el-col>
-                            <el-col :span="12"> 
-                              <el-checkbox v-model="form.surgeForce" label="Surge强制更新"></el-checkbox>
+                            <el-col :span="12">
+                              <el-checkbox v-model="form.tls13" label="开启TLS_1.3"></el-checkbox>
                             </el-col>
                           </el-row>
                           <el-row :gutter="10">
@@ -890,8 +890,8 @@ export default {
         nodeList: false,
         extraset: false,
         tls13: false,
-        surgeForce: false,
         udp: false,
+        xudp: false,
         tfo: false,
         sort: false,
         expand: true,
@@ -982,7 +982,7 @@ export default {
       }
     },
     tanchuang() {
-      this.$alert(`<div style="text-align:center;font-size:15px"><strong><span style="font-size:20px">本站官方TG交流群：</span><span><a href="https://t.me/feiyangdigital" target="_blank" style="color:red;font-size:20px;text-decoration:none">点击加入</a></span></strong></br><strong><span style="font-size:20px">牧场物语官网：</span><span><a href="https://www.mcwy.org" style="color:red;font-size:20px;text-decoration:none">点击注册</a></span></strong></br><strong><span style="font-size:20px">奈飞合租网站：</span><span><a href="https://www.ihezu.club" style="color:red;font-size:20px;text-decoration:none">点击上车</a></span></strong></br><strong><span style="font-size:20px">IOS外区应用代购：</span><span><a href="https://fk.myue.club" style="color:red;font-size:20px;text-decoration:none">点击查看</a></span></strong></br><strong><span style="font-size:20px">115蓝光4K原盘内部群：</span><span><a href="https://www.wulihub.com.cn/gc/Wvn2nV/index.htm" style="color:red;font-size:20px;text-decoration:none">点击了解</a></span></strong></br><strong><span style="font-size:20px">牧场流媒体支持状态实时检测图：</span><span><a href="https://nf.mccloud.vip" style="color:red;font-size:20px;text-decoration:none">点击查看</a></span></strong></br>本站服务器赞助机场-牧场物语，是一家拥有BGP中继+IEPL企业级内网专线的高端机场，适合各个价位要求的用户，牧场物语采用最新的奈飞非自制剧解决方案，出口随机更换IP，确保尽可能的每个用户可以用上独立IP，以此来稳定解决奈飞非自制剧的封锁，并推出7*24小时奈飞非自制剧节点自动检测系统，用户再也不用自己手动一个个的乱试节点了，目前牧场的新加坡，台湾等节区域点均可做到24H稳定非自制剧观看！</br></div>`, '信息面板', {
+      this.$alert(`<div style="text-align:center;font-size:15px;color:blue"><strong>新功能：启用XUDP必须先启用UDP，二者同时启用才生效，XUDP只对vless有效，启用TFO后增加支持hysteria的fastopen</strong></div><div style="text-align:center;font-size:15px"><strong><span style="font-size:20px">本站官方TG交流群：</span><span><a href="https://t.me/feiyangdigital" target="_blank" style="color:red;font-size:20px;text-decoration:none">点击加入</a></span></strong></br><strong><span style="font-size:20px">牧场物语官网：</span><span><a href="https://www.mcwy.org" style="color:red;font-size:20px;text-decoration:none">点击注册</a></span></strong></br><strong><span style="font-size:20px">奈飞合租网站：</span><span><a href="https://www.ihezu.club" style="color:red;font-size:20px;text-decoration:none">点击上车</a></span></strong></br><strong><span style="font-size:20px">IOS外区应用代购：</span><span><a href="https://fk.myue.club" style="color:red;font-size:20px;text-decoration:none">点击查看</a></span></strong></br><strong><span style="font-size:20px">115蓝光4K原盘内部群：</span><span><a href="https://www.wulihub.com.cn/gc/Wvn2nV/index.htm" style="color:red;font-size:20px;text-decoration:none">点击了解</a></span></strong></br><strong><span style="font-size:20px">牧场流媒体支持状态实时检测图：</span><span><a href="https://nf.mccloud.vip" style="color:red;font-size:20px;text-decoration:none">点击查看</a></span></strong></br>本站服务器赞助机场-牧场物语，是一家拥有BGP中继+IEPL企业级内网专线的高端机场，适合各个价位要求的用户，牧场物语采用最新的奈飞非自制剧解决方案，出口随机更换IP，确保尽可能的每个用户可以用上独立IP，以此来稳定解决奈飞非自制剧的封锁，并推出7*24小时奈飞非自制剧节点自动检测系统，用户再也不用自己手动一个个的乱试节点了，目前牧场的新加坡，台湾等节区域点均可做到24H稳定非自制剧观看！</br></div>`, '信息面板', {
         confirmButtonText: '确定',
         dangerouslyUseHTMLString: true,
         customClass: 'msgbox'
@@ -1083,10 +1083,6 @@ export default {
         this.customSubUrl +=
             "&tls13=" + this.form.tls13.toString();
       }
-      if (this.form.surgeForce) {
-        this.customSubUrl +=
-            "&strict=" + this.form.surgeForce.toString();
-      }
       if (this.form.sort) {
         this.customSubUrl +=
             "&sort=" + this.form.sort.toString();
@@ -1096,6 +1092,8 @@ export default {
           this.form.emoji.toString() +
           "&list=" +
           this.form.nodeList.toString() +
+          "&xudp=" +
+          this.form.xudp.toString() +
           "&udp=" +
           this.form.udp.toString() +
           "&tfo=" +
@@ -1237,8 +1235,8 @@ export default {
       if (param.get("tls13")){
         this.form.tls13 = param.get("tls13");
       }
-      if (param.get("strict")){
-        this.form.surgeForce = param.get("strict");
+      if (param.get("xudp")){
+        this.form.xudp = param.get("xudp") === 'true';
       }
       if (param.get("sort")){
         this.form.sort = param.get("sort") === 'true';
@@ -1284,7 +1282,7 @@ export default {
       data.append("include",encodeURIComponent(this.form.includeRemarks));
       data.append("rename",encodeURIComponent(this.form.rename));
       data.append("tls13",encodeURIComponent(this.form.tls13.toString()));
-      data.append("surgeForce",encodeURIComponent(this.form.surgeForce.toString()));
+      data.append("xudp",encodeURIComponent(this.form.xudp.toString()));
       data.append("emoji",encodeURIComponent(this.form.emoji.toString()));
       data.append("list",encodeURIComponent(this.form.nodeList.toString()));
       data.append("udp",encodeURIComponent(this.form.udp.toString()));

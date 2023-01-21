@@ -512,6 +512,10 @@ export default {
               {
                 label: "emby-TikTok-流媒体分组-去广告加强版",
                 value: "https://raw.githubusercontent.com/justdoiting/ClashRule/main/GeneralClashRule.ini"
+              },
+              {
+                 label: "流媒体通用分组",
+                 value: "https://raw.githubusercontent.com/cutethotw/ClashRule/main/GeneralClashRule.ini"
               }
             ]
           },

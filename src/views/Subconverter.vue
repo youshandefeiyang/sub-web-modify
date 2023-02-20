@@ -385,7 +385,7 @@
         width="80%"
     >
       <div slot="title">
-        可以从生成的长链接中解析信息,填入页面中去
+        可以从生成的长/短链接中解析信息,填入页面中去
       </div>
       <el-form label-position="left">
         <el-form-item prop="uploadConfig">
@@ -418,6 +418,7 @@ const filterConfigSample = process.env.VUE_APP_FILTER_CONFIG
 const defaultBackend = process.env.VUE_APP_SUBCONVERTER_DEFAULT_BACKEND + '/sub?'
 const shortUrlBackend = process.env.VUE_APP_MYURLS_DEFAULT_BACKEND + '/short'
 const configUploadBackend = process.env.VUE_APP_CONFIG_UPLOAD_BACKEND + '/sub.php'
+const reDirectUrlAnalyze = process.env.VUE_APP_CONFIG_UPLOAD_BACKEND + '/go'
 const basicVideo = process.env.VUE_APP_BASIC_VIDEO
 const advancedVideo = process.env.VUE_APP_ADVANCED_VIDEO
 const tgBotLink = process.env.VUE_APP_BOT_LINK
@@ -1177,14 +1178,44 @@ export default {
             this.loading = false;
           });
     },
-    confirmLoadConfig() {
-      if (this.loadConfig.indexOf("target")=== -1){
-        this.$message.error("请输入正确的订阅地址,暂不支持短链接!");
-        return;
+    analyzeUrl() {
+      if (this.loadConfig.indexOf("target")!== -1){
+        return this.loadConfig
+      } else {
+      this.loading = true
+      let data = new FormData();
+      data.append("shortUrl", btoa(this.loadConfig));
+      let realurl = this.$axios
+          .post(reDirectUrlAnalyze, data, {
+            header: {
+              "Content-Type": "application/form-data; charset=utf-8"
+            }
+          })
+          .then(res => {
+            if (res.data.code === 0 && res.data.data !== "") {
+              return res.data.data
+            } else {
+              this.$message.error("短链接解析失败：" + res.data.msg);
+            }
+          })
+          .catch(() => {
+            this.$message.error("短链接解析失败");
+          })
+          .finally(() => {
+            this.loading = false;
+          });
+          return realurl
       }
+    },
+    confirmLoadConfig() {
+      if (this.loadConfig.trim() === ""){
+        this.$message.error("订阅链接不能为空");
+        return false;
+      }
+      (async () => {
       let url
       try {
-        url = new URL(this.loadConfig)
+        url = new URL(await this.analyzeUrl())
       } catch (error) {
         this.$message.error("请输入正确的订阅地址!");
         return;
@@ -1274,6 +1305,8 @@ export default {
         this.form.new_name = param.get("new_name") === 'true';
       }
       this.dialogLoadConfigVisible = false;
+      this.$message.success("长/短链接已成功解析为订阅信息");
+    })();
     },
     renderPost() {
       let data = new FormData();

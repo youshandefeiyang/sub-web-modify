@@ -463,7 +463,6 @@ export default {
           "sub.cm": "https://sub.cm/short",
         },
         customBackend: {
-          "本地局域网版后端": "http://127.0.0.1:25500",
           "肥羊增强型后端【vless+hysteria】": "https://api.v1.mk",
           "肥羊备用后端【vless+hysteria】": "https://sub.d1.mk",
           "つつ-多地防失联【负载均衡+国内优化】": "https://api.tsutsu.one",
@@ -473,7 +472,6 @@ export default {
           "sub作者&lhie1提供": "https://api.dler.io",
         },
         backendOptions: [
-          {value: "http://127.0.0.1:25500"},
           {value: "https://api.v1.mk"},
           {value: "https://sub.d1.mk"},
           {value: "https://api.tsutsu.one"},
@@ -876,7 +874,7 @@ export default {
       form: {
         sourceSubUrl: "",
         clientType: "",
-        customBackend: "https://api.v1.mk",
+        customBackend: this.getUrlParam() == "" ? "https://api.v1.mk" : this.getUrlParam(),
         shortType: "https://v1.mk/short",
         remoteConfig: "https://raw.githubusercontent.com/ACL4SSR/ACL4SSR/master/Clash/config/ACL4SSR_Online_Full_NoAuto.ini",
         excludeRemarks: "",
@@ -947,6 +945,17 @@ export default {
   methods: {
     selectChanged() {
       this.getBackendVersion();
+    },
+    getUrlParam() {
+      let query = window.location.search.substring(1);
+      let vars = query.split('&');
+      for (let i = 0; i < vars.length; i++) {
+          var pair = vars[i].split('=');
+          if (pair[0] == "url") {
+              return decodeURIComponent(pair[1]);
+          }
+      }
+      return "";
     },
     anhei() {
       const getLocalTheme = window.localStorage.getItem("localTheme");

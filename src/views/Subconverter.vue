@@ -1364,7 +1364,7 @@ export default {
     getBackendVersion() {
       this.$axios
           .get(
-              this.form.customBackend.substring(0, this.form.customBackend.length - 5) + "/version"
+              this.form.customBackend + "/version"
           )
           .then(res => {
             this.backendVersion = res.data.replace(/backend\n$/gm, "");

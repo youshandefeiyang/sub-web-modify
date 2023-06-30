@@ -8,6 +8,11 @@ const routes = [
     path: "/",
     name: "SubConverter",
     component: () => import("../views/Subconverter.vue")
+  },
+  {
+    path: "/backend",
+    name: "SubConverter",
+    component: () => import("../views/Subconverter.vue")
   }
 ];
 

@@ -947,11 +947,12 @@ export default {
       this.getBackendVersion();
     },
     getUrlParam() {
+      let relativePath = window.location.pathname;
       let query = window.location.search.substring(1);
       let vars = query.split('&');
       for (let i = 0; i < vars.length; i++) {
           var pair = vars[i].split('=');
-          if (pair[0] == "url") {
+          if (pair[0] == "url" && relativePath == "/backend") {
               return decodeURIComponent(pair[1]);
           }
       }

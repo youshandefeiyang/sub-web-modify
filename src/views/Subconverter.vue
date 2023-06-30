@@ -415,7 +415,7 @@ const configScriptBackend = process.env.VUE_APP_CONFIG_UPLOAD_BACKEND + '/api.ph
 const remoteConfigSample = process.env.VUE_APP_SUBCONVERTER_REMOTE_CONFIG
 const scriptConfigSample = process.env.VUE_APP_SCRIPT_CONFIG
 const filterConfigSample = process.env.VUE_APP_FILTER_CONFIG
-const defaultBackend = process.env.VUE_APP_SUBCONVERTER_DEFAULT_BACKEND + '/sub?'
+const defaultBackend = process.env.VUE_APP_SUBCONVERTER_DEFAULT_BACKEND
 const shortUrlBackend = process.env.VUE_APP_MYURLS_DEFAULT_BACKEND + '/short'
 const configUploadBackend = process.env.VUE_APP_CONFIG_UPLOAD_BACKEND + '/sub.php'
 const reDirectUrlAnalyze = process.env.VUE_APP_CONFIG_UPLOAD_BACKEND + '/go'
@@ -473,14 +473,14 @@ export default {
           "sub作者&lhie1提供": "https://api.dler.io",
         },
         backendOptions: [
-          {value: "http://127.0.0.1:25500/sub?"},
-          {value: "https://api.v1.mk/sub?"},
-          {value: "https://sub.d1.mk/sub?"},
-          {value: "https://api.tsutsu.one/sub?"},
-          {value: "https://www.nameless13.com/sub?"},
-          {value: "https://sub.xeton.dev/sub?"},
-          {value: "https://api.wcc.best/sub?"},
-          {value: "https://api.dler.io/sub?"},
+          {value: "http://127.0.0.1:25500"},
+          {value: "https://api.v1.mk"},
+          {value: "https://sub.d1.mk"},
+          {value: "https://api.tsutsu.one"},
+          {value: "https://www.nameless13.com"},
+          {value: "https://sub.xeton.dev"},
+          {value: "https://api.wcc.best"},
+          {value: "https://api.dler.io"},
         ],
         remoteConfig: [
           {
@@ -876,7 +876,7 @@ export default {
       form: {
         sourceSubUrl: "",
         clientType: "",
-        customBackend: "https://api.v1.mk/sub?",
+        customBackend: "https://api.v1.mk",
         shortType: "https://v1.mk/short",
         remoteConfig: "https://raw.githubusercontent.com/ACL4SSR/ACL4SSR/master/Clash/config/ACL4SSR_Online_Full_NoAuto.ini",
         excludeRemarks: "",

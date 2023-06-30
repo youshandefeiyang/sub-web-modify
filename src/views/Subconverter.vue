@@ -196,7 +196,7 @@
                 </el-input>
               </el-form-item>
               <el-form-item label="订阅短链:">
-                <el-input class="copy-content" disabled v-model="customShortSubUrl">
+                <el-input class="copy-content" v-model="customShortSubUrl" placeholder="输入自定义短链接后缀，点击生成短链接可反复生成">
                   <el-button
                       slot="append"
                       v-clipboard:copy="customShortSubUrl"
@@ -1132,6 +1132,9 @@ export default {
       this.loading = true;
       let data = new FormData();
       data.append("longUrl", btoa(this.customSubUrl));
+      if (this.customShortSubUrl.trim() != "") {
+          data.append("shortKey",this.customShortSubUrl.trim().indexOf("http") < 0 ? this.customShortSubUrl.trim() : "");
+      }
       this.$axios
           .post(duan, data, {
             header: {

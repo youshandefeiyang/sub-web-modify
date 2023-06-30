@@ -463,14 +463,14 @@ export default {
           "sub.cm": "https://sub.cm/short",
         },
         customBackend: {
-          "本地局域网版后端": "http://127.0.0.1:25500/sub?",
-          "肥羊增强型后端【vless+hysteria】": "https://api.v1.mk/sub?",
-          "肥羊备用后端【vless+hysteria】": "https://sub.d1.mk/sub?",
-          "つつ-多地防失联【负载均衡+国内优化】": "https://api.tsutsu.one/sub?",
-          nameless13提供: "https://www.nameless13.com/sub?",
-          subconverter作者提供: "https://sub.xeton.dev/sub?",
-          "sub-web作者提供": "https://api.wcc.best/sub?",
-          "sub作者&lhie1提供": "https://api.dler.io/sub?",
+          "本地局域网版后端": "http://127.0.0.1:25500",
+          "肥羊增强型后端【vless+hysteria】": "https://api.v1.mk",
+          "肥羊备用后端【vless+hysteria】": "https://sub.d1.mk",
+          "つつ-多地防失联【负载均衡+国内优化】": "https://api.tsutsu.one",
+          nameless13提供: "https://www.nameless13.com",
+          subconverter作者提供: "https://sub.xeton.dev",
+          "sub-web作者提供": "https://api.wcc.best",
+          "sub作者&lhie1提供": "https://api.dler.io",
         },
         backendOptions: [
           {value: "http://127.0.0.1:25500/sub?"},
@@ -1040,7 +1040,7 @@ export default {
       sourceSub = sourceSub.replace(/(\n|\r|\n\r)/g, "|");
       this.customSubUrl =
           backend +
-          "target=" +
+          "/sub?target=" +
           this.form.clientType +
           "&url=" +
           encodeURIComponent(sourceSub) +

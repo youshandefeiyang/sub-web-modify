@@ -1228,7 +1228,7 @@ export default {
         this.$message.error("请输入正确的订阅地址!");
         return;
       }
-      this.form.customBackend = url.origin + url.pathname + "?"
+      this.form.customBackend = url.origin
       let param = new URLSearchParams(url.search);
       if (param.get("target")){
         let target = param.get("target");

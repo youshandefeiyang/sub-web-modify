@@ -951,7 +951,7 @@ export default {
       let vars = query.split('&');
       for (let i = 0; i < vars.length; i++) {
           var pair = vars[i].split('=');
-          if (pair[0] == "url") {
+          if (pair[0] == "backend") {
               return decodeURIComponent(pair[1]);
           }
       }

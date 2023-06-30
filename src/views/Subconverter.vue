@@ -424,7 +424,7 @@ const advancedVideo = process.env.VUE_APP_ADVANCED_VIDEO
 const tgBotLink = process.env.VUE_APP_BOT_LINK
 const yglink = process.env.VUE_APP_YOUTUBE_LINK
 const bzlink = process.env.VUE_APP_BILIBILI_LINK
-const downld = 'http://' + window.location.hostname + '/download.html'
+const downld = 'http://' + window.location.host + '/download.html'
 export default {
   data() {
     return {

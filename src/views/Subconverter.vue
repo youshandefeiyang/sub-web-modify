@@ -418,7 +418,6 @@ const filterConfigSample = process.env.VUE_APP_FILTER_CONFIG
 const defaultBackend = process.env.VUE_APP_SUBCONVERTER_DEFAULT_BACKEND
 const shortUrlBackend = process.env.VUE_APP_MYURLS_DEFAULT_BACKEND + '/short'
 const configUploadBackend = process.env.VUE_APP_CONFIG_UPLOAD_BACKEND + '/sub.php'
-const reDirectUrlAnalyze = process.env.VUE_APP_CONFIG_UPLOAD_BACKEND + '/go'
 const basicVideo = process.env.VUE_APP_BASIC_VIDEO
 const advancedVideo = process.env.VUE_APP_ADVANCED_VIDEO
 const tgBotLink = process.env.VUE_APP_BOT_LINK
@@ -1187,32 +1186,23 @@ export default {
           });
     },
     analyzeUrl() {
-      if (this.loadConfig.indexOf("target")!== -1){
-        return this.loadConfig
+      if (this.loadConfig.indexOf("target") !== -1) {
+        return this.loadConfig;
       } else {
-      this.loading = true
-      let data = new FormData();
-      data.append("shortUrl", btoa(this.loadConfig));
-      let realurl = this.$axios
-          .post(reDirectUrlAnalyze, data, {
-            header: {
-              "Content-Type": "application/form-data; charset=utf-8"
-            }
-          })
-          .then(res => {
-            if (res.data.code === 0 && res.data.data !== "") {
-              return res.data.data
-            } else {
-              this.$message.error("短链接解析失败：" + res.data.msg);
-            }
-          })
-          .catch(() => {
-            this.$message.error("短链接解析失败");
-          })
-          .finally(() => {
+        this.loading = true;
+        return (async () => {
+          try {
+            let response = await fetch(this.loadConfig, {
+              method: "GET",
+              redirect: "follow",
+            });
+            return response.url;
+          } catch (e) {
+            console.log(e);
+          } finally {
             this.loading = false;
-          });
-          return realurl
+          }
+        })();
       }
     },
     confirmLoadConfig() {

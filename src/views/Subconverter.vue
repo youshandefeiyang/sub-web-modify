@@ -1198,7 +1198,7 @@ export default {
             });
             return response.url;
           } catch (e) {
-            console.log(e);
+            this.$message.error("解析短链接失败，请检查短链接服务端是否配置跨域：" + e)
           } finally {
             this.loading = false;
           }

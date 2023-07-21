@@ -1360,7 +1360,7 @@ export default {
             this.$message.error("自定义JS上传失败");
           })
           .finally(() => {
-            this.loading3 = false;
+            this.loading2 = false;
           })
     },
     getBackendVersion() {

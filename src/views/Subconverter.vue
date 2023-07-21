@@ -1206,8 +1206,8 @@ export default {
       }
     },
     confirmLoadConfig() {
-      if (this.loadConfig.trim() === ""){
-        this.$message.error("订阅链接不能为空");
+      if (this.loadConfig.trim() === "" || !this.loadConfig.trim().includes("http")){
+        this.$message.error("待解析的订阅链接不合法");
         return false;
       }
       (async () => {

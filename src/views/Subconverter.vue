@@ -219,7 +219,7 @@
                     style="width: 120px"
                     type="danger"
                     @click="makeShortUrl"
-                    :loading="loading"
+                    :loading="loading1"
                     :disabled="customSubUrl.length === 0"
                 >生成短链接
                 </el-button>
@@ -230,7 +230,7 @@
                     type="primary"
                     @click="dialogUploadConfigVisible = true"
                     icon="el-icon-upload"
-                    :loading="loading"
+                    :loading="loading2"
                 >自定义配置
                 </el-button>
                 <el-button
@@ -238,7 +238,7 @@
                     type="primary"
                     @click="dialogLoadConfigVisible = true"
                     icon="el-icon-copy-document"
-                    :loading="loading"
+                    :loading="loading3"
                 >从URL解析</el-button>
               </el-form-item>
               <el-form-item label-width="0px" style="text-align: center">
@@ -1128,7 +1128,7 @@ export default {
           this.form.shortType === ""
               ? shortUrlBackend
               : this.form.shortType;
-      this.loading = true;
+      this.loading1 = true;
       let data = new FormData();
       data.append("longUrl", btoa(this.customSubUrl));
       if (this.customShortSubUrl.trim() != "") {
@@ -1153,11 +1153,11 @@ export default {
             this.$message.error("短链接获取失败");
           })
           .finally(() => {
-            this.loading = false;
+            this.loading1 = false;
           });
     },
     confirmUploadConfig() {
-      this.loading = true;
+      this.loading2 = true;
       let data = new FormData();
       data.append("config", encodeURIComponent(this.uploadConfig));
       this.$axios
@@ -1182,14 +1182,14 @@ export default {
             this.$message.error("远程配置上传失败");
           })
           .finally(() => {
-            this.loading = false;
+            this.loading2 = false;
           });
     },
     analyzeUrl() {
       if (this.loadConfig.indexOf("target") !== -1) {
         return this.loadConfig;
       } else {
-        this.loading = true;
+        this.loading3 = true;
         return (async () => {
           try {
             let response = await fetch(this.loadConfig, {
@@ -1200,7 +1200,7 @@ export default {
           } catch (e) {
             this.$message.error("解析短链接失败，请检查短链接服务端是否配置跨域：" + e)
           } finally {
-            this.loading = false;
+            this.loading3 = false;
           }
         })();
       }
@@ -1333,7 +1333,7 @@ export default {
         this.$message.error("订阅链接不能为空");
         return false;
       }
-      this.loading = true;
+      this.loading2 = true;
       let data = this.renderPost();
       data.append("sortscript",encodeURIComponent(this.uploadScript));
       data.append("filterscript",encodeURIComponent(this.uploadFilter));
@@ -1360,7 +1360,7 @@ export default {
             this.$message.error("自定义JS上传失败");
           })
           .finally(() => {
-            this.loading = false;
+            this.loading3 = false;
           })
     },
     getBackendVersion() {

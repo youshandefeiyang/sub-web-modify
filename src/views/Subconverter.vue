@@ -709,6 +709,10 @@ export default {
               {
                 label: "ProxyStorage自用",
                 value: "https://unpkg.com/proxy-script/config/Clash/clash.ini"
+              },
+              {
+                label: "ShellClash修改版规则 (by UlinoyaPed)",
+                value: "https://github.com/UlinoyaPed/ShellClash/raw/master/rules/ShellClash.ini"
               }
             ]
           },

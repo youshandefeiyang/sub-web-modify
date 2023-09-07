@@ -1,36 +1,31 @@
 {
-  "name": "sub-web",
+  "name": "sub-web-modify",
   "version": "0.1.0",
   "private": true,
   "scripts": {
     "serve": "vue-cli-service serve",
-    "build": "vue-cli-service build",
-    "lint": "vue-cli-service lint"
+    "build": "vue-cli-service build"
   },
   "dependencies": {
     "atob": "^2.1.2",
-    "axios": "^0.21.1",
+    "axios": "^1.5.0",
     "btoa": "^1.2.1",
-    "core-js": "^3.12.1",
-    "element-ui": "^2.15.1",
-    "vue": "^2.6.10",
-    "vue-clipboard2": "^0.3.1",
+    "core-js": "^3.8.3",
+    "element-ui": "^2.15.14",
+    "vue": "^2.6.14",
+    "vue-clipboard2": "^0.3.3",
     "vue-router": "^3.5.1"
   },
   "devDependencies": {
-    "@vue/cli-plugin-babel": "^4.5.13",
-    "@vue/cli-plugin-eslint": "^4.5.13",
-    "@vue/cli-plugin-router": "^4.5.13",
-    "@vue/cli-service": "^4.5.13",
-    "babel-eslint": "^10.0.3",
+    "@vue/cli-plugin-babel": "~5.0.0",
+    "@vue/cli-plugin-router": "~5.0.0",
+    "@vue/cli-service": "~5.0.0",
     "babel-plugin-component": "^1.1.1",
-    "babel-plugin-import": "^1.13.3",
-    "eslint": "^5.16.0",
-    "eslint-plugin-vue": "^5.0.0",
-    "sass": "^1.43.4",
-    "sass-loader": "^8.0.0",
-    "svg-sprite-loader": "^4.2.1",
+    "babel-plugin-import": "^1.13.8",
+    "sass": "^1.66.1",
+    "sass-loader": "^13.3.2",
+    "svg-sprite-loader": "^6.0.11",
     "vue-particles": "^1.0.9",
-    "vue-template-compiler": "^2.6.10"
+    "vue-template-compiler": "^2.6.14"
   }
 }

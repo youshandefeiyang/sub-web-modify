@@ -473,8 +473,8 @@ export default {
           "sub作者&lhie1提供": "https://api.dler.io",
         },
         backendOptions: [
-		  {value: "https://sub.dxdyzh.tk/sub?"},
-		  {value: "https://api.nexconvert.com/sub?"},
+          {value: "https://sub.dxdyzh.tk/sub?"},
+          {value: "https://api.nexconvert.com/sub?"},
           {value: "https://api.v1.mk"},
           {value: "https://sub.d1.mk"},
           {value: "https://api.tsutsu.one"},

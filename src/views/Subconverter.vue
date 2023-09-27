@@ -462,8 +462,8 @@ export default {
           "sub.cm": "https://sub.cm/short",
         },
         customBackend: {
-          "大象自用后端": "https://sub.dxdyzh.tk/sub?",
-          "佩奇后端": "https://api.nexconvert.com/sub?",
+		  "大象自用后端": "https://sub.dxdyzh.tk",
+          "佩奇后端": "https://api.nexconvert.com",
           "肥羊增强型后端【vless+hysteria】": "https://api.v1.mk",
           "肥羊备用后端【vless+hysteria】": "https://sub.d1.mk",
           "つつ-多地防失联【负载均衡+国内优化】": "https://api.tsutsu.one",
@@ -473,8 +473,8 @@ export default {
           "sub作者&lhie1提供": "https://api.dler.io",
         },
         backendOptions: [
-          {value: "https://sub.dxdyzh.tk/sub?"},
-          {value: "https://api.nexconvert.com/sub?"},
+		  {value: "https://sub.dxdyzh.tk"},
+		  {value: "https://api.nexconvert.com"},
           {value: "https://api.v1.mk"},
           {value: "https://sub.d1.mk"},
           {value: "https://api.tsutsu.one"},
@@ -853,7 +853,7 @@ export default {
       form: {
         sourceSubUrl: "",
         clientType: "",
-        customBackend: this.getUrlParam() == "" ? "https://api.v1.mk" : this.getUrlParam(),
+        customBackend: this.getUrlParam() == "" ? "https://sub.dxdyzh.tk" : this.getUrlParam(),
         shortType: "https://v1.mk/short",
         remoteConfig: "https://raw.githubusercontent.com/CitizenScyu/clash-rules/master/DNS.ini",
         excludeRemarks: "",
@@ -866,7 +866,7 @@ export default {
         nodeList: false,
         extraset: false,
         tls13: false,
-        udp: false,
+        udp: true,
         xudp: false,
         tfo: false,
         sort: false,
@@ -906,7 +906,7 @@ export default {
     document.title = "在线订阅转换工具";
     this.isPC = this.$getOS().isPc;
   },
-  mounted() 
+  mounted() {
     this.form.clientType = "clash";
     this.getBackendVersion();
     this.anhei();

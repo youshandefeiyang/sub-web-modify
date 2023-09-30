@@ -995,14 +995,14 @@ export default {
       }
     },
     tanchuang() {
-      this.$alert(`<div style="color: yellow;"><p>国庆7天优惠从今天已经开始了，<a href="https://www.mcwy.org" target="_blank" style="color: green; text-decoration: underline;">mcwy</a>和各种流媒体、AI合租都有优惠，具体如下：</p>
-<p>mcwy官网：<a href="https://www.mcwy.org" target="_blank" style="color: green; text-decoration: underline;">https://www.mcwy.org</a></p>
+      this.$alert(`<div style="color: #8400ff;"><p>国庆7天优惠从今天已经开始了，<a href="https://www.mcwy.org" target="_blank" style="color: #00ff84; text-decoration: underline;">mcwy</a>和各种流媒体、AI合租都有优惠，具体如下：</p>
+<p>mcwy官网：<a href="https://www.mcwy.org" target="_blank" style="color: #00ff84; text-decoration: underline;">https://www.mcwy.org</a></p>
 
 <p>七天限时优惠码：</p>
 <p style="font-weight: bold; color: red;">国庆节八五折优惠码：mcw15 （用于半年和年度使用）</p>
 <p style="font-weight: bold; color: red;">国庆节九折优惠码：mcw10 （用于月度和季度使用）</p>
 
-<p>各种流媒体奈飞油管迪士尼HBO合租，AI合租官网：<a href="https://hezu.v1.mk" target="_blank" style="color: green; text-decoration: underline;">https://hezu.v1.mk</a></p>
+<p>各种流媒体奈飞油管迪士尼HBO合租，AI合租官网：<a href="https://hezu.v1.mk" target="_blank" style="color: #00ff84; text-decoration: underline;">https://hezu.v1.mk</a></p>
 
 <p style="font-weight: bold; color: red;">优惠码：feiyang</p></div>`, '信息面板', {
         confirmButtonText: '确定',

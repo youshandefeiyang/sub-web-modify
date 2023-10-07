@@ -995,25 +995,7 @@ export default {
       }
     },
     tanchuang() {
-      this.$alert(`<div style="color: #8400ff;">
-
-<p>国庆7天众多优惠活动已经开始，特为大家带来以下福利，均有比较大的优惠：</p>
-
-<p>高端IEPL机场牧场物语，也是我一直使用的主力机场之一，价位从28-168不等，适用于各个需求级别的用户，原生支持各种常见流媒体，支持各种AI产品服务，稳定不跑路</p>
-<p>牧场物语官网：<a href="https://www.mcwy.org" target="_blank" style="color: #00ff84; text-decoration: underline;">https://www.mcwy.org</a></p>
-<p style="font-weight: bold; color: red;">国庆节八五折优惠码：mcw15 （用于半年和年度使用）</p>
-<p style="font-weight: bold; color: red;">国庆节九折优惠码：mcw10 （用于月度和季度使用）</p>
-
-
-<p>各种流媒体合租，包括奈飞、Disney、HBO、Spotify、Prime Video等，还有各种AI合租代购，包括ChatGPT Plus，MidJourney等众多AI产品</p>
-<p>合租网站：<a href="https://hezu.v1.mk" target="_blank" style="color: #00ff84; text-decoration: underline;">https://hezu.v1.mk</a></p>
-<p style="font-weight: bold; color: red;">优惠码为：feiyang</p>
-
-<p>IOS各区ID、各区APP Store代购、Google Voice账号等上车网站：</p>
-<p><a href="https://fk.myue.club" target="_blank" style="color: #00ff84; text-decoration: underline;">https://fk.myue.club</a></p>
-<p style="font-weight: bold; color: red;">优惠码：国庆快乐</p>
-
-</div>`, '信息面板', {
+      this.$alert(`<div style="text-align:center;font-size:15px"><strong><span style="font-size:20px">本站官方TG交流群：</span><span><a href="https://t.me/feiyangdigital" target="_blank" style="color:red;font-size:20px;text-decoration:none">点击加入</a></span></strong></br><strong><span style="font-size:20px">IEPL高端机场（<span style="color:blue">原生支持各种流媒体</span>）：</span><span><a href="https://www.mcwy.org" style="color:red;font-size:20px;text-decoration:none">点击注册</a></span></strong></br><strong><span style="font-size:20px">奈飞、ChatGPT合租（<span style="color:blue">优惠码：feiyang</span>）：</span><span><a href="https://hezu.v1.mk/" style="color:red;font-size:20px;text-decoration:none">点击上车</a></span></strong></br><strong><span style="font-size:20px">IOS外区应用代购：</span><span><a href="https://fk.myue.club" style="color:red;font-size:20px;text-decoration:none">点击查看</a></span></strong></br>本站服务器赞助机场-牧场物语，是一家拥有BGP中继+IEPL企业级内网专线的高端机场，适合各个价位要求的用户，牧场物语采用最新的奈飞非自制剧解决方案，出口随机更换IP，确保尽可能的每个用户可以用上独立IP，以此来稳定解决奈飞非自制剧的封锁，并推出7*24小时奈飞非自制剧节点自动检测系统，用户再也不用自己手动一个个的乱试节点了，目前牧场的新加坡，台湾等节区域点均可做到24H稳定非自制剧观看！</br></div>`, '信息面板', {
         confirmButtonText: '确定',
         dangerouslyUseHTMLString: true,
         customClass: 'msgbox'

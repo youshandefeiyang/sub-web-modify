@@ -1,81 +1,217 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="utf-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width,initial-scale=1,maximum-scale=1,minimum-scale=1,user-scalable=no">
+<!DOCTYPE html><html><head>
     <title>各平台代理工具集合</title>
-    <link rel="stylesheet" href="https://cdn.staticfile.org/bootstrap/4.6.1/css/bootstrap.min.css">
-    <script src="https://cdn.staticfile.org/layui/2.7.5/layui.min.js"></script>
-</head>
-<body>
-<p></p>
-<h1 style="text-align: center">本站资源引用自TG-@congcongx_bot</h1>
-<div class="container">
-    <h5 id="tv">TV</h5>
-    <ul>
-        <li><a href="https://github.com/Kr328/ClashForAndroid/releases/download/v2.1.6/app-universal-release.apk">Clash索尼电视兼容版</a>
-        </li>
-        <li><a href="https://github.com/2dust/v2rayNG/releases/download/1.7.16/v2rayNG_1.7.16.apk">v2rayNG索尼电视兼容版</a>
-        </li>
-        <li><a href="https://github.com/shadowsocks/shadowsocks-android/releases">Shadowsocks 影梭</a>
-            (选择shadowsocks-tv--universal)
-        </li>
-    </ul>
-</div>
-<div class="container" id="code"></div>
-<div class="container">
-    <h3 id="telegram-客户端-proxy-代理设置">Telegram 客户端 Proxy 代理设置</h3>
-    <p><a href="https://raw.githubusercontent.com/youshandefeiyang/webcdn/6.4/tg.png">解决Telegram无法连接的问题</a></p>
-    <h3 id="耗电流量">耗电/流量</h3>
-    <p><strong>为什么使用了代理应用后在电量统计中显示耗电很多？</strong><br/>
-        这是移动操作系统的一个特殊机制，Surge iOS、Quantumult X、Shadowrocket、Choc 等等所有的 SS/SSR/V2Ray/Trojan
-        客户端开启后会接管全局的（几乎）所有通信，所以所有的网络方面电量消耗都会被算在代理应用头上，实际使用中不会感到代理应用对电量有明显影响，「设置-电池」中看到它的电池用量，绝大部分都是网络所消耗的电量，并不是代理应用消耗的电量，代理应用就是背锅侠。<br/>
-        还有，夜间或锁屏后系统也会请求网络，比如后台刷新、系统服务等等，只要有请求网络就会经过代理应用，所以在「设置-电池」处看到代理应用在后台也会运行。<br/>
-        网络流量也是如此的。</p>
-</div>
-<script> 
-    getCode();
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/katex.min.css">
+    <script src="https://cdn.staticfile.org/layui/2.7.5/layui.min.js"></script>
+
+
+
+
+
+    <style>
+        code[class*=language-],pre[class*=language-]{color:#333;background:0 0;font-family:Consolas,"Liberation Mono",Menlo,Courier,monospace;text-align:left;white-space:pre;word-spacing:normal;word-break:normal;word-wrap:normal;line-height:1.4;-moz-tab-size:8;-o-tab-size:8;tab-size:8;-webkit-hyphens:none;-moz-hyphens:none;-ms-hyphens:none;hyphens:none}pre[class*=language-]{padding:.8em;overflow:auto;border-radius:3px;background:#f5f5f5}:not(pre)>code[class*=language-]{padding:.1em;border-radius:.3em;white-space:normal;background:#f5f5f5}.token.blockquote,.token.comment{color:#969896}.token.cdata{color:#183691}.token.doctype,.token.macro.property,.token.punctuation,.token.variable{color:#333}.token.builtin,.token.important,.token.keyword,.token.operator,.token.rule{color:#a71d5d}.token.attr-value,.token.regex,.token.string,.token.url{color:#183691}.token.atrule,.token.boolean,.token.code,.token.command,.token.constant,.token.entity,.token.number,.token.property,.token.symbol{color:#0086b3}.token.prolog,.token.selector,.token.tag{color:#63a35c}.token.attr-name,.token.class,.token.class-name,.token.function,.token.id,.token.namespace,.token.pseudo-class,.token.pseudo-element,.token.url-reference .token.variable{color:#795da3}.token.entity{cursor:help}.token.title,.token.title .token.punctuation{font-weight:700;color:#1d3e81}.token.list{color:#ed6a43}.token.inserted{background-color:#eaffea;color:#55a532}.token.deleted{background-color:#ffecec;color:#bd2c00}.token.bold{font-weight:700}.token.italic{font-style:italic}.language-json .token.property{color:#183691}.language-markup .token.tag .token.punctuation{color:#333}.language-css .token.function,code.language-css{color:#0086b3}.language-yaml .token.atrule{color:#63a35c}code.language-yaml{color:#183691}.language-ruby .token.function{color:#333}.language-markdown .token.url{color:#795da3}.language-makefile .token.symbol{color:#795da3}.language-makefile .token.variable{color:#183691}.language-makefile .token.builtin{color:#0086b3}.language-bash .token.keyword{color:#0086b3}pre[data-line]{position:relative;padding:1em 0 1em 3em}pre[data-line] .line-highlight-wrapper{position:absolute;top:0;left:0;background-color:transparent;display:block;width:100%}pre[data-line] .line-highlight{position:absolute;left:0;right:0;padding:inherit 0;margin-top:1em;background:hsla(24,20%,50%,.08);background:linear-gradient(to right,hsla(24,20%,50%,.1) 70%,hsla(24,20%,50%,0));pointer-events:none;line-height:inherit;white-space:pre}pre[data-line] .line-highlight:before,pre[data-line] .line-highlight[data-end]:after{content:attr(data-start);position:absolute;top:.4em;left:.6em;min-width:1em;padding:0 .5em;background-color:hsla(24,20%,50%,.4);color:#f4f1ef;font:bold 65%/1.5 sans-serif;text-align:center;vertical-align:.3em;border-radius:999px;text-shadow:none;box-shadow:0 1px #fff}pre[data-line] .line-highlight[data-end]:after{content:attr(data-end);top:auto;bottom:.4em}html body{font-family:'Helvetica Neue',Helvetica,'Segoe UI',Arial,freesans,sans-serif;font-size:16px;line-height:1.6;color:#333;background-color:#fff;overflow:initial;box-sizing:border-box;word-wrap:break-word}html body>:first-child{margin-top:0}html body h1,html body h2,html body h3,html body h4,html body h5,html body h6{line-height:1.2;margin-top:1em;margin-bottom:16px;color:#000}html body h1{font-size:2.25em;font-weight:300;padding-bottom:.3em}html body h2{font-size:1.75em;font-weight:400;padding-bottom:.3em}html body h3{font-size:1.5em;font-weight:500}html body h4{font-size:1.25em;font-weight:600}html body h5{font-size:1.1em;font-weight:600}html body h6{font-size:1em;font-weight:600}html body h1,html body h2,html body h3,html body h4,html body h5{font-weight:600}html body h5{font-size:1em}html body h6{color:#5c5c5c}html body strong{color:#000}html body del{color:#5c5c5c}html body a:not([href]){color:inherit;text-decoration:none}html body a{color:#08c;text-decoration:none}html body a:hover{color:#00a3f5;text-decoration:none}html body img{max-width:100%}html body>p{margin-top:0;margin-bottom:16px;word-wrap:break-word}html body>ol,html body>ul{margin-bottom:16px}html body ol,html body ul{padding-left:2em}html body ol.no-list,html body ul.no-list{padding:0;list-style-type:none}html body ol ol,html body ol ul,html body ul ol,html body ul ul{margin-top:0;margin-bottom:0}html body li{margin-bottom:0}html body li.task-list-item{list-style:none}html body li>p{margin-top:0;margin-bottom:0}html body .task-list-item-checkbox{margin:0 .2em .25em -1.8em;vertical-align:middle}html body .task-list-item-checkbox:hover{cursor:pointer}html body blockquote{margin:16px 0;font-size:inherit;padding:0 15px;color:#5c5c5c;background-color:#f0f0f0;border-left:4px solid #d6d6d6}html body blockquote>:first-child{margin-top:0}html body blockquote>:last-child{margin-bottom:0}html body hr{height:4px;margin:32px 0;background-color:#d6d6d6;border:0 none}html body table{margin:10px 0 15px 0;border-collapse:collapse;border-spacing:0;display:block;width:100%;overflow:auto;word-break:normal;word-break:keep-all}html body table th{font-weight:700;color:#000}html body table td,html body table th{border:1px solid #d6d6d6;padding:6px 13px}html body dl{padding:0}html body dl dt{padding:0;margin-top:16px;font-size:1em;font-style:italic;font-weight:700}html body dl dd{padding:0 16px;margin-bottom:16px}html body code{font-family:Menlo,Monaco,Consolas,'Courier New',monospace;font-size:.85em;color:#000;background-color:#f0f0f0;border-radius:3px;padding:.2em 0}html body code::after,html body code::before{letter-spacing:-.2em;content:'\00a0'}html body pre>code{padding:0;margin:0;word-break:normal;white-space:pre;background:0 0;border:0}html body .highlight{margin-bottom:16px}html body .highlight pre,html body pre{padding:1em;overflow:auto;line-height:1.45;border:#d6d6d6;border-radius:3px}html body .highlight pre{margin-bottom:0;word-break:normal}html body pre code,html body pre tt{display:inline;max-width:initial;padding:0;margin:0;overflow:initial;line-height:inherit;word-wrap:normal;background-color:transparent;border:0}html body pre code:after,html body pre code:before,html body pre tt:after,html body pre tt:before{content:normal}html body blockquote,html body dl,html body ol,html body p,html body pre,html body ul{margin-top:0;margin-bottom:16px}html body kbd{color:#000;border:1px solid #d6d6d6;border-bottom:2px solid #c7c7c7;padding:2px 4px;background-color:#f0f0f0;border-radius:3px}@media print{html body{background-color:#fff}html body h1,html body h2,html body h3,html body h4,html body h5,html body h6{color:#000;page-break-after:avoid}html body blockquote{color:#5c5c5c}html body pre{page-break-inside:avoid}html body table{display:table}html body img{display:block;max-width:100%;max-height:100%}html body code,html body pre{word-wrap:break-word;white-space:pre}}.markdown-preview{width:100%;height:100%;box-sizing:border-box}.markdown-preview ul{list-style:disc}.markdown-preview ul ul{list-style:circle}.markdown-preview ul ul ul{list-style:square}.markdown-preview ol{list-style:decimal}.markdown-preview ol ol,.markdown-preview ul ol{list-style-type:lower-roman}.markdown-preview ol ol ol,.markdown-preview ol ul ol,.markdown-preview ul ol ol,.markdown-preview ul ul ol{list-style-type:lower-alpha}.markdown-preview .newpage,.markdown-preview .pagebreak{page-break-before:always}.markdown-preview pre.line-numbers{position:relative;padding-left:3.8em;counter-reset:linenumber}.markdown-preview pre.line-numbers>code{position:relative}.markdown-preview pre.line-numbers .line-numbers-rows{position:absolute;pointer-events:none;top:1em;font-size:100%;left:0;width:3em;letter-spacing:-1px;border-right:1px solid #999;-webkit-user-select:none;-moz-user-select:none;-ms-user-select:none;user-select:none}.markdown-preview pre.line-numbers .line-numbers-rows>span{pointer-events:none;display:block;counter-increment:linenumber}.markdown-preview pre.line-numbers .line-numbers-rows>span:before{content:counter(linenumber);color:#999;display:block;padding-right:.8em;text-align:right}.markdown-preview .mathjax-exps .MathJax_Display{text-align:center!important}.markdown-preview:not([data-for=preview]) .code-chunk .code-chunk-btn-group{display:none}.markdown-preview:not([data-for=preview]) .code-chunk .status{display:none}.markdown-preview:not([data-for=preview]) .code-chunk .output-div{margin-bottom:16px}.markdown-preview .md-toc{padding:0}.markdown-preview .md-toc .md-toc-link-wrapper .md-toc-link{display:inline;padding:.25rem 0}.markdown-preview .md-toc .md-toc-link-wrapper .md-toc-link div,.markdown-preview .md-toc .md-toc-link-wrapper .md-toc-link p{display:inline}.markdown-preview .md-toc .md-toc-link-wrapper.highlighted .md-toc-link{font-weight:800}.scrollbar-style::-webkit-scrollbar{width:8px}.scrollbar-style::-webkit-scrollbar-track{border-radius:10px;background-color:transparent}.scrollbar-style::-webkit-scrollbar-thumb{border-radius:5px;background-color:rgba(150,150,150,.66);border:4px solid rgba(150,150,150,.66);background-clip:content-box}html body[for=html-export]:not([data-presentation-mode]){position:relative;width:100%;height:100%;top:0;left:0;margin:0;padding:0;overflow:auto}html body[for=html-export]:not([data-presentation-mode]) .markdown-preview{position:relative;top:0;min-height:100vh}@media screen and (min-width:914px){html body[for=html-export]:not([data-presentation-mode]) .markdown-preview{padding:2em calc(50% - 457px + 2em)}}@media screen and (max-width:914px){html body[for=html-export]:not([data-presentation-mode]) .markdown-preview{padding:2em}}@media screen and (max-width:450px){html body[for=html-export]:not([data-presentation-mode]) .markdown-preview{font-size:14px!important;padding:1em}}@media print{html body[for=html-export]:not([data-presentation-mode]) #sidebar-toc-btn{display:none}}html body[for=html-export]:not([data-presentation-mode]) #sidebar-toc-btn{position:fixed;bottom:8px;left:8px;font-size:28px;cursor:pointer;color:inherit;z-index:99;width:32px;text-align:center;opacity:.4}html body[for=html-export]:not([data-presentation-mode])[html-show-sidebar-toc] #sidebar-toc-btn{opacity:1}html body[for=html-export]:not([data-presentation-mode])[html-show-sidebar-toc] .md-sidebar-toc{position:fixed;top:0;left:0;width:300px;height:100%;padding:32px 0 48px 0;font-size:14px;box-shadow:0 0 4px rgba(150,150,150,.33);box-sizing:border-box;overflow:auto;background-color:inherit}html body[for=html-export]:not([data-presentation-mode])[html-show-sidebar-toc] .md-sidebar-toc::-webkit-scrollbar{width:8px}html body[for=html-export]:not([data-presentation-mode])[html-show-sidebar-toc] .md-sidebar-toc::-webkit-scrollbar-track{border-radius:10px;background-color:transparent}html body[for=html-export]:not([data-presentation-mode])[html-show-sidebar-toc] .md-sidebar-toc::-webkit-scrollbar-thumb{border-radius:5px;background-color:rgba(150,150,150,.66);border:4px solid rgba(150,150,150,.66);background-clip:content-box}html body[for=html-export]:not([data-presentation-mode])[html-show-sidebar-toc] .md-sidebar-toc a{text-decoration:none}html body[for=html-export]:not([data-presentation-mode])[html-show-sidebar-toc] .md-sidebar-toc .md-toc{padding:0 16px}html body[for=html-export]:not([data-presentation-mode])[html-show-sidebar-toc] .md-sidebar-toc .md-toc .md-toc-link-wrapper .md-toc-link{display:inline;padding:.25rem 0}html body[for=html-export]:not([data-presentation-mode])[html-show-sidebar-toc] .md-sidebar-toc .md-toc .md-toc-link-wrapper .md-toc-link div,html body[for=html-export]:not([data-presentation-mode])[html-show-sidebar-toc] .md-sidebar-toc .md-toc .md-toc-link-wrapper .md-toc-link p{display:inline}html body[for=html-export]:not([data-presentation-mode])[html-show-sidebar-toc] .md-sidebar-toc .md-toc .md-toc-link-wrapper.highlighted .md-toc-link{font-weight:800}html body[for=html-export]:not([data-presentation-mode])[html-show-sidebar-toc] .markdown-preview{left:300px;width:calc(100% - 300px);padding:2em calc(50% - 457px - 300px / 2);margin:0;box-sizing:border-box}@media screen and (max-width:1274px){html body[for=html-export]:not([data-presentation-mode])[html-show-sidebar-toc] .markdown-preview{padding:2em}}@media screen and (max-width:450px){html body[for=html-export]:not([data-presentation-mode])[html-show-sidebar-toc] .markdown-preview{width:100%}}html body[for=html-export]:not([data-presentation-mode]):not([html-show-sidebar-toc]) .markdown-preview{left:50%;transform:translateX(-50%)}html body[for=html-export]:not([data-presentation-mode]):not([html-show-sidebar-toc]) .md-sidebar-toc{display:none}
+        /* Please visit the URL below for more information: */
+        /*   https://shd101wyy.github.io/markdown-preview-enhanced/#/customize-css */
+
+    </style>
+    <!-- The content below will be included at the end of the <head> element. --><script type="text/javascript">
+    document.addEventListener("DOMContentLoaded", function () {
+        // your code here
+    });
     layer.open({
         title: ["信息面板", "background-color:#8DCE16; color:#fff;"],
         anim: "up",
         content: `<div style="color:black;text-align:center;font-size:15px"><strong><span style="font-size:20px">本站官方TG交流群：</span><span><a href="https://t.me/feiyangdigital" target="_blank" style="color:red;font-size:20px;text-decoration:none">点击加入</a></span></strong></br><strong><span style="font-size:20px">IEPL高端机场（<span style="color:blue">原生支持各种流媒体</span>）：</span><span><a href="https://www.mcwy.org" target="_blank" style="color:red;font-size:20px;text-decoration:none">点击注册</a></span></strong></br><strong><span style="font-size:20px">奈飞、ChatGPT合租（<span style="color:blue">优惠码：feiyang</span>）：</span><span><a href="https://hezu.v1.mk/" style="color:red;font-size:20px;text-decoration:none">点击上车</a></span></strong></br><strong><span style="font-size:20px">IOS外区应用代购：</span><span><a href="https://fk.myue.club" target="_blank" style="color:red;font-size:20px;text-decoration:none">点击查看</a></span></strong></br><strong><span style="font-size:20px">牧场流媒体支持状态实时检测图：</span><span><a href="https://nf.mccloud.vip" style="color:red;font-size:20px;text-decoration:none">点击查看</a></span></strong></br>本站服务器赞助机场-牧场物语，BGP中继+IEPL企业级内网专线的高端机场，适合各个价位要求的用户，牧场物语采用最新的奈飞非自制剧解决方案，出口随机更换IP，确保尽可能的每个用户可以用上独立IP，以此来稳定解决奈飞非自制剧的封锁，并推出7*24小时奈飞非自制剧节点自动检测系统，用户再也不用自己手动一个个的乱试节点了，目前牧场的新加坡，台湾等节区域点均可做到24H稳定非自制剧观看！</br></div>`,
         btn: ["确认"],
-      });
+    });
+</script></head><body for="html-export">
 
-    function getCode() {
-        var httpRequest;
-        makeRequest();
 
-        function makeRequest() {
-            httpRequest = new XMLHttpRequest();
-            if (!httpRequest) {
-                alert("Giving up :( Cannot create an XMLHTTP instance");
-                return false;
-            }
-            httpRequest.onreadystatechange = alertContents;
-            httpRequest.open(
-                "GET",
-                "https://congcong0806.github.io/2018/04/20/SS/"
-            );
-            httpRequest.send();
-        }
+<div class="crossnote markdown-preview  ">
 
-        function alertContents() {
-            if (httpRequest.readyState === XMLHttpRequest.DONE) {
-                if (httpRequest.status === 200) {
-                    var text = httpRequest.responseText;
-                    var newText = text.match(/<h5 id="ios-客户端-全区可下载包括中区">[\s\S]*\n<h5 id="tv">/g);
-                    var nextText = newText[0].replaceAll(/shadowrocket.store/ig, 'fk.myue.club');
-                    var finalText = nextText.replaceAll(/https:\/\/github.com\/KOP-XIAO\/Clash-Merlin\/wiki/ig, 'https://t.me/merlinclashfile')
-                    document.getElementById("code").innerHTML = finalText;
-                } else {
-                    alert("There was a problem with the request.");
-                }
-            }
-        }
-    }
-</script>
-</body>
-</html>
+    <h4 id="client">Client </h4>
+    <h5 id="客户端">客户端 </h5>
+    <h5 id="推荐客户端">推荐客户端 </h5>
+    <ul>
+        <li><code>iOS</code>: Surge 5, Quantumult X, Shadowrocket, Loon, Stash</li>
+        <li><code>Android/安卓</code>: Clash for Android, Surfboard</li>
+        <li><code>macOS</code>: Surge Mac, ClashX Pro, Clash for Windows, Stash for macOS</li>
+        <li><code>Windows</code>: Clash Verge, Clash for Windows, Clash.Mini</li>
+        <li><code>Linux</code>: Clash for Windows<br>
+            <br><em>(下方有下载地址)</em></li>
+    </ul>
+    <h5 id="clash全平台客户端">Clash全平台客户端 </h5>
+    <ul>
+        <li><code>iOS</code>: Stash, Choc, Maomi</li>
+        <li><code>Android/安卓</code>: Clash for Android</li>
+        <li><code>macOS</code>: ClashX Pro, Clash for Windows, Stash for macOS</li>
+        <li><code>Windows</code>: Clash for Windows, Clash.Mini</li>
+        <li><code>Linux</code>: Clash for Windows, Clash<br>
+            <br><em>(下方有下载地址)</em></li>
+    </ul>
+    <h5 id="tv">TV </h5>
+    <ul>
+        <li><a href="https://github.com/Kr328/ClashForAndroid/releases">Sing-Box索尼电视兼容版</a>(选择SFA-版本号-universal.apk)</li>
+        <li><a href="https://github.com/Kr328/ClashForAndroid/releases/download/v2.1.6/app-universal-release.apk">Clash索尼电视兼容版</a></li>
+        <li><a href="https://github.com/2dust/v2rayNG/releases/download/1.7.16/v2rayNG_1.7.16.apk">v2rayNG索尼电视兼容版</a></li>
+        <li><a href="https://github.com/shadowsocks/shadowsocks-android/releases">Shadowsocks 影梭</a>(选择shadowsocks-tv--universal)</li>
+    </ul>
+    <h5 id="ios-客户端-全区可下载包括中区">iOS 客户端 (全区可下载,包括中区) </h5>
+    <ul>
+        <li><a href="https://apps.apple.com/cn/app/outline-app/id1356177741">Outline</a> (支持SS)</li>
+    </ul>
+    <h5 id="ios-客户端-中区无法下载其他区可下载">iOS 客户端 (中区无法下载,其他区可下载) </h5>
+    <ul>
+        <li><a href="https://apps.apple.com/us/app/id1442620678?l=zh-cn">Surge iOS 5</a> 更新订阅制,首年:<span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mn>49.99</mn><mo separator="true">,</mo><mtext>次年开始</mtext><mo>:</mo></mrow><annotation encoding="application/x-tex">49.99,次年开始:</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.8778em;vertical-align:-0.1944em;"></span><span class="mord">49.99</span><span class="mpunct">,</span><span class="mspace" style="margin-right:0.1667em;"></span><span class="mord cjk_fallback">次年开始</span><span class="mspace" style="margin-right:0.2778em;"></span><span class="mrel">:</span></span></span></span>14.99/年 (支持Snell/SS/VMess/VMessAEAD/Trojan/SSH/WireGuard/Hysteria2) <a href="https://nssurge.com/buy_now">推荐官网购买</a></li>
+        <li><a href="https://apps.apple.com/us/app/quantumult-x/id1443988620?l=zh-cn&amp;platform=iphone">Quantumult X</a> $7.99 (支持SS/SSR/VMess/VMessAEAD/Trojan)</li>
+        <li><a href="https://apps.apple.com/us/app/shadowrocket/id932747118?l=zh-cn">Shadowrocket</a> $2.99 (也叫:小火箭, 支持SS/SSR/Snell/VMess/VMessAEAD/Trojan/VLESS/Relay/Hysteria/Hysteria2/TUIC/WireGuard/Brook/Lua/Juicity)</li>
+        <li><a href="https://apps.apple.com/us/app/loon/id1373567447?l=zh-cn">Loon</a> $5.99 (支持SS/SSR/VMess/VMessAEAD/Trojan/VLESS/WireGuard/Hysteria2)</li>
+        <li><a href="https://apps.apple.com/us/app/loon-lite/id6444029612?l=zh-cn">Loon Lite</a> $0.99</li>
+        <li><a href="https://apps.apple.com/us/app/stash-proxy-utility/id1596063349?l=zh-cn">Stash</a> $3.99 (iOS 上的 Clash 客户端, 支持SS/SSR/Snell/VMess/VMessAEAD/Trojan/VLESS/XTLS/Hysteria/Hysteria2)</li>
+        <li><a href="https://apps.apple.com/us/app/choc/id1582542227?l=zh-cn">Choc</a> $2.99 (iOS 上的 Clash 客户端, 支持SS/SSR/Snell/VMess/VMessAEAD/Trojan)</li>
+        <li>Maomi <a href="https://testflight.apple.com/join/LAn6mLkU">TestFlight</a> (iOS 上的 Clash 客户端, 支持 Clash Premium 内核)</li>
+        <li><a href="https://apps.apple.com/us/app/sing-box/id6451272673?l=zh-cn">sing-box</a> Free (支持SOCKS/HTTP/SS/SSR/VMess/Trojan/WireGuard/Hysteria/Hysteria2/ShadowTLS/VLESS/TUIC/Tor/SSH)</li>
+        <li><a href="https://apps.apple.com/us/app/egern/id1616105820?l=zh-cn">Egern</a> $2.99 (支持SS/Trojan)</li>
+        <li><a href="https://apps.apple.com/us/app/blatu/id1317522797?l=zh-cn">Blatu</a> $1.99 (Shadowrocket作者开发的, 支持shadowvpn,DSVPN,WireGuard)</li>
+        <li><a href="https://apps.apple.com/us/app/pharos-pro/id1456610173?l=zh-cn">Pharos Pro</a> $1.99</li>
+        <li><a href="https://apps.apple.com/us/app/kitsunebi-proxy-utility/id1446584073">Kitsunebi</a> $4.99</li>
+        <li><a href="https://apps.apple.com/us/app/id1162704202">Potatso 2</a> $2.99</li>
+        <li><a href="https://apps.apple.com/us/app/id1239860606">Potatso Lite</a> Free</li>
+        <li><a href="https://apps.apple.com/us/app/lancex/id1536754048">LanceX</a> $2.99</li>
+        <li><a href="https://apps.apple.com/us/app/trojanx/id1523269113">TrojanX</a> $1.99</li>
+        <li><a href="https://apps.apple.com/us/app/id1545555197">OneClick</a> Free</li>
+        <li><a href="https://apps.apple.com/app/spectre-vpn/id1508712998">Spectre VPN</a> Free</li>
+        <li><a href="https://fk.myue.club">代购/人民币购买地址</a></li>
+    </ul>
+    <h5 id="tvos-客户端">tvOS 客户端 </h5>
+    <ul>
+        <li>Surge iOS 5</li>
+        <li>Quantumult X</li>
+        <li>Shadowrocket</li>
+        <li>Loon</li>
+        <li>Loon Lite</li>
+        <li>Stash</li>
+        <li>Potatso</li>
+    </ul>
+    <h5 id="android安卓-客户端">Android/安卓 客户端 </h5>
+    <ul>
+        <li><a href="https://github.com/Kr328/ClashForAndroid/releases">Clash for Android</a> Clash的Android图形客户端 (支持SS/SSR/Snell/VMess/Trojan/Wireguard)</li>
+        <li><a href="https://play.google.com/store/apps/details?id=com.github.kr328.clash">Clash for Android Google Play</a> Clash的Android图形客户端 (支持SS/SSR/Snell/VMess/Trojan/Wireguard)</li>
+        <li><a href="https://t.me/+kqvN73Ap1ixhY2Q1">Clash for Android 3.0 测试版</a></li>
+        <li><a href="https://github.com/MetaCubeX/ClashMetaForAndroid/releases">ClashMetaForAndroid</a> Clash.Meta内核</li>
+        <li><a href="https://github.com/getsurfboard/surfboard/releases">Surfboard</a> (支持SS/VMess/Trojan, 可直接导入 Surge2/3/4 的配置)</li>
+        <li><a href="https://play.google.com/store/apps/details?id=com.getsurfboard">Surfboard Google Play</a> (支持SS/VMess/Trojan)</li>
+        <li><a href="https://github.com/SagerNet/sing-box/releases">sing-box</a> (支持SOCKS/HTTP/SS/SSR/VMess/Trojan/WireGuard/Hysteria/Hysteria2/ShadowTLS/VLESS/TUIC/Tor/SSH)</li>
+        <li><a href="https://play.google.com/store/apps/details?id=io.nekohasekai.sagernet">SagerNet Google Play</a></li>
+        <li><a href="https://github.com/MatsuriDayo/Matsuri/releases">Matsuri(茉莉)</a></li>
+        <li><a href="https://github.com/XTLS/AnXray/releases">AnXray</a></li>
+        <li><a href="https://github.com/PharosVip/Pharos-Android-Test/releases">Pharos</a></li>
+        <li><a href="https://github.com/eycorsican/kitsunebi-android/releases">Kitsunebi</a></li>
+        <li><a href="https://play.google.com/store/apps/details?id=fun.kitsunebi.kitsunebi4android">Kitsunebi Google Play</a></li>
+        <li><a href="https://github.com/shadowsocks/shadowsocks-android/releases">Shadowsocks 影梭</a></li>
+        <li><a href="https://play.google.com/store/apps/details?id=com.github.shadowsocks">Shadowsocks 影梭 Google Play</a></li>
+        <li><a href="https://play.google.com/apps/testing/com.github.shadowsocks">Shadowsocks 影梭 Google Play Beta 版</a></li>
+        <li><a href="https://github.com/shadowsocks/simple-obfs-android/releases">Simple Obfuscation</a> (影梭的插件)</li>
+        <li><a href="https://play.google.com/store/apps/details?id=com.github.shadowsocks.plugin.obfs_local">Simple Obfuscation Google Play</a> (影梭的插件)</li>
+        <li><a href="https://github.com/2dust/v2rayNG/releases">v2rayNG</a></li>
+        <li><a href="https://play.google.com/store/apps/details?id=com.v2ray.ang">v2rayNG Google Play</a></li>
+        <li><a href="https://play.google.com/store/apps/details?id=moe.nb4a">NekoBox for Android</a></li>
+        <li><a href="https://github.com/MatsuriDayo/NekoBoxForAndroid/releases">NekoBoxForAndroid</a></li>
+        <li><a href="https://oneclick.earth/files/app-website-release.apk">OneClick</a></li>
+        <li><a href="https://play.google.com/store/apps/details?id=earth.oneclick">OneClick Google Play</a></li>
+        <li><a href="https://github.com/kalasutra/Clash_For_Magisk">Clash for Magisk</a></li>
+        <li><a href="https://play.google.com/store/apps/details?id=com.github.douglarek.sba">SBA</a></li>
+    </ul>
+    <h5 id="windows-客户端">Windows 客户端 </h5>
+    <ul>
+        <li><a href="https://github.com/zzzgydi/clash-verge/releases">Clash Verge</a> Clash的Windows图形客户端,支持Clash Premium和Clash.Meta内核</li>
+        <li><a href="https://github.com/Fndroid/clash_for_windows_pkg/releases">Clash for Windows</a> Clash的Windows/macOS图形客户端,简称:CFW (支持SS/SSR/Snell/VMess/VMessAEAD/Trojan/Wireguard/VLESS)</li>
+        <li><a href="https://github.com/Clash-Mini/Clash.Mini/releases">Clash.Mini</a> 小巧精致的Windows版Clash客户端~约等于直接运行内核</li>
+        <li><a href="https://github.com/Dreamacro/clash/releases">Clash 内核</a> 一个Go语言开发的多平台代理客户端 (支持SS/SSR/Snell/VMess/VMessAEAD/Trojan/VLESS)</li>
+        <li><a href="https://github.com/Dreamacro/clash/releases/tag/premium">Clash Premium 内核</a></li>
+        <li><a href="https://github.com/MetaCubeX/Clash.Meta/releases">Clash.Meta</a> 另一个 Clash 内核</li>
+        <li><a href="https://t.me/tgcnx/2588740">Clash.NET</a> 一个漂亮的Clash的Windows图形客户端(已停更)</li>
+        <li><a href="https://github.com/shipinbaoku/clashcross/releases">ClashCross</a></li>
+        <li><a href="https://apps.apple.com/us/app/sing-box/id6451272673">sing-box</a> (支持SOCKS/HTTP/SS/SSR/VMess/Trojan/WireGuard/Hysteria/Hysteria2/ShadowTLS/VLESS/TUIC/Tor/SSH)</li>
+        <li><a href="https://github.com/2dust/clashN/releases">ClashN</a></li>
+        <li><a href="https://github.com/zapll/xclash/releases">xclash</a> Client for Clash.Meta</li>
+        <li><a href="https://github.com/netchx/Netch/releases">Netch</a> (支持SS/SSR/Vmess)</li>
+        <li><a href="https://github.com/TheMRLL/winxray/releases">WinXray</a></li>
+        <li><a href="https://github.com/MatsuriDayo/nekoray/releases">NekoRay</a></li>
+        <li><a href="https://github.com/XrayR-project/XrayR/releases">XrayR</a></li>
+        <li><a href="https://github.com/shadowsocks/shadowsocks-windows/releases">Shadowsocks</a> (简称:SS)</li>
+        <li><a href="https://github.com/shadowsocks/simple-obfs/releases">simple-obfs</a> (SS的插件)</li>
+        <li><a href="https://github.com/shadowsocks/shadowsocks-windows/releases/tag/2.3.1">Shadowsocks 2.3.1</a>（XP系统可用）</li>
+        <li><a href="https://github.com/2dust/v2rayN/releases">v2rayN</a></li>
+        <li><a href="https://github.com/Cenmrev/V2RayW/releases">V2RayW</a></li>
+        <li><a href="https://github.com/Shinlor/V2RayS/releases">V2RayS</a></li>
+        <li><a href="https://github.com/Qv2ray/Qv2ray/releases">Qv2ray</a></li>
+        <li><a href="https://github.com/YtFlow/Maple/releases">Maple</a></li>
+        <li><a href="https://github.com/nojsja/shadowsocks-electron/releases">Shadowsocks Electron</a></li>
+    </ul>
+    <h5 id="macos-客户端">macOS 客户端 </h5>
+    <ul>
+        <li><a href="https://nssurge.com/buy_now">Surge Mac 5</a> <span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mn>49.99</mn><mi mathvariant="normal">/</mi></mrow><annotation encoding="application/x-tex">49.99/</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:1em;vertical-align:-0.25em;"></span><span class="mord">49.99/</span></span></span></span>69.99/$99.99 (支持Snell/SS/VMess/VMessAEAD/Trojan/SSH/WireGuard)</li>
+        <li><a href="https://apps.apple.com/us/app/quantumult-x/id1443988620?l=zh-cn&amp;platform=mac">Quantumult X</a> $7.99 (支持SS/SSR/VMess/VMessAEAD/Trojan, 需要 macOS 11.0 或更高版本)</li>
+        <li><a href="https://github.com/Fndroid/clash_for_windows_pkg/releases">Clash for Windows</a> Clash的Windows/macOS图形客户端,简称:CFW (支持SS/SSR/Snell/VMess/VMessAEAD/Trojan/Wireguard/VLESS)</li>
+        <li><a href="https://github.com/yichengchen/clashX/releases">ClashX</a> Clash的Mac图形客户端 (FOSS内核，支持SS/SSR/Snell/VMess/VMessAEAD/Trojan)</li>
+        <li><a href="https://install.appcenter.ms/users/clashx/apps/clashx-pro/distribution_groups/public">ClashX Pro</a> Clash的Mac图形客户端 (Premium内核，支持SS/SSR/Snell/VMess/VMessAEAD/Trojan/Wireguard/VLESS)</li>
+        <li><a href="https://stash.ws/macos/pricing/">Stash for macOS</a> 得益于为 macOS 平台专注设计，Stash for macOS 将比 Stash for iOS 版本支持更多的特性。</li>
+        <li><a href="https://github.com/Dreamacro/clash/releases">Clash 内核</a> 一个Go语言开发的多平台代理客户端 (支持SS/SSR/Snell/VMess/VMessAEAD/Trojan)</li>
+        <li><a href="https://github.com/Dreamacro/clash/releases/tag/premium">Clash Premium 内核</a></li>
+        <li><a href="https://github.com/MetaCubeX/ClashX.Meta/releases/">ClashX.Meta</a> 另一个 Clash 内核</li>
+        <li><a href="https://github.com/MetaCubeX/Clash.Meta/releases">Clash.Meta</a> 另一个 Clash 内核</li>
+        <li><a href="https://github.com/shipinbaoku/clashcross/releases">ClashCross</a></li>
+        <li><a href="https://github.com/qiudaomao/ClaftRelease/releases">Claft</a> Dashboard for Clash totally in SwiftUI</li>
+        <li><a href="https://github.com/zapll/xclash/releases">xclash</a> Client for Clash.Meta</li>
+        <li><a href="https://github.com/XrayR-project/XrayR/releases">XrayR</a></li>
+        <li><a href="https://github.com/Cenmrev/V2RayX/releases">V2RayX</a></li>
+        <li><a href="https://github.com/yanue/V2rayU/releases">V2rayU</a></li>
+        <li><a href="https://github.com/gssdromen/V2RayC">V2RayC</a></li>
+        <li><a href="https://github.com/Qv2ray/Qv2ray/releases">Qv2ray</a></li>
+        <li><a href="https://github.com/JimLee1996/TrojanX/releases">TrojanX</a></li>
+        <li><a href="https://github.com/nojsja/shadowsocks-electron/releases">Shadowsocks Electron</a></li>
+    </ul>
+    <h5 id="linux-客户端">Linux 客户端 </h5>
+    <ul>
+        <li><a href="https://github.com/Fndroid/clash_for_windows_pkg/releases">Clash for Windows</a> Clash的Windows/macOS图形客户端,简称:CFW (支持SS/SSR/Snell/VMess/VMessAEAD/Trojan/Wireguard/VLESS)</li>
+        <li><a href="https://github.com/Dreamacro/clash/releases">Clash 内核</a> 一个Go语言开发的多平台代理客户端 (支持SS/SSR/Snell/VMess/VMessAEAD/Trojan/VLESS)</li>
+        <li><a href="https://github.com/Dreamacro/clash/releases/tag/premium">Clash Premium 内核</a></li>
+        <li><a href="https://github.com/MetaCubeX/Clash.Meta/releases">Clash.Meta</a> 另一个 Clash 内核</li>
+        <li><a href="https://github.com/shipinbaoku/clashcross/releases">ClashCross</a></li>
+    </ul>
+    <h5 id="路由器">路由器 </h5>
+    <ul>
+        <li><a href="https://github.com/vernesong/OpenClash/wiki">OpenClash</a></li>
+        <li><a href="https://t.me/merlinclashfile">Clash-Merlin</a></li>
+        <li><a href="https://koolclash.js.org">Koolshare OpenWrt/LED</a></li>
+        <li><a href="https://github.com/SukkaW/Koolshare-Clash/releases">KoolClash</a></li>
+        <li><a href="https://github.com/juewuy/ShellClash">ShellClash</a></li>
+        <li><a href="https://github.com/hq450/fancyss">fancyss</a></li>
+        <li><a href="https://github.com/frainzy1477/clash/releases">Clash for OpenWrt</a></li>
+        <li><a href="https://github.com/frainzy1477/clashr/releases">ClashR for OpenWrt</a></li>
+        <li><a href="https://github.com/frainzy1477/luci-app-clash/releases">Luci For Clash - OpenWrt</a></li>
+        <li><a href="https://github.com/shadowsocks/openwrt-shadowsocks">OpenWRT-Shadowsocks</a></li>
+        <li><a href="https://www.right.com.cn/forum/thread-161324-1-1.html">Padavan</a></li>
+    </ul>
+    <h3 id="telegram-客户端-proxy-代理设置">Telegram 客户端 Proxy 代理设置 </h3>
+    <p><a href="https://raw.githubusercontent.com/youshandefeiyang/webcdn/6.4/tg.png%22">https://raw.githubusercontent.com/youshandefeiyang/webcdn/6.4/tg.png"</a></p>
+    <h3 id="耗电流量">耗电/流量 </h3>
+    <p><em>为什么使用了代理应用后在电量统计中显示耗电很多？</em><br><br>
+        这是移动操作系统的一个特殊机制，Surge iOS、Quantumult X、Shadowrocket、Choc 等等所有的 SS/SSR/V2Ray/Trojan 客户端开启后会接管全局的（几乎）所有通信，所以所有的网络方面电量消耗都会被算在代理应用头上，实际使用中不会感到代理应用对电量有明显影响，「设置-电池」中看到它的电池用量，绝大部分都是网络所消耗的电量，并不是代理应用消耗的电量，代理应用就是背锅侠。<br><br>
+        还有，夜间或锁屏后系统也会请求网络，比如后台刷新、系统服务等等，只要有请求网络就会经过代理应用，所以在「设置-电池」处看到代理应用在后台也会运行。<br><br>
+        网络流量也是如此的。</p>
+
+</div>
+
+
+
+
+
+
+
+
+
+</body></html>

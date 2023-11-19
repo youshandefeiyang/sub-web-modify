@@ -243,14 +243,7 @@
               </el-form-item>
               <el-form-item label-width="0px" style="text-align: center">
                 <el-button
-                    style="width: 120px;"
-                    type="success"
-                    icon="el-icon-refresh"
-                    @click="gotoCts"
-                >sing-box转换
-                </el-button>
-                <el-button
-                    style="width: 120px;"
+                    style="width: 250px;"
                     type="success"
                     icon="el-icon-video-play"
                     @click="centerDialogVisible = true"
@@ -442,6 +435,7 @@ export default {
       btnBoolean: false,
       options: {
         clientTypes: {
+          "Sing-Box": "singbox",
           Clash: "clash",
           Surge2: "surge&ver=2",
           Surge3: "surge&ver=3",
@@ -939,7 +933,7 @@ export default {
   },
   mounted() {
     this.tanchuang();
-    this.form.clientType = "clash";
+    this.form.clientType = "singbox";
     this.getBackendVersion();
     this.anhei();
     let lightMedia = window.matchMedia('(prefers-color-scheme: light)');
@@ -1010,9 +1004,6 @@ export default {
     },
     onCopy() {
       this.$message.success("已复制");
-    },
-    gotoCts() {
-      window.open("https://cts.v1.mk/");
     },
     goToProject() {
       window.open(project);

@@ -1330,6 +1330,9 @@ export default {
         if (param.get("new_name")) {
           this.form.new_name = param.get("new_name") === 'true';
         }
+        if (param.get("singbox.ipv6")) {
+          this.form.tpl.singbox.ipv6 = param.get("singbox.ipv6") === '1';
+        }
         this.dialogLoadConfigVisible = false;
         this.$message.success("长/短链接已成功解析为订阅信息");
       })();

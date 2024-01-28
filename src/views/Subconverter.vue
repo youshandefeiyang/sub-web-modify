@@ -447,9 +447,7 @@ export default {
       options: {
         clientTypes: {
           Clash: "clash",
-          Surge2: "surge&ver=2",
-          Surge3: "surge&ver=3",
-          Surge4: "surge&ver=4",
+          "Surge4/5": "surge&ver=4",
           "Sing-Box": "singbox",
           V2Ray: "v2ray",
           Trojan: "trojan",
@@ -460,6 +458,8 @@ export default {
           "Quantumult X": "quanx",
           Loon: "loon",
           Mellow: "mellow",
+          Surge3: "surge&ver=3",
+          Surge2: "surge&ver=2",
           ClashR: "clashr",
           "Shadowsocks(SIP002)": "ss",
           "Shadowsocks Android(SIP008)": "sssub",

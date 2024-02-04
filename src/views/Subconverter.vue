@@ -853,7 +853,7 @@ export default {
       form: {
         sourceSubUrl: "",
         clientType: "",
-        customBackend: this.getUrlParam() == "" ? "https://api.nexconvert.com" : this.getUrlParam(),
+        customBackend: this.getUrlParam() == "" ? "https://suc.flycnb.tk" : this.getUrlParam(),
         shortType: "https://v1.mk/short",
         remoteConfig: "https://raw.githubusercontent.com/CitizenScyu/clash-rules/master/DNS.ini",
         excludeRemarks: "",

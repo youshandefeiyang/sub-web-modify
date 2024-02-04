@@ -462,7 +462,7 @@ export default {
           "sub.cm": "https://sub.cm/short",
         },
         customBackend: {
-          "Fly后端": "https://suc.flycnb.tk/sub?",
+          "Fly后端": "https://suc.flycnb.tk",
           "佩奇后端": "https://api.nexconvert.com",
           "肥羊增强型后端【vless reality+hy1+hy2】": "https://api.v1.mk",
           "肥羊备用后端【vless reality+hy1+hy2】": "https://sub.d1.mk",
@@ -473,7 +473,7 @@ export default {
           "墙洞": "https://api.dler.io",
         },
         backendOptions: [
-          {value: "https://suc.flycnb.tk/sub?"},
+          {value: "https://suc.flycnb.tk"},
           {value: "https://api.nexconvert.com"},
           {value: "https://api.v1.mk"},
           {value: "https://sub.d1.mk"},

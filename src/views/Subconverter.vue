@@ -988,7 +988,7 @@ export default {
       window.open(downld);
     },
     gotoBasicVideo() {
-      this.$alert("别忘了关注友善的肥羊哦！", {
+      this.$alert("推荐机场链接https://s.1g.gay/dCEja7", {
         type: "warning",
         confirmButtonText: '确定',
         customClass: 'msgbox',

@@ -254,7 +254,7 @@
                     type="primary"
                     icon="el-icon-copy-document"
                     :loading="loading3"
-                ><a href="https://m5.5nnn.top/#/register?code=WFHKmOg2">推荐机场</a></el-button>
+                ><a href="https://m5.5nnn.top/#/register?code=WFHKmOg2 style="color: inherit;">推荐机场</a></el-button>
               </el-form-item>
             </el-form>
           </el-container>

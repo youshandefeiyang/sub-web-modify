@@ -5,8 +5,8 @@
         <el-card>
           <div slot="header">
             <svg-icon class="gayhub" icon-class="github" style="float:left" @click="goToProject"/>
-            <a href="tg://user?id=5480911121"><svg-icon class="dianbao" icon-class="telegram" style="float:left;margin-left: 10px"
-                      /></a>
+            <svg-icon class="dianbao" icon-class="telegram" style="float:left;margin-left: 10px"
+                      @click="gotoTgChannel"/>
             <svg-icon class="bilibili" icon-class="bilibili" style="float:right;margin-left:10px"
                       @click="gotoBiliBili"/>
             <svg-icon class="youguan" icon-class="youtube" style="float:right;margin-left:10px" @click="gotoYouTuBe"/>

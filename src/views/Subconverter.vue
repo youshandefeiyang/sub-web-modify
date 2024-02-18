@@ -247,7 +247,7 @@
                     type="primary"
                     icon="el-icon-video-play"
                     @click="centerDialogVisible = true"
-                >保姆级视频教程
+                >视频教程
                 </el-button>
                 <el-button
                     style="width: 120px"
@@ -255,7 +255,7 @@
                     @click="dialogLoadConfigVisible = true"
                     icon="el-icon-copy-document"
                     :loading="loading3"
-                >推荐机场</el-button>
+                ><a href="https://m5.5nnn.top/#/register?code=WFHKmOg2">推荐机场</a></el-button>
               </el-form-item>
             </el-form>
           </el-container>

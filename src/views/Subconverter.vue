@@ -243,12 +243,19 @@
               </el-form-item>
               <el-form-item label-width="0px" style="text-align: center">
                 <el-button
-                    style="width: 250px;"
-                    type="success"
+                    style="width: 120px;"
+                    type="primary"
                     icon="el-icon-video-play"
                     @click="centerDialogVisible = true"
                 >保姆级视频教程
                 </el-button>
+                <el-button
+                    style="width: 120px"
+                    type="primary"
+                    @click="dialogLoadConfigVisible = true"
+                    icon="el-icon-copy-document"
+                    :loading="loading3"
+                >推荐机场</el-button>
               </el-form-item>
             </el-form>
           </el-container>
@@ -462,7 +469,7 @@ export default {
           "sub.cm": "https://sub.cm/short",
         },
         customBackend: {
-          "Fly后端": "https://suc.flynb.site",
+          "大象后端": "https://sub.dxdyzh.tk",
           "佩奇后端": "https://api.nexconvert.com",
           "肥羊增强型后端【vless reality+hy1+hy2】": "https://api.v1.mk",
           "肥羊备用后端【vless reality+hy1+hy2】": "https://sub.d1.mk",
@@ -473,7 +480,7 @@ export default {
           "墙洞": "https://api.dler.io",
         },
         backendOptions: [
-          {value: "https://suc.flynb.site"},
+          {value: "https://sub.dxdyzh.tk"},
           {value: "https://api.nexconvert.com"},
           {value: "https://api.v1.mk"},
           {value: "https://sub.d1.mk"},
@@ -853,7 +860,7 @@ export default {
       form: {
         sourceSubUrl: "",
         clientType: "",
-        customBackend: this.getUrlParam() == "" ? "https://suc.flynb.site" : this.getUrlParam(),
+        customBackend: this.getUrlParam() == "" ? "https://sub.dxdyzh.tk" : this.getUrlParam(),
         shortType: "https://v1.mk/short",
         remoteConfig: "https://raw.githubusercontent.com/CitizenScyu/clash-rules/master/DNS.ini",
         excludeRemarks: "",
@@ -999,7 +1006,7 @@ export default {
           });
     },
     gotoAdvancedVideo() {
-      this.$alert("别忘了关注友善的肥羊哦！", {
+      this.$alert("放心使用，不记录任何订阅", {
         type: "warning",
         confirmButtonText: '确定',
         customClass: 'msgbox',
@@ -1350,7 +1357,7 @@ export default {
             a ? this.$message.success(`${this.backendVersion}` + "肥羊负载均衡增强版后端，已屏蔽免费节点池（会返回403），额外支持vless+hysteria订阅转换") : b ? this.$message.success(`${this.backendVersion}` + "本地局域网自建版后端") : this.$message.success(`${this.backendVersion}` + "官方原版后端不支持vless/hysteria订阅转换");
           })
           .catch(() => {
-            this.$message.error("请求SubConverter版本号返回数据失败，该后端不可用！");
+            this.$message.error("请放心使用本订阅转换，不保存任何订阅记录！");
           });
     }
   }

@@ -254,7 +254,7 @@
                     type="primary"
                     icon="el-icon-copy-document"
                     :loading="loading3"
-                ><a href="https://m5.5nnn.top/#/register?code=WFHKmOg2 style="color: inherit;">推荐机场</a></el-button>
+                ><a href="https://m5.5nnn.top/#/register?code=WFHKmOg2" style="color: inherit;">推荐机场</a></el-button>
               </el-form-item>
             </el-form>
           </el-container>
@@ -1353,7 +1353,7 @@ export default {
             this.backendVersion = this.backendVersion.replace("subconverter", "SubConverter");
             let a = this.form.customBackend.indexOf("api.v1.mk") !== -1 || this.form.customBackend.indexOf("sub.d1.mk") !== -1;
             let b = this.form.customBackend.indexOf("127.0.0.1") !== -1;
-            a ? this.$message.success(`${this.backendVersion}` + "肥羊负载均衡增强版后端，已屏蔽免费节点池（会返回403），额外支持vless+hysteria订阅转换") : b ? this.$message.success(`${this.backendVersion}` + "本地局域网自建版后端") : this.$message.success(`${this.backendVersion}` + "官方原版后端不支持vless/hysteria订阅转换");
+            a ? this.$message.success(`${this.backendVersion}` + "肥羊负载均衡增强版后端，已屏蔽免费节点池（会返回403），额外支持vless+hysteria订阅转换") : b ? this.$message.success(`${this.backendVersion}` + "本地局域网自建版后端") : this.$message.success(`${this.backendVersion}` + "本站已支持vless/hysteria订阅转换");
           })
           .catch(() => {
             this.$message.error("请放心使用本订阅转换，不保存任何订阅记录！");

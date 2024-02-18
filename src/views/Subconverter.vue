@@ -252,7 +252,6 @@
                 <el-button
                     style="width: 120px"
                     type="primary"
-                    @click="dialogLoadConfigVisible = true"
                     icon="el-icon-copy-document"
                     :loading="loading3"
                 ><a href="https://m5.5nnn.top/#/register?code=WFHKmOg2">推荐机场</a></el-button>

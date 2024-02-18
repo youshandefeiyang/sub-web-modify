@@ -909,7 +909,7 @@ export default {
     };
   },
   created() {
-    document.title = "在线订阅转换工具";
+    document.title = "大象订阅转换工具";
     this.isPC = this.$getOS().isPc;
   },
   mounted() {

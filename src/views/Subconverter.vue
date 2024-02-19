@@ -468,7 +468,7 @@ export default {
           "sub.cm": "https://sub.cm/short",
         },
         customBackend: {
-          "大象后端(如需转换hy2可能要在更多选项里面打开跳过证书验证）": "https://sub.dxdyzh.tk",
+          "大象后端(hy2可能要打开跳过证书验证）": "https://sub.dxdyzh.tk",
           "佩奇后端": "https://api.nexconvert.com",
           "肥羊增强型后端【vless reality+hy1+hy2】": "https://api.v1.mk",
           "肥羊备用后端【vless reality+hy1+hy2】": "https://sub.d1.mk",

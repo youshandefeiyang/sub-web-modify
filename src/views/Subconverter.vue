@@ -884,7 +884,7 @@ export default {
         new_name: true, // 是否使用 Clash 新字段
         tpl: {
           surge: {
-            doh: true // dns 查询是否使用 DoH
+            doh: false // dns 查询是否使用 DoH
           },
           clash: {
             doh: true

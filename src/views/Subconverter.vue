@@ -446,8 +446,8 @@ export default {
       btnBoolean: false,
       options: {
         clientTypes: {
-          Clash: "clash",
           "Surge4/5": "surge&ver=4",
+          Clash: "clash",
           "Sing-Box": "singbox",
           V2Ray: "v2ray",
           Trojan: "trojan",
@@ -892,7 +892,7 @@ export default {
         customBackend: this.getUrlParam() == "" ? "https://api.v1.mk" : this.getUrlParam(),
         shortType: "https://v1.mk/short",
         remoteConfig: "https://raw.githubusercontent.com/liu-hong/sub-web-modify/master/my.ini",
-        excludeRemarks: "",
+        excludeRemarks: "深港",
         includeRemarks: "",
         filename: "",
         rename: "",

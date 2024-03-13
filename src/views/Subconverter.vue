@@ -888,7 +888,7 @@ export default {
       },
       form: {
         sourceSubUrl: "",
-        clientType: "",
+        clientType: "surge&ver=4",
         customBackend: this.getUrlParam() == "" ? "https://api.v1.mk" : this.getUrlParam(),
         shortType: "https://v1.mk/short",
         remoteConfig: "https://raw.githubusercontent.com/liu-hong/sub-web-modify/master/my.ini",

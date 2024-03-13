@@ -947,7 +947,7 @@ export default {
   },
   mounted() {
     this.tanchuang();
-    this.form.clientType = "clash";
+    this.form.clientType = "surge&ver=4";
     this.getBackendVersion();
     this.anhei();
     let lightMedia = window.matchMedia('(prefers-color-scheme: light)');

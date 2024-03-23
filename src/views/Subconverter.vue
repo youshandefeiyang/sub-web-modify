@@ -1005,7 +1005,7 @@ export default {
           });
     },
     gotoAdvancedVideo() {
-      this.$alert("放心使用，不记录任何订阅", {
+      this.$alert("欢迎加入TG频道@CitizenScyu", {
         type: "warning",
         confirmButtonText: '确定',
         customClass: 'msgbox',
@@ -1356,7 +1356,7 @@ export default {
             a ? this.$message.success(`${this.backendVersion}` + "肥羊负载均衡增强版后端，已屏蔽免费节点池（会返回403），额外支持vless+hysteria订阅转换") : b ? this.$message.success(`${this.backendVersion}` + "本地局域网自建版后端") : this.$message.success(`${this.backendVersion}` + "本站已支持vless/hysteria订阅转换");
           })
           .catch(() => {
-            this.$message.error("请放心使用本订阅转换，不保存任何订阅记录！");
+            this.$message.error("欢迎加入TG频道@CitizenScyu");
           });
     }
   }

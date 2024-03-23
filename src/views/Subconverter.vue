@@ -228,11 +228,9 @@
                 <el-button
                     style="width: 120px"
                     type="primary"
-                    @click="dialogUploadConfigVisible = true"
-                    icon="el-icon-upload"
-                    :loading="loading2"
-                >自定义配置
-                </el-button>
+                    icon="el-icon-copy-document"
+                    :loading="loading3"
+                ><a href="https://t.me/CitizenScyu" style="color: inherit;">加入频道</a></el-button>
                 <el-button
                     style="width: 120px"
                     type="primary"
@@ -249,12 +247,14 @@
                     @click="centerDialogVisible = true"
                 >视频教程
                 </el-button>
-                <el-button
+              <el-button
                     style="width: 120px"
                     type="primary"
-                    icon="el-icon-copy-document"
-                    :loading="loading3"
-                ><a href="https://m5.5nnn.top/#/register?code=WFHKmOg2" style="color: inherit;">推荐机场</a></el-button>
+                    @click="dialogUploadConfigVisible = true"
+                    icon="el-icon-upload"
+                    :loading="loading2"
+                >自定义配置
+                </el-button>
               </el-form-item>
             </el-form>
           </el-container>

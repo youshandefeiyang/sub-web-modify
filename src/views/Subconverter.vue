@@ -470,7 +470,7 @@ export default {
         customBackend: {
           "大象后端(hy2可能要打开跳过证书验证）": "https://sub.dxdyzh.tk",
           "佩奇后端": "https://api.nexconvert.com",
-          "肥羊增强型后端【vless reality+hy1+hy2】": "https://api.v1.mk",
+          "肥羊增强型后端【vless reality+hy1+hy2】": "https://suburl.v1.mk",
           "肥羊备用后端【vless reality+hy1+hy2】": "https://sub.d1.mk",
           "つつ-多地防失联【负载均衡+国内优化】": "https://api.tsutsu.one",
           nameless13提供: "https://www.nameless13.com",
@@ -481,7 +481,7 @@ export default {
         backendOptions: [
           {value: "https://sub.dxdyzh.tk"},
           {value: "https://api.nexconvert.com"},
-          {value: "https://api.v1.mk"},
+          {value: "https://suburl.v1.mk"},
           {value: "https://sub.d1.mk"},
           {value: "https://api.tsutsu.one"},
           {value: "https://www.nameless13.com"},

@@ -9,5 +9,5 @@ docker run -d --restart unless-stopped --privileged=true -p 8090:80 --name sub-w
 ```
 访问地址举例:
 ```
-http://192.168.10.1:8090/?backend=https://apiurl.v1.mk
+http://192.168.10.1:8090/?backend=https://url.v1.mk
 ```

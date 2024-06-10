@@ -35,21 +35,10 @@
                     allow-create
                     filterable
                     @change="selectChanged"
-                    @blur="(event) => handleBlur(event, 'customBackend')"
                     placeholder="可输入自己的后端"
                     style="width: 100%"
                 >
-                  <el-option-group
-                      v-for="group in options.customBackend"
-                      :key="group.label"
-                      :label="group.label"
-                  >
-                    <el-option
-                        v-for="item in group.options"
-                        :key="item.value"
-                        :label="item.label"
-                        :value="item.value"
-                    ></el-option>
+                  <el-option v-for="(v, k) in options.customBackend" :key="k" :label="k" :value="v"></el-option>
                 </el-select>
               </el-form-item>
               <el-form-item label="短链选择:">
@@ -57,21 +46,10 @@
                     v-model="form.shortType"
                     allow-create
                     filterable
-                    @blur="(event) => handleBlur(event, 'shortTypes')"
                     placeholder="可输入其他可用短链API"
                     style="width: 100%"
                 >
-                  <el-option-group
-                      v-for="group in options.shortTypes"
-                      :key="group.label"
-                      :label="group.label"
-                  >
-                    <el-option
-                        v-for="item in group.options"
-                        :key="item.value"
-                        :label="item.label"
-                        :value="item.value"
-                    ></el-option>
+                  <el-option v-for="(v, k) in options.shortTypes" :key="k" :label="k" :value="v"></el-option>
                 </el-select>
               </el-form-item>
               <el-form-item label="远程配置:">
@@ -79,7 +57,6 @@
                     v-model="form.remoteConfig"
                     allow-create
                     filterable
-                    @blur="(event) => handleBlur(event, 'remoteConfig')"
                     placeholder="请选择"
                     style="width: 100%"
                 >
@@ -505,6 +482,15 @@ export default {
           "sub-web作者提供": "https://api.wcc.best",
           "sub作者&lhie1提供": "https://api.dler.io",
         },
+        backendOptions: [
+          {value: "https://url.v1.mk"},
+          {value: "https://sub.d1.mk"},
+          {value: "https://api.tsutsu.one"},
+          {value: "https://www.nameless13.com"},
+          {value: "https://sub.xeton.dev"},
+          {value: "https://api.wcc.best"},
+          {value: "https://api.dler.io"},
+        ],
         remoteConfig: [
           {
             label: "通用",
@@ -977,14 +963,6 @@ export default {
     } //监听系统主题，自动切换！
   },
   methods: {
-    handleBlur(event, optionType) {
-      const inputElement = event.target;
-      const inputValue = inputElement.value;
-      if (inputValue && !this.options[optionType].find(option => option.value === inputValue)) {
-        this.options[optionType].unshift({ value: inputValue, label: inputValue });
-      }
-      this.form[optionType] = inputValue;
-    },
     selectChanged() {
       this.getBackendVersion();
     },

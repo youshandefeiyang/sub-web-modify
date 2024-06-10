@@ -39,7 +39,17 @@
                     placeholder="可输入自己的后端"
                     style="width: 100%"
                 >
-                  <el-option v-for="(v, k) in options.customBackend" :key="k" :label="k" :value="v"></el-option>
+                  <el-option-group
+                      v-for="group in options.customBackend"
+                      :key="group.label"
+                      :label="group.label"
+                  >
+                    <el-option
+                        v-for="item in group.options"
+                        :key="item.value"
+                        :label="item.label"
+                        :value="item.value"
+                    ></el-option>
                 </el-select>
               </el-form-item>
               <el-form-item label="短链选择:">
@@ -51,7 +61,17 @@
                     placeholder="可输入其他可用短链API"
                     style="width: 100%"
                 >
-                  <el-option v-for="(v, k) in options.shortTypes" :key="k" :label="k" :value="v"></el-option>
+                  <el-option-group
+                      v-for="group in options.shortTypes"
+                      :key="group.label"
+                      :label="group.label"
+                  >
+                    <el-option
+                        v-for="item in group.options"
+                        :key="item.value"
+                        :label="item.label"
+                        :value="item.value"
+                    ></el-option>
                 </el-select>
               </el-form-item>
               <el-form-item label="远程配置:">
@@ -960,11 +980,9 @@ export default {
     handleBlur(event, optionType) {
       const inputElement = event.target;
       const inputValue = inputElement.value;
-
       if (inputValue && !this.options[optionType].find(option => option.value === inputValue)) {
         this.options[optionType].unshift({ value: inputValue, label: inputValue });
       }
-
       this.form[optionType] = inputValue;
     },
     selectChanged() {

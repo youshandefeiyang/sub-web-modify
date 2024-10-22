@@ -167,6 +167,13 @@
                               <el-checkbox v-model="form.fdn" label="过滤不支持节点"></el-checkbox>
                             </el-col>
                           </el-row>
+                          <el-row :gutter="10">
+                            <el-col :span="12">
+                              <div style="margin-left: 35%">
+                                <el-checkbox v-model="form.tpl.singbox.ipv6" label="Sing-Box支持IPV6"></el-checkbox>
+                              </div>
+                            </el-col>
+                          </el-row>
                           <el-button slot="reference">更多选项</el-button>
                         </el-popover>
                       </el-row>
@@ -442,6 +449,7 @@ export default {
       options: {
         clientTypes: {
           Clash: "clash",
+          Sing-Box: "singbox",
           Surge2: "surge&ver=2",
           Surge3: "surge&ver=3",
           Surge4: "surge&ver=4",
@@ -468,7 +476,7 @@ export default {
           "sub.cm": "https://sub.cm/short",
         },
         customBackend: {
-          "大象后端(hy2可能要打开跳过证书验证）": "https://sub.dxdyzh.tk",
+          "大象后端": "https://sub.dxdyzh.tk",
           "佩奇后端": "https://api.nexconvert.com",
           "肥羊增强型后端【vless reality+hy1+hy2】": "https://apiurl.v1.mk",
           "肥羊备用后端【vless reality+hy1+hy2】": "https://sub.d1.mk",
@@ -889,6 +897,9 @@ export default {
           clash: {
             doh: true
           }
+          singbox: {
+            ipv6: false
+          }
         }
       },
       loading1: false,
@@ -1100,6 +1111,11 @@ export default {
         }
         this.customSubUrl += "&new_name=" + this.form.new_name.toString();
       }
+      if (this.form.clientType === "singbox") {
+        if (this.form.tpl.singbox.ipv6 === true) {
+          this.customSubUrl += "&singbox.ipv6=1";
+        }
+      }
       this.$copyText(this.customSubUrl);
       this.$message.success("定制订阅已复制到剪贴板");
     },
@@ -1282,6 +1298,9 @@ export default {
       if (param.get("new_name")){
         this.form.new_name = param.get("new_name") === 'true';
       }
+      if (param.get("singbox.ipv6")) {
+          this.form.tpl.singbox.ipv6 = param.get("singbox.ipv6") === '1';
+        }
       this.dialogLoadConfigVisible = false;
       this.$message.success("长/短链接已成功解析为订阅信息");
     })();

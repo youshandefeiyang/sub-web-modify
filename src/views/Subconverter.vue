@@ -449,7 +449,7 @@ export default {
       options: {
         clientTypes: {
           Clash: "clash",
-          Sing-Box: "singbox",
+          "Sing-Box": "singbox",
           Surge2: "surge&ver=2",
           Surge3: "surge&ver=3",
           Surge4: "surge&ver=4",

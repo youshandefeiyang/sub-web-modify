@@ -896,7 +896,7 @@ export default {
           },
           clash: {
             doh: true
-          }
+          },
           singbox: {
             ipv6: false
           }

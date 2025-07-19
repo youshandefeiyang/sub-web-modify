@@ -11,5 +11,3 @@ docker run -d --restart unless-stopped --privileged=true -p 8090:80 --name sub-w
 ```
 http://192.168.10.1:8090/?backend=https://url.v1.mk
 ```
-# 本项目 CDN 加速及安全防护由 Tencent EdgeOne 赞助
-  [<img src="https://edgeone.ai/logo/headLogo.png" alt="GitHub Logo" width="500" height="100">](https://edgeone.ai/zh?from=github)

@@ -5,8 +5,9 @@
 ### 使用方法：
 建议使用Docker一键部署:
 ```
-docker run -d --restart unless-stopped --privileged=true -p 8090:80 --name sub-web-modify youshandefeiyang/sub-web-modify
+docker run -d --restart unless-stopped -p 8090:80 --name sub-web-modify youshandefeiyang/sub-web-modify
 ```
+        restart: unless-stopped
 访问地址举例:
 ```
 http://192.168.10.1:8090/?backend=https://url.v1.mk

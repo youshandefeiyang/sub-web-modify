@@ -2,11 +2,10 @@
 FROM --platform=$BUILDPLATFORM node:22.18.0-alpine3.22 AS build
 WORKDIR /app
 
-# 若依赖含原生扩展，可加编译工具（按需启用）
-# RUN apk add --no-cache --virtual .build-deps python3 make g++
-
-# Node 22 使用 Corepack 管理 Yarn
-RUN apk add --no-cache libc6-compat && corepack enable && corepack prepare yarn@stable --activate
+# 为 Git 依赖安装必要工具；并启用 Corepack 固定 Yarn
+RUN apk add --no-cache git openssh-client ca-certificates libc6-compat \
+  && corepack enable \
+  && corepack prepare yarn@stable --activate
 
 # 先拷贝依赖清单，利用缓存
 COPY package.json yarn.lock ./

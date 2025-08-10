@@ -1,4 +1,4 @@
-FROM node:24-alpine AS build
+FROM 24.5.0-alpine AS build
 WORKDIR /app
 COPY . .
 RUN yarn install

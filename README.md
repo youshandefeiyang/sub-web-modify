@@ -5,8 +5,22 @@
 ### 使用方法：
 建议使用Docker一键部署:
 ```
-docker run -d --restart unless-stopped --privileged=true -p 8090:80 --name sub-web-modify youshandefeiyang/sub-web-modify
+docker run -d --restart unless-stopped -p 8090:80 --name sub-web-modify youshandefeiyang/sub-web-modify
 ```
+或使用docker compose
+```yaml
+name: sub-converter-web
+services:
+    sub-web-modify:
+        restart: unless-stopped
+        privileged: false
+        ports:
+            - 8090:80
+        container_name: sub-web-modify
+        image: youshandefeiyang/sub-web-modify
+```
+运行docker compose: `docker compose up -d`
+
 访问地址举例:
 ```
 http://192.168.10.1:8090/?backend=https://url.v1.mk

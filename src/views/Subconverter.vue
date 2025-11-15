@@ -447,6 +447,7 @@ export default {
       options: {
         clientTypes: {
           Clash: "clash",
+          ShadowRocket: "shadowrocket",
           "Surge4/5": "surge&ver=4",
           "Sing-Box": "singbox",
           V2Ray: "v2ray",
@@ -1410,4 +1411,5 @@ export default {
   }
 };
 </script>
+
 

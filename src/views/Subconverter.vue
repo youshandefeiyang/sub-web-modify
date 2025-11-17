@@ -87,6 +87,9 @@
                         </el-button>
                       </el-form-item>
                     </template>
+                    <el-form-item label="自定义UA:">
+                      <el-input v-model="form.diyua" placeholder="设置获取订阅链接时所用的自定义User-Agent"/>
+                    </el-form-item>
                     <el-form-item label="包含节点:">
                       <el-input v-model="form.includeRemarks" placeholder="要保留的节点，支持正则"/>
                     </el-form-item>
@@ -1129,7 +1132,7 @@ export default {
           "&scv=" +
           this.form.scv.toString() +
           "&fdn=" +
-          this.form.fdn.toString();
+          this.form.fdn.toString();    
       if (this.form.clientType.includes("surge")) {
         if (this.form.tpl.surge.doh === true) {
           this.customSubUrl += "&surge.doh=true";
@@ -1145,6 +1148,10 @@ export default {
         if (this.form.tpl.singbox.ipv6 === true) {
           this.customSubUrl += "&singbox.ipv6=1";
         }
+      }
+      if (this.form.diyua.trim() !== "") {
+        this.customSubUrl +=
+            "&diyua=" + encodeURIComponent(this.form.diyua);
       }
       this.$copyText(this.customSubUrl);
       this.$message.success("定制订阅已复制到剪贴板");
@@ -1331,6 +1338,9 @@ export default {
         if (param.get("singbox.ipv6")) {
           this.form.tpl.singbox.ipv6 = param.get("singbox.ipv6") === '1';
         }
+        if (param.get("diyua")) {
+          this.form.diyua = param.get("diyua");
+        }
         this.dialogLoadConfigVisible = false;
         this.$message.success("长/短链接已成功解析为订阅信息");
       })();
@@ -1355,6 +1365,7 @@ export default {
       data.append("sdoh", encodeURIComponent(this.form.tpl.surge.doh.toString()));
       data.append("cdoh", encodeURIComponent(this.form.tpl.clash.doh.toString()));
       data.append("newname", encodeURIComponent(this.form.new_name.toString()));
+      data.append("diyua", encodeURIComponent(this.form.diyua.toString()));
       return data;
     },
     confirmUploadScript() {

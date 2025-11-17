@@ -88,7 +88,7 @@
                       </el-form-item>
                     </template>
                     <el-form-item label="自定义UA:">
-                      <el-input v-model="form.diyua" placeholder="设置获取订阅链接时所用的自定义User-Agent"/>
+                      <el-input v-model="form.diyua" placeholder="设置后端获取订阅链接时所用的自定义User-Agent"/>
                     </el-form-item>
                     <el-form-item label="包含节点:">
                       <el-input v-model="form.includeRemarks" placeholder="要保留的节点，支持正则"/>
@@ -480,17 +480,10 @@ export default {
         customBackend: {
           "肥羊增强型后端【vless reality+anytls】": "https://url.v1.mk",
           "肥羊备用后端【vless reality+anytls】": "https://sub.d1.mk",
-          nameless13提供: "https://www.nameless13.com",
-          subconverter作者提供: "https://sub.xeton.dev",
         },
         backendOptions: [
           {value: "https://url.v1.mk"},
           {value: "https://sub.d1.mk"},
-          {value: "https://api.tsutsu.one"},
-          {value: "https://www.nameless13.com"},
-          {value: "https://sub.xeton.dev"},
-          {value: "https://api.wcc.best"},
-          {value: "https://api.dler.io"},
         ],
         remoteConfig: [
           {
@@ -1422,5 +1415,6 @@ export default {
   }
 };
 </script>
+
 
 

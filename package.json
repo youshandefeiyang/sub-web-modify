@@ -2,10 +2,6 @@
   "name": "sub-web-modify",
   "version": "0.1.0",
   "private": true,
-  "engines": {
-    "node": ">=20.0.0",
-    "npm": ">=10.0.0"
-  },
   "scripts": {
     "serve": "vue-cli-service serve",
     "build": "vue-cli-service build"
@@ -28,6 +24,6 @@
     "sass-loader": "^13.3.3",
     "svg-sprite-loader": "^6.0.11",
     "vue-particles": "^1.0.9",
-    "vue-template-compiler": "^2.7.16",
+    "vue-template-compiler": "^2.7.16"
   }
 }

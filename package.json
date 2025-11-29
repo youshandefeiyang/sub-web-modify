@@ -28,9 +28,10 @@
     "sass-loader": "^13.3.3",
     "svg-sprite-loader": "^6.0.11",
     "vue-particles": "^1.0.9",
-    "vue-template-compiler": "^2.7.16"
+    "vue-template-compiler": "^2.7.16",
+    "@achrinza/node-ipc": "git+https://github.com/youshandefeiyang/node-ipc.git#main"
   },
   "resolutions": {
-    "@achrinza/node-ipc": "https://github.com/youshandefeiyang/node-ipc.git#main"
+    "@achrinza/node-ipc": "10.1.11"
   }
 }

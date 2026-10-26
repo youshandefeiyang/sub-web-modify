@@ -144,7 +144,7 @@
                               <el-checkbox v-model="form.tpl.clash.doh" label="Clash.DoH"></el-checkbox>
                             </el-col>
                             <el-col :span="12">
-                              <el-checkbox v-model="form.appendType" label="插入节点类型"></el-checkbox>
+                              <el-checkbox v-model="form.diydns" label="开启私有化DNS"></el-checkbox>
                             </el-col>
                           </el-row>
                           <el-row :gutter="10">
@@ -173,9 +173,10 @@
                           </el-row>
                           <el-row :gutter="10">
                             <el-col :span="12">
-                              <div style="margin-left: 35%">
-                                <el-checkbox v-model="form.tpl.singbox.ipv6" label="Sing-Box支持IPV6"></el-checkbox>
-                              </div>
+                              <el-checkbox v-model="form.appendType" label="插入节点类型"></el-checkbox>
+                            </el-col>
+                            <el-col :span="12">
+                                <el-checkbox v-model="form.tpl.singbox.ipv6" label="SingBox-IPV6"></el-checkbox>
                             </el-col>
                           </el-row>
                           <el-button slot="reference">更多选项</el-button>
@@ -892,7 +893,7 @@ export default {
         rename: "",
         devid: "",
         interval: "",
-        diyua: "ShadowRocket",
+        diyua: "clash.meta/1.19.0",
         emoji: true,
         nodeList: false,
         extraset: false,
@@ -902,6 +903,7 @@ export default {
         tfo: false,
         sort: false,
         expand: true,
+        diydns: true,
         scv: false,
         fdn: false,
         appendType: false,
@@ -1102,6 +1104,10 @@ export default {
         this.customSubUrl +=
             "&append_type=" + this.form.appendType.toString();
       }
+      if (this.form.diydns) {
+        this.customSubUrl +=
+            "&diydns=" + this.form.diydns.toString();
+      }
       if (this.form.tls13) {
         this.customSubUrl +=
             "&tls13=" + this.form.tls13.toString();
@@ -1289,6 +1295,9 @@ export default {
         }
         if (param.get("append_type")) {
           this.form.appendType = param.get("append_type") === 'true';
+        }
+        if (param.get("diydns")) {
+          this.form.diydns = param.get("diydns") === 'true';
         }
         if (param.get("tls13")) {
           this.form.tls13 = param.get("tls13");

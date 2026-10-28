@@ -452,7 +452,7 @@ export default {
         clientTypes: {
           Clash: "clash",
           ShadowRocket: "shadowrocket",
-          "Surge4/5": "surge&ver=4",
+          "Surge5/6": "surge&ver=5",
           "Sing-Box": "singbox",
           V2Ray: "v2ray",
           Trojan: "trojan",
@@ -463,8 +463,8 @@ export default {
           "Quantumult X": "quanx",
           Loon: "loon",
           Mellow: "mellow",
+          Surge4: "surge&ver=4",
           Surge3: "surge&ver=3",
-          Surge2: "surge&ver=2",
           ClashR: "clashr",
           "Shadowsocks(SIP002)": "ss",
           "Shadowsocks Android(SIP008)": "sssub",
@@ -1260,7 +1260,7 @@ export default {
             this.form.clientType = target + "&ver=" + param.get("ver");
           } else if (target === 'surge') {
             //类型为surge,没有ver
-            this.form.clientType = target + "&ver=4"
+            this.form.clientType = target + "&ver=5"
           } else {
             //类型为其他
             this.form.clientType = target;

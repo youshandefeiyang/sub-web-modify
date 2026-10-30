@@ -451,9 +451,10 @@ export default {
       options: {
         clientTypes: {
           Clash: "clash",
+          "Sing-Box": "singbox",
+          "Sing-Box-1.15": "singbox&singbox_version=1.15",
           ShadowRocket: "shadowrocket",
           "Surge5/6": "surge&ver=5",
-          "Sing-Box": "singbox",
           V2Ray: "v2ray",
           Trojan: "trojan",
           ShadowsocksR: "ssr",
